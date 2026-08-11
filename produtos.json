@@ -1,14 +1,5 @@
 [
   {
-    "id": "impressora-multifuncional",
-    "nome": "Impressora Multifuncional Wi-Fi",
-    "categoria": "perifericos",
-    "condicao": "novo",
-    "descricao": "Imprime, copia e digitaliza. Tanque de tinta econômico.",
-    "preco": 899,
-    "imagem": ""
-  },
-  {
     "id": "ssd-480",
     "nome": "SSD 480GB SATA",
     "categoria": "hardware",
