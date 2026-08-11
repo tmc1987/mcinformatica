@@ -853,14 +853,81 @@ async function publicar(mensagemCommit, mensagemSucesso) {
         shaArquivo = await gravarArquivo(ARQUIVO, conteudo, mensagemCommit, shaArquivo);
         renderizarLista();
         mostrar("tela-lista");
-        aviso("status-lista", mensagemSucesso, "ok");
-        setTimeout(() => esconderAviso("status-lista"), 8000);
+        aviso("status-lista", mensagemSucesso + " Conferindo se já apareceu no site...", "info");
+        acompanharPublicacao();
     } catch (erro) {
         mostrar("tela-lista");
         aviso("status-lista", erro.message, "erro");
         // Recarrega para não deixar a tela diferente do que está publicado
         setTimeout(() => iniciar(false), 2500);
     }
+}
+
+/* Depois de salvar, o site leva um tempinho para atualizar. Aqui o painel
+   confere sozinho se a alteração já apareceu; se demorar demais (o GitHub
+   às vezes perde a atualização quando são muitas mudanças seguidas), o
+   próprio painel manda republicar. */
+let relogioVerificacao = null;
+
+function acompanharPublicacao() {
+    clearTimeout(relogioVerificacao);
+
+    const esperado = JSON.stringify(produtos);
+    const INTERVALO = 15000;
+    const TENTATIVAS = 8;
+    let tentativa = 0;
+    let jaRepublicou = false;
+
+    async function conferir() {
+        let noAr = null;
+        try {
+            const resposta = await fetch(`${ARQUIVO}?v=${Date.now()}`, { cache: "no-store" });
+            if (resposta.ok) noAr = JSON.stringify(await resposta.json());
+        } catch (e) { /* site fora do ar ou aberto localmente */ }
+
+        if (noAr === esperado) {
+            aviso("status-lista", "Pronto! As alterações já estão no ar no site.", "ok");
+            return;
+        }
+
+        if (++tentativa < TENTATIVAS) {
+            relogioVerificacao = setTimeout(conferir, INTERVALO);
+            return;
+        }
+
+        if (!jaRepublicou) {
+            jaRepublicou = true;
+            tentativa = 0;
+            aviso("status-lista", "O site está demorando para atualizar. Reenviando...", "info");
+            try {
+                await pedirRepublicacao();
+            } catch (e) { /* segue conferindo mesmo assim */ }
+            relogioVerificacao = setTimeout(conferir, INTERVALO);
+            return;
+        }
+
+        aviso(
+            "status-lista",
+            "Suas alterações estão salvas com segurança. O site deve atualizar em alguns minutos — depois disso, atualize a página do site (F5).",
+            "info"
+        );
+    }
+
+    relogioVerificacao = setTimeout(conferir, INTERVALO);
+}
+
+// Grava um arquivo de controle só para o GitHub republicar o site
+async function pedirRepublicacao() {
+    let sha = null;
+    try {
+        sha = (await lerArquivo(".deploy")).sha;
+    } catch (e) { /* arquivo ainda não existe */ }
+    await gravarArquivo(
+        ".deploy",
+        paraBase64(new Date().toISOString() + "\n"),
+        "Reenvia publicacao do site",
+        sha
+    );
 }
 
 // ---------- Início ----------
