@@ -1,14 +1,5 @@
 [
   {
-    "id": "pc-gamer-entrada",
-    "nome": "PC Gamer · Ryzen 5 · 16GB · GTX 1650",
-    "categoria": "computadores",
-    "condicao": "novo",
-    "descricao": "Roda os jogos mais populares em Full HD. Montado e testado na loja.",
-    "preco": 3799,
-    "imagem": ""
-  },
-  {
     "id": "pc-usado-office",
     "nome": "Computador para Escritório (Seminovo)",
     "categoria": "computadores",
