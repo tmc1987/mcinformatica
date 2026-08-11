@@ -1,14 +1,5 @@
 [
   {
-    "id": "kit-teclado-mouse",
-    "nome": "Kit Teclado e Mouse Sem Fio",
-    "categoria": "perifericos",
-    "condicao": "novo",
-    "descricao": "Conexão USB 2.4GHz, teclado ABNT2 silencioso.",
-    "preco": 119,
-    "imagem": ""
-  },
-  {
     "id": "headset-gamer",
     "nome": "Headset Gamer com Microfone",
     "categoria": "perifericos",
