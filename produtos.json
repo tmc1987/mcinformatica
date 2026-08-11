@@ -1,14 +1,5 @@
 [
   {
-    "id": "notebook-usado-i3",
-    "nome": "Notebook Core i3 · 8GB · SSD 240GB (Seminovo)",
-    "categoria": "notebooks",
-    "condicao": "usado",
-    "descricao": "Seminovo revisado pela nossa assistência, com garantia da loja.",
-    "preco": 1299,
-    "imagem": ""
-  },
-  {
     "id": "pc-completo-home",
     "nome": "Computador Completo + Monitor 19\"",
     "categoria": "computadores",
