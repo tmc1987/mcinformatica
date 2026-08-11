@@ -1,14 +1,5 @@
 [
   {
-    "id": "ssd-480",
-    "nome": "SSD 480GB SATA",
-    "categoria": "hardware",
-    "condicao": "novo",
-    "descricao": "Deixe seu computador até 10x mais rápido. Instalação disponível.",
-    "preco": 249,
-    "imagem": ""
-  },
-  {
     "id": "memoria-8gb-ddr4",
     "nome": "Memória RAM 8GB DDR4",
     "categoria": "hardware",
