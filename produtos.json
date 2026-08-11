@@ -1,14 +1,5 @@
 [
   {
-    "id": "monitor-24",
-    "nome": "Monitor LED 24\" Full HD",
-    "categoria": "perifericos",
-    "condicao": "novo",
-    "descricao": "Painel IPS, 75Hz, HDMI e VGA. Ótimo para trabalho e jogos.",
-    "preco": 649,
-    "imagem": ""
-  },
-  {
     "id": "kit-teclado-mouse",
     "nome": "Kit Teclado e Mouse Sem Fio",
     "categoria": "perifericos",
