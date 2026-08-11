@@ -580,3 +580,6 @@ a { color: inherit; }
 }
 
 .link-painel:hover { color: var(--azul-claro); opacity: 1; }
+
+/* Endereço do rodapé */
+.rodape-coluna .recuo { display: inline-block; margin-left: 20px; }
