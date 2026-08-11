@@ -11,7 +11,7 @@ WhatsApp da loja, onde a negociação é fechada.
 - **Produtos e número do WhatsApp**: arquivo `app.js`, listas no topo (instruções nos comentários).
 - **Textos, contatos e horários**: arquivo `index.html`.
 - **Fotos dos produtos**: coloque as imagens na pasta `img/` e aponte o campo `imagem` do produto.
-- **Logo**: `img/logo.svg` é uma versão vetorial recriada; para usar a arte original,
-  salve como `img/logo.png` e troque as referências no `index.html`.
+- **Logo**: a arte oficial está em `img/logo.jpg` (usada no cabeçalho, na abertura e no
+  rodapé). O `img/logo.svg` é uma versão vetorial de reserva.
 
 Qualquer alteração enviada ao branch `main` entra no ar automaticamente em poucos minutos.

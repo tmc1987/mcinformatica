@@ -73,7 +73,21 @@ a { color: inherit; }
     text-decoration: none;
 }
 
-.brand-logo { width: 52px; height: 52px; }
+.brand-badge {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 1px solid var(--borda);
+}
+
+.brand-badge img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(2.1) translateY(10%);
+}
 
 .brand-name {
     font-size: 1.35rem;
@@ -152,8 +166,10 @@ a { color: inherit; }
 .hero-botoes { display: flex; gap: 14px; flex-wrap: wrap; }
 
 .hero-logo img {
-    width: 320px;
-    filter: drop-shadow(0 12px 40px rgba(30, 111, 217, 0.35));
+    width: 360px;
+    border-radius: 24px;
+    border: 1px solid var(--borda);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.55), 0 0 60px rgba(30, 111, 217, 0.18);
 }
 
 /* ---------- Botões ---------- */
@@ -451,7 +467,7 @@ a { color: inherit; }
     margin: 0 auto 32px;
 }
 
-.rodape-logo { width: 90px; margin-bottom: 12px; }
+.rodape-logo { width: 110px; border-radius: 14px; margin-bottom: 12px; }
 
 .rodape-coluna h4 {
     font-size: 1.1rem;
@@ -525,7 +541,7 @@ a { color: inherit; }
 
     .hero { flex-direction: column-reverse; text-align: center; padding: 40px 24px; }
 
-    .hero-logo img { width: 200px; }
+    .hero-logo img { width: 240px; }
 
     .hero-botoes { justify-content: center; }
 
