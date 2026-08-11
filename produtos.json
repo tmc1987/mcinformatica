@@ -1,14 +1,5 @@
 [
   {
-    "id": "headset-gamer",
-    "nome": "Headset Gamer com Microfone",
-    "categoria": "perifericos",
-    "condicao": "novo",
-    "descricao": "Som estéreo, microfone flexível e LED. Compatível com PC e console.",
-    "preco": 159,
-    "imagem": ""
-  },
-  {
     "id": "impressora-multifuncional",
     "nome": "Impressora Multifuncional Wi-Fi",
     "categoria": "perifericos",
