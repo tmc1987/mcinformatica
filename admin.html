@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Painel da Loja — MC Informática</title>
+    <link rel="icon" type="image/jpeg" href="img/logo.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous">
+<style>
+:root {
+    --marinho-escuro: #0a1220;
+    --marinho: #101b2d;
+    --marinho-claro: #18263d;
+    --azul: #1e6fd9;
+    --azul-claro: #3d8bfd;
+    --prata: #c9d2dc;
+    --prata-escuro: #8794a3;
+    --laranja: #ff8c1a;
+    --verde: #25d366;
+    --vermelho: #e2564f;
+    --branco: #f5f8fc;
+    --borda: rgba(201, 210, 220, 0.15);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background: var(--marinho-escuro);
+    color: var(--branco);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    padding-bottom: 60px;
+}
+
+h1, h2, h3 { font-family: 'Rajdhani', sans-serif; letter-spacing: 0.02em; }
+
+/* ---------- Cabeçalho ---------- */
+.topo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding: 14px 20px;
+    background: var(--marinho);
+    border-bottom: 1px solid var(--borda);
+    position: sticky;
+    top: 0;
+    z-index: 20;
+}
+
+.topo-marca { display: flex; align-items: center; gap: 12px; }
+
+.topo-marca .selo-logo {
+    width: 46px;
+    height: 46px;
+    border-radius: 11px;
+    overflow: hidden;
+    border: 1px solid var(--borda);
+    flex-shrink: 0;
+}
+
+.topo-marca img { width: 100%; height: 100%; object-fit: cover; transform: scale(2.1) translateY(10%); }
+
+.topo-marca h1 { font-size: 1.25rem; }
+
+.topo-marca span { display: block; font-size: 0.78rem; color: var(--prata-escuro); font-family: 'Inter', sans-serif; }
+
+.topo-acoes { display: flex; gap: 10px; flex-wrap: wrap; }
+
+/* ---------- Botões ---------- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 11px 20px;
+    border: none;
+    border-radius: 9px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: filter 0.2s, background 0.2s;
+}
+
+.btn:hover { filter: brightness(1.12); }
+.btn:disabled { opacity: 0.55; cursor: not-allowed; }
+
+.btn-azul { background: linear-gradient(135deg, var(--azul-claro), var(--azul)); color: #fff; }
+.btn-neutro { background: var(--marinho-claro); color: var(--prata); border: 1px solid var(--borda); }
+.btn-vermelho { background: transparent; color: var(--vermelho); border: 1px solid var(--vermelho); }
+.btn-verde { background: var(--verde); color: #06331a; }
+.btn-largo { width: 100%; }
+
+/* ---------- Estrutura ---------- */
+.area { max-width: 900px; margin: 0 auto; padding: 28px 20px; }
+
+.cartao {
+    background: var(--marinho);
+    border: 1px solid var(--borda);
+    border-radius: 16px;
+    padding: 26px;
+}
+
+.oculto { display: none !important; }
+
+/* ---------- Login ---------- */
+.login { max-width: 560px; margin: 40px auto; }
+
+.login h2 { font-size: 1.6rem; margin-bottom: 8px; }
+
+.login > .cartao > p { color: var(--prata-escuro); margin-bottom: 20px; }
+
+.passos {
+    background: var(--marinho-escuro);
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    padding: 18px 18px 18px 38px;
+    margin-bottom: 20px;
+    font-size: 0.92rem;
+    color: var(--prata);
+}
+
+.passos li { margin-bottom: 8px; }
+.passos li:last-child { margin-bottom: 0; }
+.passos code {
+    background: var(--marinho-claro);
+    padding: 2px 7px;
+    border-radius: 5px;
+    font-size: 0.88em;
+    color: var(--azul-claro);
+}
+.passos a { color: var(--azul-claro); }
+
+/* ---------- Formulários ---------- */
+.campo { margin-bottom: 18px; }
+
+.campo label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.92rem;
+    margin-bottom: 6px;
+}
+
+.campo .dica { font-weight: 400; color: var(--prata-escuro); font-size: 0.85rem; }
+
+.campo input[type="text"],
+.campo input[type="password"],
+.campo input[type="number"],
+.campo select,
+.campo textarea {
+    width: 100%;
+    padding: 12px 14px;
+    background: var(--marinho-escuro);
+    border: 1px solid var(--borda);
+    border-radius: 9px;
+    color: var(--branco);
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+}
+
+.campo textarea { resize: vertical; min-height: 88px; }
+
+.campo input:focus, .campo select:focus, .campo textarea:focus {
+    outline: 2px solid var(--azul-claro);
+    outline-offset: 1px;
+}
+
+.linha { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+/* ---------- Aviso / status ---------- */
+.aviso {
+    padding: 12px 16px;
+    border-radius: 9px;
+    font-size: 0.92rem;
+    margin-bottom: 18px;
+}
+
+.aviso-erro { background: rgba(226, 86, 79, 0.15); border: 1px solid var(--vermelho); color: #ffb4b0; }
+.aviso-ok { background: rgba(37, 211, 102, 0.13); border: 1px solid var(--verde); color: #9df0bd; }
+.aviso-info { background: rgba(61, 139, 253, 0.12); border: 1px solid var(--azul); color: #bcd8ff; }
+
+/* ---------- Lista de produtos ---------- */
+.barra-lista {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+}
+
+.barra-lista h2 { font-size: 1.5rem; }
+.barra-lista .contagem { color: var(--prata-escuro); font-size: 0.9rem; }
+
+.lista { display: flex; flex-direction: column; gap: 12px; }
+
+.item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--marinho);
+    border: 1px solid var(--borda);
+    border-radius: 13px;
+    padding: 14px;
+}
+
+.item-foto {
+    width: 64px;
+    height: 64px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--marinho-claro);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--azul-claro);
+    font-size: 1.4rem;
+}
+
+.item-foto img { width: 100%; height: 100%; object-fit: cover; }
+
+.item-info { flex: 1; min-width: 0; }
+
+.item-info h3 { font-size: 1.08rem; line-height: 1.3; }
+
+.item-meta { font-size: 0.85rem; color: var(--prata-escuro); display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+
+.tag {
+    padding: 2px 9px;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.tag-novo { background: var(--azul-claro); color: #fff; }
+.tag-usado { background: var(--laranja); color: #000; }
+
+.item-preco { font-weight: 700; color: var(--branco); }
+
+.item-botoes { display: flex; gap: 6px; flex-shrink: 0; flex-wrap: wrap; justify-content: flex-end; }
+
+.icone-botao {
+    width: 38px;
+    height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--marinho-claro);
+    border: 1px solid var(--borda);
+    border-radius: 9px;
+    color: var(--prata);
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.icone-botao:hover { background: var(--azul); color: #fff; }
+.icone-botao.perigo:hover { background: var(--vermelho); border-color: var(--vermelho); }
+.icone-botao:disabled { opacity: 0.35; cursor: not-allowed; }
+
+.vazio { text-align: center; color: var(--prata-escuro); padding: 42px 20px; }
+.vazio i { font-size: 2.2rem; display: block; margin-bottom: 12px; color: var(--azul-claro); }
+
+/* ---------- Pré-visualização da foto ---------- */
+.previa {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 10px;
+}
+
+.previa-caixa {
+    width: 92px;
+    height: 92px;
+    border-radius: 11px;
+    overflow: hidden;
+    background: var(--marinho-escuro);
+    border: 1px solid var(--borda);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--prata-escuro);
+    font-size: 1.6rem;
+    flex-shrink: 0;
+}
+
+.previa-caixa img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ---------- Carregando ---------- */
+.carregando { text-align: center; padding: 48px 20px; color: var(--prata-escuro); }
+.carregando i { font-size: 2rem; color: var(--azul-claro); display: block; margin-bottom: 12px; }
+
+@media (max-width: 620px) {
+    .linha { grid-template-columns: 1fr; }
+    .item { flex-wrap: wrap; }
+    .item-botoes { width: 100%; justify-content: flex-start; }
+}
+</style>
+</head>
+<body>
+
+<header class="topo">
+    <div class="topo-marca">
+        <span class="selo-logo"><img src="img/logo.jpg" alt="MC Informática"></span>
+        <div>
+            <h1>Painel da Loja</h1>
+            <span>MC Informática</span>
+        </div>
+    </div>
+    <div class="topo-acoes oculto" id="topo-acoes">
+        <a class="btn btn-neutro" href="index.html" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Ver o site</a>
+        <button class="btn btn-neutro" id="btn-sair"><i class="fa-solid fa-right-from-bracket"></i> Sair</button>
+    </div>
+</header>
+
+<!-- ====================== LOGIN ====================== -->
+<section class="area login" id="tela-login">
+    <div class="cartao">
+        <h2>Entrar no painel</h2>
+        <p>Cole aqui a sua chave de acesso para gerenciar os produtos do site.</p>
+
+        <div class="aviso aviso-erro oculto" id="erro-login"></div>
+
+        <div class="campo">
+            <label for="campo-token">Chave de acesso</label>
+            <input type="password" id="campo-token" placeholder="github_pat_..." autocomplete="off">
+        </div>
+
+        <button class="btn btn-azul btn-largo" id="btn-entrar">
+            <i class="fa-solid fa-unlock"></i> Entrar
+        </button>
+
+        <details style="margin-top: 22px;">
+            <summary style="cursor: pointer; color: var(--azul-claro); font-weight: 600;">Não tenho a chave — como criar?</summary>
+            <ol class="passos" style="margin-top: 14px;">
+                <li>Abra <a href="https://github.com/settings/personal-access-tokens/new" target="_blank">esta página do GitHub</a> (faça login se pedir).</li>
+                <li>Em <strong>Token name</strong>, escreva <code>painel-loja</code>.</li>
+                <li>Em <strong>Expiration</strong>, escolha o prazo maior possível (ex.: <code>No expiration</code> ou 1 ano).</li>
+                <li>Em <strong>Repository access</strong>, marque <strong>Only select repositories</strong> e escolha <code>mcinformatica</code>.</li>
+                <li>Em <strong>Permissions → Repository permissions</strong>, procure <strong>Contents</strong> e mude para <strong>Read and write</strong>.</li>
+                <li>Clique em <strong>Generate token</strong> e copie o código que aparecer (começa com <code>github_pat_</code>).</li>
+                <li>Volte aqui, cole o código no campo acima e clique em Entrar.</li>
+            </ol>
+            <p style="font-size: 0.86rem; color: var(--prata-escuro);">
+                Guarde essa chave num lugar seguro. Ela fica salva só neste navegador —
+                use o painel no seu computador ou celular pessoal, e clique em “Sair” se usar um aparelho compartilhado.
+            </p>
+        </details>
+    </div>
+</section>
+
+<!-- ====================== LISTA ====================== -->
+<section class="area oculto" id="tela-lista">
+    <div class="aviso aviso-ok oculto" id="status-lista"></div>
+
+    <div class="barra-lista">
+        <div>
+            <h2>Produtos do site</h2>
+            <span class="contagem" id="contagem"></span>
+        </div>
+        <button class="btn btn-azul" id="btn-novo"><i class="fa-solid fa-plus"></i> Novo produto</button>
+    </div>
+
+    <div class="lista" id="lista"></div>
+</section>
+
+<!-- ====================== FORMULÁRIO ====================== -->
+<section class="area oculto" id="tela-form">
+    <div class="cartao">
+        <h2 id="form-titulo" style="font-size: 1.5rem; margin-bottom: 20px;">Novo produto</h2>
+
+        <div class="aviso aviso-erro oculto" id="erro-form"></div>
+
+        <div class="campo">
+            <label for="f-nome">Nome do produto</label>
+            <input type="text" id="f-nome" placeholder="Ex.: Notebook Dell Inspiron 15">
+        </div>
+
+        <div class="linha">
+            <div class="campo">
+                <label for="f-categoria">Categoria</label>
+                <select id="f-categoria">
+                    <option value="notebooks">Notebooks</option>
+                    <option value="computadores">Computadores</option>
+                    <option value="perifericos">Periféricos</option>
+                    <option value="hardware">Hardware</option>
+                    <option value="acessorios">Acessórios</option>
+                    <option value="outros">Outros</option>
+                </select>
+            </div>
+            <div class="campo">
+                <label for="f-condicao">Condição</label>
+                <select id="f-condicao">
+                    <option value="novo">Novo</option>
+                    <option value="usado">Usado / Seminovo</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="campo">
+            <label for="f-preco">Preço <span class="dica">— deixe 0 para aparecer “Sob consulta”</span></label>
+            <input type="number" id="f-preco" min="0" step="0.01" placeholder="1899,00">
+        </div>
+
+        <div class="campo">
+            <label for="f-descricao">Descrição <span class="dica">— uma ou duas linhas com as principais características</span></label>
+            <textarea id="f-descricao" placeholder="Core i5, 8GB de memória, SSD 256GB. Bateria nova, com garantia da loja."></textarea>
+        </div>
+
+        <div class="campo">
+            <label for="f-foto">Foto <span class="dica">— opcional; sem foto aparece um ícone da categoria</span></label>
+            <input type="file" id="f-foto" accept="image/*">
+            <div class="previa">
+                <div class="previa-caixa" id="previa-caixa"><i class="fa-solid fa-image"></i></div>
+                <button type="button" class="btn btn-neutro oculto" id="btn-tirar-foto">
+                    <i class="fa-solid fa-trash"></i> Remover foto
+                </button>
+            </div>
+        </div>
+
+        <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 26px;">
+            <button class="btn btn-azul" id="btn-salvar" style="flex: 1; min-width: 200px;">
+                <i class="fa-solid fa-floppy-disk"></i> Salvar e publicar
+            </button>
+            <button class="btn btn-neutro" id="btn-cancelar">Cancelar</button>
+        </div>
+    </div>
+</section>
+
+<!-- ====================== CARREGANDO ====================== -->
+<div class="area carregando oculto" id="tela-carregando">
+    <i class="fa-solid fa-circle-notch fa-spin"></i>
+    <p id="texto-carregando">Carregando...</p>
+</div>
+
+<script>
+/* ============================================================
+   Painel da MC Informática
+   Lê e grava o arquivo produtos.json direto no repositório do
+   site (GitHub), usando a chave de acesso da loja.
+   ============================================================ */
+
+const REPO = "tmc1987/mcinformatica";
+const BRANCH = "main";
+const ARQUIVO = "produtos.json";
+const API = `https://api.github.com/repos/${REPO}/contents/`;
+
+const CATEGORIAS = {
+    notebooks: "Notebooks",
+    computadores: "Computadores",
+    perifericos: "Periféricos",
+    hardware: "Hardware",
+    acessorios: "Acessórios",
+    outros: "Outros"
+};
+
+const ICONES = {
+    notebooks: "fa-solid fa-laptop",
+    computadores: "fa-solid fa-desktop",
+    perifericos: "fa-solid fa-keyboard",
+    hardware: "fa-solid fa-microchip",
+    acessorios: "fa-solid fa-plug",
+    outros: "fa-solid fa-box"
+};
+
+let produtos = [];
+let shaArquivo = null;
+let editandoId = null;
+let fotoPendente = null;   // Blob da foto escolhida, ainda não enviada
+let fotoAtual = "";        // caminho da foto já salva
+
+const el = (id) => document.getElementById(id);
+
+// ---------- Chave de acesso ----------
+const chave = {
+    get: () => localStorage.getItem("mc_chave") || "",
+    set: (v) => localStorage.setItem("mc_chave", v),
+    limpar: () => localStorage.removeItem("mc_chave")
+};
+
+// ---------- Telas ----------
+function mostrar(tela) {
+    ["tela-login", "tela-lista", "tela-form", "tela-carregando"].forEach((t) =>
+        el(t).classList.toggle("oculto", t !== tela)
+    );
+    el("topo-acoes").classList.toggle("oculto", tela === "tela-login");
+    window.scrollTo({ top: 0 });
+}
+
+function carregando(texto) {
+    el("texto-carregando").textContent = texto;
+    mostrar("tela-carregando");
+}
+
+function aviso(id, texto, tipo) {
+    const caixa = el(id);
+    caixa.textContent = texto;
+    caixa.className = "aviso aviso-" + tipo;
+    caixa.classList.remove("oculto");
+}
+
+function esconderAviso(id) {
+    el(id).classList.add("oculto");
+}
+
+// ---------- Comunicação com o GitHub ----------
+function paraBase64(texto) {
+    const bytes = new TextEncoder().encode(texto);
+    let binario = "";
+    bytes.forEach((b) => (binario += String.fromCharCode(b)));
+    return btoa(binario);
+}
+
+function deBase64(base64) {
+    const binario = atob(base64.replace(/\s/g, ""));
+    const bytes = Uint8Array.from(binario, (c) => c.charCodeAt(0));
+    return new TextDecoder().decode(bytes);
+}
+
+async function lerArquivo(caminho) {
+    const resposta = await fetch(`${API}${caminho}?ref=${BRANCH}&t=${Date.now()}`, {
+        cache: "no-store",
+        headers: {
+            Authorization: "Bearer " + chave.get(),
+            Accept: "application/vnd.github+json"
+        }
+    });
+    if (resposta.status === 404) return { conteudo: null, sha: null };
+    if (!resposta.ok) throw new Error(await mensagemErro(resposta));
+    const dados = await resposta.json();
+    return { conteudo: deBase64(dados.content), sha: dados.sha };
+}
+
+async function gravarArquivo(caminho, conteudoBase64, mensagem, sha) {
+    const corpo = { message: mensagem, content: conteudoBase64, branch: BRANCH };
+    if (sha) corpo.sha = sha;
+
+    const resposta = await fetch(API + caminho, {
+        method: "PUT",
+        headers: {
+            Authorization: "Bearer " + chave.get(),
+            Accept: "application/vnd.github+json",
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(corpo)
+    });
+    if (!resposta.ok) throw new Error(await mensagemErro(resposta));
+    const dados = await resposta.json();
+    return dados.content.sha;
+}
+
+async function mensagemErro(resposta) {
+    let detalhe = "";
+    try {
+        const dados = await resposta.json();
+        detalhe = dados.message || "";
+    } catch (e) { /* resposta sem corpo */ }
+
+    if (resposta.status === 401) return "Chave de acesso inválida ou expirada. Crie uma nova chave e entre de novo.";
+    if (resposta.status === 403) return "A chave não tem permissão de escrita no site (Contents: Read and write).";
+    if (resposta.status === 409) return "O site foi alterado em outro lugar. Recarregue a página e tente de novo.";
+    return `Não consegui salvar (erro ${resposta.status}). ${detalhe}`;
+}
+
+// ---------- Entrar / sair ----------
+el("btn-entrar").addEventListener("click", async () => {
+    const valor = el("campo-token").value.trim();
+    if (!valor) {
+        aviso("erro-login", "Cole a sua chave de acesso no campo acima.", "erro");
+        return;
+    }
+    esconderAviso("erro-login");
+    chave.set(valor);
+    await iniciar(true);
+});
+
+el("campo-token").addEventListener("keydown", (e) => {
+    if (e.key === "Enter") el("btn-entrar").click();
+});
+
+el("btn-sair").addEventListener("click", () => {
+    if (!confirm("Sair do painel? Você vai precisar colar a chave de novo para entrar.")) return;
+    chave.limpar();
+    el("campo-token").value = "";
+    mostrar("tela-login");
+});
+
+// ---------- Carregar produtos ----------
+async function iniciar(vindoDoLogin) {
+    if (!chave.get()) {
+        mostrar("tela-login");
+        return;
+    }
+
+    carregando("Carregando produtos...");
+    try {
+        const { conteudo, sha } = await lerArquivo(ARQUIVO);
+        produtos = conteudo ? JSON.parse(conteudo) : [];
+        if (!Array.isArray(produtos)) produtos = [];
+        shaArquivo = sha;
+        renderizarLista();
+        mostrar("tela-lista");
+    } catch (erro) {
+        chave.limpar();
+        mostrar("tela-login");
+        aviso("erro-login", erro.message, "erro");
+        if (!vindoDoLogin) el("campo-token").value = "";
+    }
+}
+
+// ---------- Lista ----------
+function esc(texto) {
+    return String(texto ?? "")
+        .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+}
+
+function precoTexto(valor) {
+    const n = Number(valor);
+    return n > 0 ? n.toLocaleString("pt-BR", { style: "currency", currency: "BRL" }) : "Sob consulta";
+}
+
+function renderizarLista() {
+    el("contagem").textContent =
+        produtos.length === 0
+            ? "Nenhum produto cadastrado"
+            : produtos.length === 1
+            ? "1 produto no site"
+            : `${produtos.length} produtos no site`;
+
+    if (produtos.length === 0) {
+        el("lista").innerHTML = `
+            <div class="cartao vazio">
+                <i class="fa-solid fa-boxes-packing"></i>
+                Nenhum produto cadastrado ainda.<br>
+                Clique em <strong>Novo produto</strong> para começar.
+            </div>`;
+        return;
+    }
+
+    el("lista").innerHTML = produtos
+        .map((p, i) => {
+            const foto = p.imagem
+                ? `<img src="${esc(p.imagem)}" alt="">`
+                : `<i class="${ICONES[p.categoria] || ICONES.outros}"></i>`;
+            const tag = p.condicao === "usado"
+                ? '<span class="tag tag-usado">Usado</span>'
+                : '<span class="tag tag-novo">Novo</span>';
+
+            return `
+            <div class="item">
+                <div class="item-foto">${foto}</div>
+                <div class="item-info">
+                    <h3>${esc(p.nome)}</h3>
+                    <div class="item-meta">
+                        ${tag}
+                        <span>${esc(CATEGORIAS[p.categoria] || "Outros")}</span>
+                        <span class="item-preco">${precoTexto(p.preco)}</span>
+                    </div>
+                </div>
+                <div class="item-botoes">
+                    <button class="icone-botao" data-acao="subir" data-i="${i}" title="Mover para cima" ${i === 0 ? "disabled" : ""}>
+                        <i class="fa-solid fa-arrow-up"></i>
+                    </button>
+                    <button class="icone-botao" data-acao="descer" data-i="${i}" title="Mover para baixo" ${i === produtos.length - 1 ? "disabled" : ""}>
+                        <i class="fa-solid fa-arrow-down"></i>
+                    </button>
+                    <button class="icone-botao" data-acao="editar" data-i="${i}" title="Editar">
+                        <i class="fa-solid fa-pen"></i>
+                    </button>
+                    <button class="icone-botao perigo" data-acao="excluir" data-i="${i}" title="Excluir">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </div>
+            </div>`;
+        })
+        .join("");
+}
+
+el("lista").addEventListener("click", async (e) => {
+    const botao = e.target.closest("button[data-acao]");
+    if (!botao) return;
+    const i = Number(botao.dataset.i);
+    const acao = botao.dataset.acao;
+
+    if (acao === "editar") { abrirFormulario(produtos[i]); return; }
+
+    if (acao === "excluir") {
+        if (!confirm(`Excluir "${produtos[i].nome}" do site?`)) return;
+        produtos.splice(i, 1);
+        await publicar("Remove produto do site", "Produto excluído! O site atualiza em cerca de 1 minuto.");
+        return;
+    }
+
+    if (acao === "subir" && i > 0) {
+        [produtos[i - 1], produtos[i]] = [produtos[i], produtos[i - 1]];
+        await publicar("Reordena produtos do site", "Ordem atualizada!");
+        return;
+    }
+
+    if (acao === "descer" && i < produtos.length - 1) {
+        [produtos[i], produtos[i + 1]] = [produtos[i + 1], produtos[i]];
+        await publicar("Reordena produtos do site", "Ordem atualizada!");
+    }
+});
+
+// ---------- Formulário ----------
+el("btn-novo").addEventListener("click", () => abrirFormulario(null));
+el("btn-cancelar").addEventListener("click", () => { mostrar("tela-lista"); });
+
+function abrirFormulario(produto) {
+    esconderAviso("erro-form");
+    editandoId = produto ? produto.id : null;
+    fotoPendente = null;
+    fotoAtual = produto ? produto.imagem || "" : "";
+
+    el("form-titulo").textContent = produto ? "Editar produto" : "Novo produto";
+    el("f-nome").value = produto ? produto.nome : "";
+    el("f-categoria").value = produto ? produto.categoria : "notebooks";
+    el("f-condicao").value = produto ? produto.condicao : "novo";
+    el("f-preco").value = produto && produto.preco ? produto.preco : "";
+    el("f-descricao").value = produto ? produto.descricao : "";
+    el("f-foto").value = "";
+
+    atualizarPrevia(fotoAtual);
+    mostrar("tela-form");
+}
+
+function atualizarPrevia(src) {
+    el("previa-caixa").innerHTML = src
+        ? `<img src="${esc(src)}" alt="">`
+        : '<i class="fa-solid fa-image"></i>';
+    el("btn-tirar-foto").classList.toggle("oculto", !src);
+}
+
+el("f-foto").addEventListener("change", async (e) => {
+    const arquivo = e.target.files[0];
+    if (!arquivo) return;
+    try {
+        fotoPendente = await prepararFoto(arquivo);
+        atualizarPrevia(URL.createObjectURL(fotoPendente));
+    } catch (erro) {
+        aviso("erro-form", "Não consegui ler essa imagem. Tente outra foto.", "erro");
+    }
+});
+
+el("btn-tirar-foto").addEventListener("click", () => {
+    fotoPendente = null;
+    fotoAtual = "";
+    el("f-foto").value = "";
+    atualizarPrevia("");
+});
+
+// Reduz a foto antes de enviar, para o site abrir rápido
+async function prepararFoto(arquivo, maximo = 1200) {
+    const bitmap = await createImageBitmap(arquivo);
+    const escala = Math.min(1, maximo / Math.max(bitmap.width, bitmap.height));
+    const largura = Math.round(bitmap.width * escala);
+    const altura = Math.round(bitmap.height * escala);
+
+    const tela = document.createElement("canvas");
+    tela.width = largura;
+    tela.height = altura;
+    tela.getContext("2d").drawImage(bitmap, 0, 0, largura, altura);
+
+    return new Promise((resolve) => tela.toBlob(resolve, "image/jpeg", 0.85));
+}
+
+function blobParaBase64(blob) {
+    return new Promise((resolve, rejeitar) => {
+        const leitor = new FileReader();
+        leitor.onload = () => resolve(leitor.result.split(",")[1]);
+        leitor.onerror = rejeitar;
+        leitor.readAsDataURL(blob);
+    });
+}
+
+function gerarId(nome) {
+    const base = nome
+        .toLowerCase()
+        .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-|-$/g, "")
+        .slice(0, 40) || "produto";
+    return `${base}-${Date.now().toString(36)}`;
+}
+
+el("btn-salvar").addEventListener("click", async () => {
+    const nome = el("f-nome").value.trim();
+    const descricao = el("f-descricao").value.trim();
+
+    if (!nome) {
+        aviso("erro-form", "Escreva o nome do produto.", "erro");
+        return;
+    }
+    if (!descricao) {
+        aviso("erro-form", "Escreva uma descrição curta do produto.", "erro");
+        return;
+    }
+    esconderAviso("erro-form");
+
+    const dados = {
+        id: editandoId || gerarId(nome),
+        nome,
+        categoria: el("f-categoria").value,
+        condicao: el("f-condicao").value,
+        descricao,
+        preco: Number(el("f-preco").value) || 0,
+        imagem: fotoAtual
+    };
+
+    try {
+        if (fotoPendente) {
+            carregando("Enviando a foto...");
+            const caminho = `img/produtos/${dados.id}.jpg`;
+            const base64 = await blobParaBase64(fotoPendente);
+            // Se já existir uma foto com esse nome, precisamos do sha para substituir
+            let shaFoto = null;
+            try {
+                const atual = await lerArquivo(caminho);
+                shaFoto = atual.sha;
+            } catch (e) { /* foto ainda não existe */ }
+            await gravarArquivo(caminho, base64, `Adiciona foto de ${nome}`, shaFoto);
+            dados.imagem = caminho;
+            fotoPendente = null;
+        }
+
+        const indice = produtos.findIndex((p) => p.id === dados.id);
+        if (indice >= 0) produtos[indice] = dados;
+        else produtos.push(dados);
+
+        await publicar(
+            indice >= 0 ? `Atualiza produto: ${nome}` : `Adiciona produto: ${nome}`,
+            "Produto publicado! O site atualiza em cerca de 1 minuto."
+        );
+    } catch (erro) {
+        mostrar("tela-form");
+        aviso("erro-form", erro.message, "erro");
+    }
+});
+
+// ---------- Publicar no site ----------
+async function publicar(mensagemCommit, mensagemSucesso) {
+    carregando("Publicando no site...");
+    try {
+        const conteudo = paraBase64(JSON.stringify(produtos, null, 2) + "\n");
+        shaArquivo = await gravarArquivo(ARQUIVO, conteudo, mensagemCommit, shaArquivo);
+        renderizarLista();
+        mostrar("tela-lista");
+        aviso("status-lista", mensagemSucesso, "ok");
+        setTimeout(() => esconderAviso("status-lista"), 8000);
+    } catch (erro) {
+        mostrar("tela-lista");
+        aviso("status-lista", erro.message, "erro");
+        // Recarrega para não deixar a tela diferente do que está publicado
+        setTimeout(() => iniciar(false), 2500);
+    }
+}
+
+// ---------- Início ----------
+iniciar(false);
+</script>
+</body>
+</html>

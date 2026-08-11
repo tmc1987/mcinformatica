@@ -1,0 +1,110 @@
+[
+  {
+    "id": "notebook-i5-8gb",
+    "nome": "Notebook Core i5 · 8GB · SSD 256GB",
+    "categoria": "notebooks",
+    "condicao": "novo",
+    "descricao": "Ideal para trabalho e estudos. Tela 15,6\", Windows 11 instalado.",
+    "preco": 2499,
+    "imagem": ""
+  },
+  {
+    "id": "notebook-usado-i3",
+    "nome": "Notebook Core i3 · 8GB · SSD 240GB (Seminovo)",
+    "categoria": "notebooks",
+    "condicao": "usado",
+    "descricao": "Seminovo revisado pela nossa assistência, com garantia da loja.",
+    "preco": 1299,
+    "imagem": ""
+  },
+  {
+    "id": "pc-completo-home",
+    "nome": "Computador Completo + Monitor 19\"",
+    "categoria": "computadores",
+    "condicao": "novo",
+    "descricao": "PC completo com monitor, teclado e mouse. Pronto para usar.",
+    "preco": 1899,
+    "imagem": ""
+  },
+  {
+    "id": "pc-gamer-entrada",
+    "nome": "PC Gamer · Ryzen 5 · 16GB · GTX 1650",
+    "categoria": "computadores",
+    "condicao": "novo",
+    "descricao": "Roda os jogos mais populares em Full HD. Montado e testado na loja.",
+    "preco": 3799,
+    "imagem": ""
+  },
+  {
+    "id": "pc-usado-office",
+    "nome": "Computador para Escritório (Seminovo)",
+    "categoria": "computadores",
+    "condicao": "usado",
+    "descricao": "Core i5, 8GB, SSD 240GB. Revisado e com garantia da loja.",
+    "preco": 999,
+    "imagem": ""
+  },
+  {
+    "id": "monitor-24",
+    "nome": "Monitor LED 24\" Full HD",
+    "categoria": "perifericos",
+    "condicao": "novo",
+    "descricao": "Painel IPS, 75Hz, HDMI e VGA. Ótimo para trabalho e jogos.",
+    "preco": 649,
+    "imagem": ""
+  },
+  {
+    "id": "kit-teclado-mouse",
+    "nome": "Kit Teclado e Mouse Sem Fio",
+    "categoria": "perifericos",
+    "condicao": "novo",
+    "descricao": "Conexão USB 2.4GHz, teclado ABNT2 silencioso.",
+    "preco": 119,
+    "imagem": ""
+  },
+  {
+    "id": "headset-gamer",
+    "nome": "Headset Gamer com Microfone",
+    "categoria": "perifericos",
+    "condicao": "novo",
+    "descricao": "Som estéreo, microfone flexível e LED. Compatível com PC e console.",
+    "preco": 159,
+    "imagem": ""
+  },
+  {
+    "id": "impressora-multifuncional",
+    "nome": "Impressora Multifuncional Wi-Fi",
+    "categoria": "perifericos",
+    "condicao": "novo",
+    "descricao": "Imprime, copia e digitaliza. Tanque de tinta econômico.",
+    "preco": 899,
+    "imagem": ""
+  },
+  {
+    "id": "ssd-480",
+    "nome": "SSD 480GB SATA",
+    "categoria": "hardware",
+    "condicao": "novo",
+    "descricao": "Deixe seu computador até 10x mais rápido. Instalação disponível.",
+    "preco": 249,
+    "imagem": ""
+  },
+  {
+    "id": "memoria-8gb-ddr4",
+    "nome": "Memória RAM 8GB DDR4",
+    "categoria": "hardware",
+    "condicao": "novo",
+    "descricao": "2666MHz, para desktop ou notebook. Consulte compatibilidade.",
+    "preco": 149,
+    "imagem": ""
+  },
+  {
+    "id": "fonte-500w",
+    "nome": "Fonte 500W 80 Plus",
+    "categoria": "hardware",
+    "condicao": "novo",
+    "descricao": "Certificação 80 Plus, proteção contra sobrecarga.",
+    "preco": 279,
+    "imagem": ""
+  }
+]

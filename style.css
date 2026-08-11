@@ -547,3 +547,36 @@ a { color: inherit; }
 
     .hero-texto { margin-left: auto; margin-right: auto; }
 }
+
+/* ---------- Catálogo ainda sem produtos ---------- */
+.catalogo-vazio {
+    grid-column: 1 / -1;
+    text-align: center;
+    background: var(--marinho);
+    border: 1px solid var(--borda);
+    border-radius: 16px;
+    padding: 48px 24px;
+}
+
+.catalogo-vazio i {
+    font-size: 2.6rem;
+    color: var(--azul-claro);
+    margin-bottom: 16px;
+}
+
+.catalogo-vazio h3 { font-size: 1.5rem; margin-bottom: 10px; }
+
+.catalogo-vazio p {
+    color: var(--prata-escuro);
+    max-width: 520px;
+    margin: 0 auto 22px;
+}
+
+.link-painel {
+    color: var(--prata-escuro);
+    text-decoration: none;
+    margin-left: 14px;
+    opacity: 0.55;
+}
+
+.link-painel:hover { color: var(--azul-claro); opacity: 1; }
