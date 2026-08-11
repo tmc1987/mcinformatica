@@ -1,14 +1,5 @@
 [
   {
-    "id": "pc-completo-home",
-    "nome": "Computador Completo + Monitor 19\"",
-    "categoria": "computadores",
-    "condicao": "novo",
-    "descricao": "PC completo com monitor, teclado e mouse. Pronto para usar.",
-    "preco": 1899,
-    "imagem": ""
-  },
-  {
     "id": "pc-gamer-entrada",
     "nome": "PC Gamer · Ryzen 5 · 16GB · GTX 1650",
     "categoria": "computadores",
