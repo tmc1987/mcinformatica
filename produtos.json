@@ -1,14 +1,5 @@
 [
   {
-    "id": "memoria-8gb-ddr4",
-    "nome": "Memória RAM 8GB DDR4",
-    "categoria": "hardware",
-    "condicao": "novo",
-    "descricao": "2666MHz, para desktop ou notebook. Consulte compatibilidade.",
-    "preco": 149,
-    "imagem": ""
-  },
-  {
     "id": "fonte-500w",
     "nome": "Fonte 500W 80 Plus",
     "categoria": "hardware",
