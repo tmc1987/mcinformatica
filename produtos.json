@@ -1,14 +1,5 @@
 [
   {
-    "id": "notebook-i5-8gb",
-    "nome": "Notebook Core i5 · 8GB · SSD 256GB",
-    "categoria": "notebooks",
-    "condicao": "novo",
-    "descricao": "Ideal para trabalho e estudos. Tela 15,6\", Windows 11 instalado.",
-    "preco": 2499,
-    "imagem": ""
-  },
-  {
     "id": "notebook-usado-i3",
     "nome": "Notebook Core i3 · 8GB · SSD 240GB (Seminovo)",
     "categoria": "notebooks",
