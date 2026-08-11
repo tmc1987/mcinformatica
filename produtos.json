@@ -1,14 +1,5 @@
 [
   {
-    "id": "pc-usado-office",
-    "nome": "Computador para Escritório (Seminovo)",
-    "categoria": "computadores",
-    "condicao": "usado",
-    "descricao": "Core i5, 8GB, SSD 240GB. Revisado e com garantia da loja.",
-    "preco": 999,
-    "imagem": ""
-  },
-  {
     "id": "monitor-24",
     "nome": "Monitor LED 24\" Full HD",
     "categoria": "perifericos",
