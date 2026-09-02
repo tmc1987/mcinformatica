@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow, noarchive">
-    <title>InfoTech Cliente | MC Informatica</title>
+    <title>Aplicativos InfoTech | MC Informatica</title>
     <link rel="icon" type="image/jpeg" href="img/logo.jpg">
     <style>
         :root {
@@ -68,7 +68,13 @@
             line-height: 1.45;
         }
 
-        .apps { max-width: 560px; margin: 0 auto; }
+        .apps {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+            max-width: 760px;
+            margin: 0 auto;
+        }
 
         .app {
             display: flex;
@@ -128,6 +134,7 @@
 
         @media (max-width: 640px) {
             main { padding-top: 18px; }
+            .apps { grid-template-columns: 1fr; }
             .app { min-height: 0; }
         }
     </style>
@@ -135,10 +142,10 @@
 <body>
     <main>
         <img class="brand" src="img/logo.jpg" alt="MC Informatica">
-        <h1>InfoTech Cliente</h1>
+        <h1>Aplicativos InfoTech</h1>
         <p class="intro">
-            Aplicativo Android para acompanhar ordens de serviço, aprovações e notificações
-            da MC Informática. Este download é temporário durante os testes.
+            Aplicativos Android conectados ao sistema central da MC Informática.
+            Escolha abaixo a versão adequada ao seu acesso.
         </p>
 
         <div class="notice">
@@ -151,12 +158,25 @@
                 <p>Aplicativo de acompanhamento do cliente, conectado ao ambiente online da MC Informática.</p>
                 <ul class="meta">
                     <li><strong>Plataforma:</strong> Android (APK)</li>
-                    <li><strong>Versão:</strong> 0.1.0</li>
+                    <li><strong>Versão:</strong> 0.1.0 (compilação 7)</li>
                     <li><strong>Tamanho:</strong> 89,3 MB</li>
                     <li><strong>Notificações:</strong> habilitadas em segundo plano</li>
-                    <li><strong>SHA-256:</strong> <code>8fe7d43719fcf115f12659ef783e89462c0a6eee28ea10c8376857fcb75edac8</code></li>
+                    <li><strong>SHA-256:</strong> <code>9fe42a44909bf2958a89e9bc72e53a6ca9c0de28bfc2afd8f604850884e1b7f1</code></li>
                 </ul>
-                <a class="download" href="https://expo.dev/artifacts/eas/PKEwdV2Io8yGCUvESQFEZjST3lnmwLr96vFsTK1s9lE.apk" target="_blank" rel="nofollow noopener">Baixar InfoTech Cliente</a>
+                <a class="download" href="downloads/infotech-cliente-android.apk" target="_blank" rel="nofollow noopener">Baixar InfoTech Cliente</a>
+            </article>
+
+            <article class="app">
+                <h2>InfoTech Admin</h2>
+                <p>Aplicativo interno para administrar clientes, equipamentos e o fluxo das ordens de serviço.</p>
+                <ul class="meta">
+                    <li><strong>Plataforma:</strong> Android (APK)</li>
+                    <li><strong>Versão:</strong> 0.1.0 (compilação 7)</li>
+                    <li><strong>Tamanho:</strong> 59,5 MB</li>
+                    <li><strong>Acesso:</strong> equipe autorizada da MC Informática</li>
+                    <li><strong>SHA-256:</strong> <code>da074f08095379e203e0b8d13400a01f81ec1d725ba00b2d9bf4e1d1f6373d19</code></li>
+                </ul>
+                <a class="download" href="downloads/infotech-admin-android.apk" target="_blank" rel="nofollow noopener">Baixar InfoTech Admin</a>
             </article>
         </section>
 
