@@ -8,9 +8,8 @@ WhatsApp da loja, onde a negociação é fechada.
 
 ## Painel da loja
 
-Os produtos são cadastrados pelo painel, sem precisar mexer em código:
-
-**www.mcinformatica.net.br/admin.html**
+Os produtos são cadastrados por um painel administrativo interno, sem precisar
+mexer em código. O endereço do painel não deve ser divulgado na página pública.
 
 No painel dá para incluir, editar, reordenar e excluir produtos, definir preço e
 descrição e enviar a foto direto do celular ou do computador. Cada alteração é
