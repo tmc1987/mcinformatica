@@ -764,44 +764,29 @@ html { scroll-padding-top: 90px; }
 
 .banner-arte {
     position: relative;
-    display: grid;
-    place-items: center;
     height: clamp(205px, 21vw, 275px);
     overflow: hidden;
-    background: radial-gradient(circle at 50% 50%, #28558a 0, #173459 36%, #0e2036 76%);
+    background: #132941;
 }
 
-.banner-arte::before, .banner-arte::after {
+.banner-arte img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner-arte::after {
     content: "";
     position: absolute;
-    width: 340px;
-    height: 340px;
-    border: 1px solid rgba(192, 222, 255, 0.15);
-    border-radius: 50%;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 65%, rgba(4, 13, 24, 0.64));
+    pointer-events: none;
 }
 
-.banner-arte::after { width: 225px; height: 225px; border-color: rgba(192, 222, 255, 0.24); }
-.banner-arte-manutencao { background: radial-gradient(circle, #354d6b 0, #1c3048 42%, #101e30 79%); }
-.banner-arte-upgrade { background: radial-gradient(circle, #305b83 0, #1a395b 43%, #10243b 80%); }
-.banner-arte-montagem { background: radial-gradient(circle, #4b4560 0, #2d3049 43%, #161e31 80%); }
-.banner-arte-dados { background: radial-gradient(circle, #245c70 0, #194155 43%, #0e2637 80%); }
-
-.banner-halo {
-    z-index: 1;
-    display: grid;
-    place-items: center;
-    width: 130px;
-    height: 130px;
-    border: 1px solid rgba(210, 231, 255, 0.36);
-    border-radius: 28px;
-    background: linear-gradient(145deg, rgba(142, 196, 255, 0.2), rgba(68, 132, 214, 0.06));
-    box-shadow: 0 22px 60px rgba(0, 0, 0, 0.2), inset 0 1px rgba(255, 255, 255, 0.15);
-    transform: rotate(-8deg);
-}
-
-.banner-halo i { color: #e0efff; font-size: 3.6rem; transform: rotate(8deg); }
 .banner-arte-tag {
     position: absolute;
+    z-index: 1;
     right: 18px;
     bottom: 17px;
     color: #bdd4ed;
@@ -888,8 +873,6 @@ html { scroll-padding-top: 90px; }
     .hero-botoes .btn { justify-content: center; width: 100%; }
     .hero-assinatura { line-height: 1.6; }
     .banner-arte { height: 210px; }
-    .banner-halo { width: 112px; height: 112px; }
-    .banner-halo i { font-size: 3rem; }
     .banner-conteudo { min-height: 0; padding: 22px; }
     .banner-conteudo p { min-height: 0; }
     .diferenciais { grid-template-columns: 1fr; }
