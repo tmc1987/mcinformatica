@@ -6,9 +6,11 @@
     const telas = [...banner.querySelectorAll(".banner-tela")];
     const pontos = [...banner.querySelectorAll(".banner-pontos button")];
     const contador = document.getElementById("banner-contador");
+    const botaoPausa = document.getElementById("banner-pausa");
     const movimentoReduzido = window.matchMedia("(prefers-reduced-motion: reduce)");
     let atual = 0;
     let timer;
+    let pausadoPeloUsuario = false;
 
     function mostrar(indice) {
         atual = (indice + telas.length) % telas.length;
@@ -33,9 +35,17 @@
 
     function iniciar() {
         parar();
-        if (document.hidden || movimentoReduzido.matches || banner.matches(":hover") || banner.contains(document.activeElement)) return;
-        timer = window.setInterval(() => mostrar(atual + 1), 6500);
+        if (document.hidden || movimentoReduzido.matches || pausadoPeloUsuario) return;
+        timer = window.setInterval(() => mostrar(atual + 1), 15000);
     }
+
+    botaoPausa.addEventListener("click", () => {
+        pausadoPeloUsuario = !pausadoPeloUsuario;
+        botaoPausa.setAttribute("aria-pressed", String(pausadoPeloUsuario));
+        botaoPausa.setAttribute("aria-label", pausadoPeloUsuario ? "Retomar rotação automática" : "Pausar rotação automática");
+        botaoPausa.querySelector("i").className = pausadoPeloUsuario ? "fa-solid fa-play" : "fa-solid fa-pause";
+        iniciar();
+    });
 
     banner.querySelector("#banner-anterior").addEventListener("click", () => {
         mostrar(atual - 1);
@@ -50,10 +60,6 @@
         iniciar();
     }));
 
-    banner.addEventListener("mouseenter", parar);
-    banner.addEventListener("mouseleave", iniciar);
-    banner.addEventListener("focusin", parar);
-    banner.addEventListener("focusout", () => window.setTimeout(iniciar, 0));
     document.addEventListener("visibilitychange", iniciar);
     movimentoReduzido.addEventListener("change", iniciar);
 
