@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos | MC Informática</title>
+    <meta name="description" content="Veja os produtos novos e usados da MC Informática em Brodowski/SP. Consulte disponibilidade e peça informações pelo WhatsApp.">
+    <link rel="icon" type="image/jpeg" href="img/logo.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css?v=20260924-5">
+</head>
+<body>
+    <div class="topbar">
+        <span><i class="fa-solid fa-location-dot"></i> Brodowski/SP &mdash; Rua General Carneiro, 1641</span>
+        <span><i class="fa-brands fa-whatsapp"></i> (16) 99619-8688</span>
+    </div>
+
+    <header class="header">
+        <a class="brand" href="index.html#inicio">
+            <span class="brand-badge"><img src="img/logo.jpg" alt="Logo MC Informática"></span>
+            <span class="brand-name"><strong>MC</strong> INFORMÁTICA</span>
+        </a>
+        <nav class="nav" id="nav">
+            <a href="index.html#inicio">Início</a>
+            <a href="produtos.html" aria-current="page">Produtos</a>
+            <a href="index.html#servicos">Assistência Técnica</a>
+            <a href="downloads-teste.html">Aplicativos InfoTech</a>
+            <a href="index.html#contato">Contato</a>
+        </nav>
+        <div class="header-actions">
+            <a href="#" class="btn btn-whatsapp btn-header-whats link-whats" data-whats="Olá! Vim pelo site da MC Informática.">
+                <i class="fa-brands fa-whatsapp"></i> WhatsApp
+            </a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="secao" id="produtos">
+        <h1 class="secao-titulo">Nossos Produtos</h1>
+        <p class="secao-subtitulo">Filtre por categoria e chame no WhatsApp para comprar</p>
+        <div class="filtros" id="filtros">
+            <!-- Filtros montados conforme as categorias cadastradas -->
+        </div>
+        <div class="grade-produtos" id="grade-produtos">
+            <!-- Produtos renderizados via JavaScript (lista em app.js) -->
+        </div>
+    </main>
+
+    <footer class="rodape" id="contato">
+        <div class="rodape-colunas">
+            <div class="rodape-coluna">
+                <img src="img/logo.jpg" alt="MC Informática" class="rodape-logo">
+                <p>Loja de Informática &bull; Assistência Técnica &bull; Novos e Usados</p>
+            </div>
+            <div class="rodape-coluna">
+                <h4>Contato</h4>
+                <p><i class="fa-brands fa-whatsapp"></i> <a href="#" class="link-whats" data-whats="Olá! Vim pelo site da MC Informática.">(16) 99619-8688</a></p>
+                <p><i class="fa-solid fa-envelope"></i> <a href="mailto:mcinfo.brodowski@gmail.com">mcinfo.brodowski@gmail.com</a></p>
+            </div>
+            <div class="rodape-coluna">
+                <h4>Onde estamos</h4>
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    <a href="https://www.google.com/maps/search/?api=1&amp;query=MC+Inform%C3%A1tica+Rua+General+Carneiro+1641+Brodowski+SP" target="_blank" rel="noopener">
+                        Rua General Carneiro, 1641<br>
+                        <span class="recuo">Centro &bull; Brodowski/SP</span>
+                    </a>
+                </p>
+            </div>
+            <div class="rodape-coluna">
+                <h4>Horário de atendimento</h4>
+                <p>Segunda a sexta: 9h às 18h</p>
+                <p>Sábado: 9h às 13h</p>
+            </div>
+        </div>
+        <p class="rodape-copy">© 2026 MC Informática. Todos os direitos reservados.</p>
+    </footer>
+
+    <a href="#" class="whats-flutuante link-whats" data-whats="Olá! Vim pelo site da MC Informática." aria-label="Falar no WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script src="app.js?v=20260924-3"></script>
+</body>
+</html>

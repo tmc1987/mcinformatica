@@ -103,7 +103,7 @@ function renderizarFiltros() {
         .join("");
 }
 
-barraFiltros.addEventListener("click", (e) => {
+barraFiltros?.addEventListener("click", (e) => {
     const botao = e.target.closest(".filtro");
     if (!botao) return;
     categoriaAtual = botao.dataset.categoria;
@@ -171,7 +171,7 @@ function renderizarProdutos() {
         .join("");
 }
 
-gradeProdutos.addEventListener("click", (e) => {
+gradeProdutos?.addEventListener("click", (e) => {
     const botao = e.target.closest(".btn-comprar-whats");
     if (!botao) return;
     const produto = PRODUTOS.find((p) => p.id === botao.dataset.id);
@@ -206,4 +206,11 @@ nav.addEventListener("click", (e) => {
 });
 
 // ---------- Inicialização ----------
-carregarProdutos();
+if (gradeProdutos && barraFiltros) carregarProdutos();
+if (!gradeProdutos) {
+    const redirecionarProdutosAntigos = () => {
+        if (window.location.hash === "#produtos") window.location.replace("produtos.html");
+    };
+    window.addEventListener("hashchange", redirecionarProdutosAntigos);
+    redirecionarProdutosAntigos();
+}
