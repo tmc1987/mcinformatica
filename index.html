@@ -9,14 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css?v=20260924-1">
-    <style>
-        .hero { flex-direction: column; justify-content: center; gap: 18px; text-align: center; }
-        .hero-conteudo { display: flex; flex-direction: column; align-items: center; max-width: 780px; }
-        .hero-botoes { justify-content: center; }
-        .hero-logo img { width: 190px; }
-        @media (max-width: 860px) { .hero { gap: 16px; } .hero-logo img { width: 170px; } }
-    </style>
+    <link rel="stylesheet" href="style.css?v=20260924-2">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -73,21 +66,50 @@
 
     <!-- Hero -->
     <section class="hero" id="inicio">
-        <div class="hero-logo">
-            <img src="img/logo.jpg" alt="Logo MC Informática — Loja de Informática, Assistência Técnica, Novos e Usados">
-        </div>
         <div class="hero-conteudo">
-            <p class="hero-tag">Loja de Informática &bull; Novos e Usados</p>
-            <h1>Tecnologia com <span>preço justo</span> e garantia de quem entende</h1>
-            <p class="hero-texto">
-                Computadores, notebooks, periféricos e peças — equipamentos novos e seminovos
-                revisados pela nossa assistência técnica. Escolha no site e chame a gente
-                no WhatsApp para combinar tudo.
-            </p>
+            <p class="hero-tag"><span class="status-ponto" aria-hidden="true"></span> Assistência técnica e tecnologia em Brodowski/SP</p>
+            <h1>Seu computador em boas mãos. <span>Do diagnóstico à solução.</span></h1>
+            <p class="hero-texto">Manutenção, formatação, upgrades e computadores sob medida. Atendimento próximo, explicação clara e orçamento direto pelo WhatsApp.</p>
             <div class="hero-botoes">
-                <a href="#produtos" class="btn btn-primario"><i class="fa-solid fa-store"></i> Ver produtos</a>
-                <a href="#servicos" class="btn btn-secundario"><i class="fa-solid fa-screwdriver-wrench"></i> Assistência técnica</a>
-                <a href="downloads-teste.html" class="btn btn-secundario"><i class="fa-brands fa-android"></i> Baixar aplicativos</a>
+                <a href="#servicos" class="btn btn-primario"><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i> Conhecer os serviços</a>
+                <a href="#produtos" class="btn btn-secundario"><i class="fa-solid fa-laptop" aria-hidden="true"></i> Ver produtos</a>
+            </div>
+            <div class="hero-assinatura"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Rua General Carneiro, 1641 <span aria-hidden="true">•</span> Centro, Brodowski</div>
+        </div>
+
+        <div class="banner-servicos" aria-label="Destaques dos serviços da MC Informática">
+            <div class="banner-cabecalho"><span><span class="banner-luz" aria-hidden="true"></span> EM DESTAQUE NA OFICINA</span><span id="banner-contador">01 / 05</span></div>
+            <div class="banner-telas" id="banner-telas">
+                <article class="banner-tela is-active" data-servico="Formatação de computadores">
+                    <div class="banner-arte banner-arte-formatacao"><div class="banner-halo"><i class="fa-solid fa-laptop-code" aria-hidden="true"></i></div><span class="banner-arte-tag">SISTEMA PRONTO PARA USAR</span></div>
+                    <div class="banner-conteudo"><span class="banner-categoria">01 / SISTEMAS</span><h2>Formatação e configuração</h2><p>Reinstalação do sistema, drivers e programas essenciais para seu notebook ou PC.</p><a href="#servicos">Ver serviço <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
+                </article>
+                <article class="banner-tela" data-servico="Manutenção de notebooks e PCs" hidden>
+                    <div class="banner-arte banner-arte-manutencao"><div class="banner-halo"><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i></div><span class="banner-arte-tag">CUIDADO COM CADA DETALHE</span></div>
+                    <div class="banner-conteudo"><span class="banner-categoria">02 / MANUTENÇÃO</span><h2>Seu equipamento bem cuidado</h2><p>Limpeza, troca de pasta térmica e reparos em notebooks e computadores.</p><a href="#servicos">Ver serviço <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
+                </article>
+                <article class="banner-tela" data-servico="Upgrade de desempenho" hidden>
+                    <div class="banner-arte banner-arte-upgrade"><div class="banner-halo"><i class="fa-solid fa-gauge-high" aria-hidden="true"></i></div><span class="banner-arte-tag">MAIS DESEMPENHO</span></div>
+                    <div class="banner-conteudo"><span class="banner-categoria">03 / UPGRADE</span><h2>Mais velocidade para sua rotina</h2><p>Instalação de SSD, memória RAM e outros componentes para melhorar seu computador.</p><a href="#servicos">Ver serviço <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
+                </article>
+                <article class="banner-tela" data-servico="Montagem de computadores" hidden>
+                    <div class="banner-arte banner-arte-montagem"><div class="banner-halo"><i class="fa-solid fa-desktop" aria-hidden="true"></i></div><span class="banner-arte-tag">FEITO PARA VOCÊ</span></div>
+                    <div class="banner-conteudo"><span class="banner-categoria">04 / MONTAGEM</span><h2>Um PC do seu jeito</h2><p>Computadores sob medida para trabalho, estudo ou jogos, dentro do seu orçamento.</p><a href="#servicos">Ver serviço <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
+                </article>
+                <article class="banner-tela" data-servico="Recuperação de dados" hidden>
+                    <div class="banner-arte banner-arte-dados"><div class="banner-halo"><i class="fa-solid fa-database" aria-hidden="true"></i></div><span class="banner-arte-tag">SEUS ARQUIVOS IMPORTAM</span></div>
+                    <div class="banner-conteudo"><span class="banner-categoria">05 / DADOS</span><h2>Ajuda para recuperar arquivos</h2><p>Backup e avaliação de recuperação de dados em HDs, SSDs e pen drives.</p><a href="#servicos">Ver serviço <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
+                </article>
+            </div>
+            <div class="banner-rodape">
+                <div class="banner-pontos" id="banner-pontos" aria-label="Escolher destaque">
+                    <button type="button" class="is-active" aria-label="Mostrar formatação" aria-current="true"></button>
+                    <button type="button" aria-label="Mostrar manutenção"></button>
+                    <button type="button" aria-label="Mostrar upgrade"></button>
+                    <button type="button" aria-label="Mostrar montagem"></button>
+                    <button type="button" aria-label="Mostrar recuperação de dados"></button>
+                </div>
+                <div class="banner-setas"><button type="button" id="banner-anterior" aria-label="Serviço anterior"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i></button><button type="button" id="banner-proximo" aria-label="Próximo serviço"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button></div>
             </div>
         </div>
     </section>
@@ -210,5 +232,6 @@
     </a>
 
     <script src="app.js"></script>
+    <script src="banner.js"></script>
 </body>
 </html>
