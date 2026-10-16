@@ -730,12 +730,20 @@ html { scroll-padding-top: 90px; }
 .btn-whatsapp { background: #31d46d; }
 
 .banner-servicos {
+    position: relative;
     min-width: 0;
     overflow: hidden;
     border: 1px solid rgba(151, 188, 230, 0.26);
     border-radius: 20px;
     background: #111f32;
     box-shadow: 0 28px 80px rgba(0, 0, 0, 0.34), 0 0 70px rgba(42, 119, 202, 0.12);
+    transition: border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.banner-servicos:hover,
+.banner-servicos:focus-within {
+    border-color: rgba(151, 188, 230, 0.5);
+    box-shadow: 0 32px 85px rgba(0, 0, 0, 0.4), 0 0 75px rgba(42, 119, 202, 0.2);
 }
 
 .banner-cabecalho, .banner-rodape {
@@ -756,8 +764,11 @@ html { scroll-padding-top: 90px; }
 .banner-cabecalho > span:first-child { display: inline-flex; align-items: center; gap: 11px; }
 .banner-luz { width: 6px; height: 6px; background: var(--laranja); box-shadow: 0 0 0 4px rgba(255, 140, 26, 0.12); }
 #banner-contador { color: #e4edf8; font-variant-numeric: tabular-nums; }
+.banner-telas { position: relative; isolation: isolate; }
 .banner-tela[hidden] { display: none !important; }
-.banner-tela { animation: banner-entrada 0.35s ease-out; }
+.banner-tela { position: relative; z-index: 1; }
+.banner-tela.is-active { animation: banner-entrada 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+.banner-tela.is-exiting { position: absolute; z-index: 0; inset: 0; width: 100%; pointer-events: none; }
 
 .banner-arte {
     position: relative;
@@ -771,6 +782,11 @@ html { scroll-padding-top: 90px; }
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.banner-tela.is-active .banner-arte img {
+    animation: banner-imagem 15s ease-out both;
+    will-change: transform;
 }
 
 .banner-arte::after {
@@ -790,15 +806,26 @@ html { scroll-padding-top: 90px; }
     font-size: 0.6rem;
     font-weight: 700;
     letter-spacing: 0.14em;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
 }
 
-.banner-conteudo { min-height: 205px; padding: 25px 28px 24px; }
+.banner-conteudo { position: relative; min-height: 205px; padding: 25px 28px 24px; }
+.banner-conteudo::before { content: ""; position: absolute; left: 0; top: 27px; bottom: 27px; width: 2px; background: linear-gradient(var(--laranja), transparent); }
 .banner-categoria { color: var(--laranja); font-size: 0.67rem; font-weight: 700; letter-spacing: 0.12em; }
 .banner-conteudo h2 { margin: 6px 0; font-size: clamp(1.6rem, 2.1vw, 2.2rem); line-height: 1.1; }
 .banner-conteudo p { min-height: 49px; max-width: 440px; color: #aebed0; font-size: 0.84rem; line-height: 1.55; }
 .banner-conteudo a { display: inline-flex; gap: 9px; align-items: center; margin-top: 13px; color: #9ac7ff; font-size: 0.82rem; font-weight: 700; text-decoration: none; }
 .banner-conteudo a:hover { color: #fff; }
 .banner-conteudo a i { font-size: 0.65rem; }
+.banner-tela.is-active .banner-arte-tag,
+.banner-tela.is-active .banner-categoria,
+.banner-tela.is-active .banner-conteudo h2,
+.banner-tela.is-active .banner-conteudo p,
+.banner-tela.is-active .banner-conteudo a { animation: banner-texto 0.65s ease-out both; }
+.banner-tela.is-active .banner-arte-tag { animation-delay: 0.12s; }
+.banner-tela.is-active .banner-conteudo h2 { animation-delay: 0.08s; }
+.banner-tela.is-active .banner-conteudo p { animation-delay: 0.16s; }
+.banner-tela.is-active .banner-conteudo a { animation-delay: 0.24s; }
 .banner-rodape { border-top: 1px solid var(--borda); }
 .banner-pontos, .banner-setas { display: flex; align-items: center; gap: 8px; }
 .banner-pontos button { width: 9px; height: 9px; border: 0; border-radius: 50%; background: #52647b; cursor: pointer; transition: width 0.2s, background 0.2s; }
@@ -806,7 +833,9 @@ html { scroll-padding-top: 90px; }
 .banner-setas button { display: grid; place-items: center; width: 33px; height: 33px; border: 1px solid var(--borda); border-radius: 8px; background: #1b2b40; color: #dce9f7; cursor: pointer; }
 .banner-setas button:hover { border-color: var(--azul-claro); color: #fff; }
 
-@keyframes banner-entrada { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes banner-entrada { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes banner-imagem { from { transform: scale(1.075) translateX(-0.8%); } to { transform: scale(1) translateX(0); } }
+@keyframes banner-texto { from { opacity: 0; transform: translateY(9px); } to { opacity: 1; transform: translateY(0); } }
 
 .diferenciais { gap: 0; padding: 0 24px 65px; }
 .diferencial { border-radius: 0; text-align: left; padding: 23px; background: #101d30; }
@@ -893,6 +922,10 @@ html { scroll-padding-top: 90px; }
 
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    .banner-tela { animation: none; }
+    .banner-tela.is-active, .banner-tela.is-active .banner-arte img,
+    .banner-tela.is-active .banner-arte-tag, .banner-tela.is-active .banner-categoria,
+    .banner-tela.is-active .banner-conteudo h2, .banner-tela.is-active .banner-conteudo p,
+    .banner-tela.is-active .banner-conteudo a { animation: none; }
+    .banner-servicos { transition: none; }
     .btn, .produto, .servico { transition: none; }
 }
