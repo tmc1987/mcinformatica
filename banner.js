@@ -50,16 +50,17 @@
     }
 
     function parar() {
-        window.clearInterval(timer);
+        window.clearTimeout(timer);
         timer = undefined;
     }
 
     function iniciar() {
         parar();
-        if (document.hidden || movimentoReduzido.matches || pausadoPeloUsuario ||
-            (window.matchMedia("(hover: hover)").matches && banner.matches(":hover")) ||
-            banner.contains(document.activeElement)) return;
-        timer = window.setInterval(() => mostrar(atual + 1), 15000);
+        if (document.hidden || movimentoReduzido.matches || pausadoPeloUsuario) return;
+        timer = window.setTimeout(() => {
+            mostrar(atual + 1);
+            iniciar();
+        }, 8000);
     }
 
     botaoPausa.addEventListener("click", () => {
@@ -85,10 +86,6 @@
 
     document.addEventListener("visibilitychange", iniciar);
     movimentoReduzido.addEventListener("change", iniciar);
-    banner.addEventListener("mouseenter", iniciar);
-    banner.addEventListener("mouseleave", iniciar);
-    banner.addEventListener("focusin", iniciar);
-    banner.addEventListener("focusout", () => window.setTimeout(iniciar, 0));
 
     mostrar(0);
     iniciar();

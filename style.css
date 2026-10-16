@@ -774,19 +774,24 @@ html { scroll-padding-top: 90px; }
     position: relative;
     height: clamp(205px, 21vw, 275px);
     overflow: hidden;
-    background: #132941;
+    background: radial-gradient(circle at 78% 36%, #164d82 0, transparent 45%),
+                radial-gradient(circle at 16% 75%, #133d66 0, transparent 42%), #08192f;
 }
 
-.banner-arte img {
+.banner-arte::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(116, 184, 255, 0.045) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(116, 184, 255, 0.045) 1px, transparent 1px);
+    background-size: 28px 28px;
+}
+
+.banner-arte svg {
+    position: relative;
     display: block;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-}
-
-.banner-tela.is-active .banner-arte img {
-    animation: banner-imagem 15s ease-out both;
-    will-change: transform;
 }
 
 .banner-arte::after {
@@ -808,6 +813,55 @@ html { scroll-padding-top: 90px; }
     letter-spacing: 0.14em;
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
 }
+
+/* Cenas vetoriais: os elementos se movimentam; não há foto estática ampliada. */
+.cena-manutencao { background: radial-gradient(circle at 35% 48%, #145571, transparent 48%), #08192f; }
+.cena-upgrade { background: radial-gradient(circle at 72% 42%, #164b83, transparent 52%), #08192f; }
+.cena-montagem { background: radial-gradient(circle at 33% 50%, #174776, transparent 49%), #08192f; }
+.cena-dados { background: radial-gradient(circle at 76% 40%, #144c68, transparent 48%), #08192f; }
+.banner-arte .scene-panel, .banner-arte .scene-drive-old, .banner-arte .scene-case {
+    fill: #122a46; stroke: #5791bd; stroke-width: 2;
+    filter: drop-shadow(0 14px 16px rgba(0, 0, 0, 0.35));
+}
+.banner-arte .scene-screen, .banner-arte .scene-case-inner { fill: #09192d; stroke: #27567e; stroke-width: 2; }
+.banner-arte .scene-tower, .banner-arte .scene-drive-new { fill: #173b60; stroke: #78b9ed; stroke-width: 2; filter: drop-shadow(0 10px 20px rgba(26, 128, 211, 0.3)); }
+.banner-arte .scene-kicker, .banner-arte .scene-small, .banner-arte .scene-component text { fill: #a8d8f3; font: 700 12px 'Inter', sans-serif; letter-spacing: 1.8px; }
+.banner-arte .scene-small { fill: #82a9c9; font-size: 9px; letter-spacing: 1.3px; }
+.banner-arte .scene-title { fill: #f2f8ff; font: 700 27px 'Rajdhani', sans-serif; }
+.banner-arte .scene-track { fill: #224a6a; }
+.banner-arte .scene-fill, .banner-arte .scene-meter { fill: #54d5bd; }
+.banner-arte .scene-code, .banner-arte .scene-divider, .banner-arte .scene-metal, .banner-arte .scene-chip-line, .banner-arte .scene-cable { fill: none; stroke: #5c91ba; stroke-width: 3; stroke-linecap: round; opacity: 0.8; }
+.banner-arte .scene-scan { fill: none; stroke: #78ddf7; stroke-width: 3; opacity: 0.7; filter: drop-shadow(0 0 8px #68dafa); }
+.banner-arte .scene-fan-ring { fill: #123859; stroke: #65a9d7; stroke-width: 3; filter: drop-shadow(0 0 10px rgba(63, 178, 237, 0.45)); }
+.banner-arte .scene-ring-inner { fill: #082138; stroke-dasharray: 8 7; }
+.banner-arte .scene-fan { fill: #4b9cd2; }
+.banner-arte .scene-hub { fill: #beeafa; }
+.banner-arte .scene-led, .banner-arte .scene-pulse { fill: #50dfa9; filter: drop-shadow(0 0 7px #50dfa9); }
+.banner-arte .scene-wave, .banner-arte .scene-transfer { fill: none; stroke: #6be1db; stroke-width: 3; stroke-linecap: round; stroke-dasharray: 8 7; }
+.banner-arte .scene-chip { fill: #0c233e; stroke: #56ade6; stroke-width: 2; }
+.banner-arte .scene-data-dot { fill: #86e9e4; filter: drop-shadow(0 0 7px #70e5e7); }
+.banner-arte .scene-component rect { fill: #1a4d75; stroke: #80c7e9; stroke-width: 2; }
+.banner-arte .scene-component text { font-size: 10px; }
+.banner-arte .scene-file rect { fill: #2d88ae; stroke: #b8effb; stroke-width: 1.5; }
+.banner-arte .scene-file path { fill: none; stroke: #d6f6fc; stroke-width: 1.5; }
+.banner-arte .scene-vault { fill: #1a5475; stroke: #83d9de; stroke-width: 3; filter: drop-shadow(0 0 18px rgba(54, 194, 208, 0.25)); }
+.banner-arte .scene-lock { fill: #123b59; stroke: #c5f5ed; stroke-width: 3; stroke-linejoin: round; }
+.banner-tela.is-active .scene-pulse { animation: cena-pulso 1.5s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+.banner-tela.is-active .scene-fan { animation: cena-rotor 2.6s linear infinite; }
+.banner-tela.is-active .scene-fill { animation: cena-progresso 7s ease-in-out infinite; transform-box: fill-box; transform-origin: left center; }
+.banner-tela.is-active .scene-scan { animation: cena-varredura 3.5s linear infinite; }
+.banner-tela.is-active .scene-wave { animation: cena-fluxo 1.4s linear infinite; }
+.banner-tela.is-active .scene-meter { animation: cena-medidor 3s ease-in-out infinite alternate; transform-box: fill-box; transform-origin: left center; }
+.banner-tela.is-active .scene-data-dot { animation: cena-transferencia 2.4s ease-in-out infinite; }
+.banner-tela.is-active .scene-data-dot-2 { animation-delay: 0.7s; }
+.banner-tela.is-active .scene-data-dot-3 { animation-delay: 1.4s; }
+.banner-tela.is-active .scene-ssd { animation: cena-ssd 3s ease-in-out infinite; }
+.banner-tela.is-active .scene-component { animation: cena-encaixe 5s ease-in-out infinite; }
+.banner-tela.is-active .scene-component-2 { animation-delay: 0.6s; }
+.banner-tela.is-active .scene-component-3 { animation-delay: 1.2s; }
+.banner-tela.is-active .scene-file { animation: cena-arquivo 3s ease-in-out infinite; }
+.banner-tela.is-active .scene-file-2 { animation-delay: 1s; }
+.banner-tela.is-active .scene-file-3 { animation-delay: 2s; }
 
 .banner-conteudo { position: relative; min-height: 205px; padding: 25px 28px 24px; }
 .banner-conteudo::before { content: ""; position: absolute; left: 0; top: 27px; bottom: 27px; width: 2px; background: linear-gradient(var(--laranja), transparent); }
@@ -834,8 +888,17 @@ html { scroll-padding-top: 90px; }
 .banner-setas button:hover { border-color: var(--azul-claro); color: #fff; }
 
 @keyframes banner-entrada { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes banner-imagem { from { transform: scale(1.075) translateX(-0.8%); } to { transform: scale(1) translateX(0); } }
 @keyframes banner-texto { from { opacity: 0; transform: translateY(9px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes cena-pulso { 50% { opacity: 0.35; transform: scale(1.5); } }
+@keyframes cena-rotor { to { transform: rotate(360deg); } }
+@keyframes cena-progresso { 0% { transform: scaleX(0.08); } 80%, 100% { transform: scaleX(1); } }
+@keyframes cena-varredura { from { transform: translateY(0); opacity: 0; } 15% { opacity: 0.75; } to { transform: translateY(145px); opacity: 0; } }
+@keyframes cena-fluxo { to { stroke-dashoffset: -30; } }
+@keyframes cena-medidor { from { transform: scaleX(0.28); } to { transform: scaleX(1); } }
+@keyframes cena-transferencia { 0%, 8% { transform: translateX(0); opacity: 0; } 18% { opacity: 1; } 75% { transform: translateX(100px); opacity: 1; } 90%, 100% { transform: translateX(100px); opacity: 0; } }
+@keyframes cena-ssd { 50% { transform: translateY(-5px); filter: drop-shadow(0 0 15px rgba(95, 223, 229, 0.45)); } }
+@keyframes cena-encaixe { 0%, 10% { transform: translateX(55px); opacity: 0; } 28%, 75% { transform: translateX(0); opacity: 1; } 90%, 100% { transform: translateX(0); opacity: 0; } }
+@keyframes cena-arquivo { 0%, 8% { transform: translateX(0); opacity: 0; } 18% { opacity: 1; } 75% { transform: translateX(115px); opacity: 1; } 90%, 100% { transform: translateX(115px); opacity: 0; } }
 
 .diferenciais { gap: 0; padding: 0 24px 65px; }
 .diferencial { border-radius: 0; text-align: left; padding: 23px; background: #101d30; }
@@ -922,7 +985,7 @@ html { scroll-padding-top: 90px; }
 
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    .banner-tela.is-active, .banner-tela.is-active .banner-arte img,
+    .banner-tela.is-active, .banner-tela.is-active .banner-arte svg *,
     .banner-tela.is-active .banner-arte-tag, .banner-tela.is-active .banner-categoria,
     .banner-tela.is-active .banner-conteudo h2, .banner-tela.is-active .banner-conteudo p,
     .banner-tela.is-active .banner-conteudo a { animation: none; }
