@@ -56,7 +56,12 @@
 
     function iniciar() {
         parar();
+        banner.classList.toggle("is-paused", pausadoPeloUsuario || movimentoReduzido.matches || document.hidden);
         if (document.hidden || movimentoReduzido.matches || pausadoPeloUsuario) return;
+        // Reinicia o indicador sempre que os 8 segundos de exibição recomeçam.
+        pontos[atual].classList.remove("is-active");
+        void pontos[atual].offsetWidth;
+        pontos[atual].classList.add("is-active");
         timer = window.setTimeout(() => {
             mostrar(atual + 1);
             iniciar();
