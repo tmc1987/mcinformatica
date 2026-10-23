@@ -1,0 +1,213 @@
+/* MC Informática — direção visual 2026. Mantém as cenas e a lógica do site. */
+:root {
+    --marinho-escuro: #070d16;
+    --marinho: #101a29;
+    --marinho-claro: #172437;
+    --azul: #347fd4;
+    --azul-claro: #8ac8ff;
+    --prata: #d9e4f0;
+    --prata-escuro: #a7b7c9;
+    --borda: rgba(165, 199, 232, .16);
+    --branco: #f5f9fd;
+}
+
+body { background: #070d16; color: var(--branco); }
+h1, h2, h3, h4, .brand-name { font-family: 'Inter', sans-serif; letter-spacing: -.035em; }
+
+.topbar {
+    background: #0b1421;
+    border-bottom: 1px solid rgba(165, 199, 232, .1);
+    color: #9badc1;
+    letter-spacing: .025em;
+}
+.topbar i { color: #8ac8ff; }
+.header {
+    min-height: 78px;
+    background: rgba(7, 13, 22, .94);
+    border-bottom-color: rgba(165, 199, 232, .13);
+    box-shadow: none;
+    backdrop-filter: blur(18px);
+}
+.brand-badge { width: 47px; height: 47px; border-color: rgba(138, 200, 255, .25); }
+.brand-name { font-size: 1.08rem; font-weight: 700; letter-spacing: .11em; white-space: nowrap; }
+.brand-name strong { color: #f5f9fd; }
+.nav a { color: #bdcad9; font-size: .85rem; }
+.nav a:hover, .nav a[aria-current="page"] { color: #8ac8ff; }
+.btn-header-whats { background: transparent; border: 1px solid rgba(138, 200, 255, .36); color: #e9f4ff; border-radius: 7px; }
+.btn-header-whats:hover { background: rgba(138, 200, 255, .09); }
+.btn-header-whats i { color: #4fe192; }
+
+.hero {
+    max-width: 1320px;
+    min-height: 610px;
+    grid-template-columns: minmax(0, 1.06fr) minmax(0, .94fr);
+    gap: clamp(42px, 5vw, 92px);
+    padding: 76px 28px 88px;
+}
+.hero::before {
+    background: radial-gradient(ellipse at 75% 34%, rgba(42, 116, 197, .18), transparent 43%),
+                linear-gradient(rgba(138, 200, 255, .025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(138, 200, 255, .025) 1px, transparent 1px);
+    background-size: auto, 64px 64px, 64px 64px;
+}
+.hero-conteudo { max-width: 640px; }
+.hero-tag {
+    padding: 0;
+    margin-bottom: 30px;
+    border: 0;
+    background: none;
+    color: #9ab9d8;
+    font-size: .7rem;
+    letter-spacing: .14em;
+}
+.status-ponto { width: 6px; height: 6px; background: #69b7fa; box-shadow: 0 0 0 4px rgba(105, 183, 250, .1); }
+.hero h1 {
+    max-width: 650px;
+    margin-bottom: 24px;
+    font-size: clamp(3rem, 4.45vw, 4.8rem);
+    font-weight: 650;
+    line-height: 1.07;
+    letter-spacing: -.065em;
+}
+.hero h1 span { margin-top: 3px; color: #91caff; }
+.hero-texto { max-width: 535px; color: #b8c7d8; font-size: 1rem; line-height: 1.82; }
+.hero-botoes { gap: 12px; }
+.hero-botoes .btn { min-height: 50px; padding: 13px 19px; font-size: .88rem; }
+.hero-botoes .btn-primario { gap: 20px; }
+.hero-assinatura { margin-top: 42px; padding-top: 18px; border-top: 1px solid var(--borda); color: #93a8bb; }
+.hero-assinatura i { color: #8ac8ff; }
+.btn { border-radius: 7px; }
+.btn-primario { background: #69b5f7; color: #06111e; box-shadow: 0 8px 26px rgba(54, 141, 214, .14); }
+.btn-primario:hover { background: #91caff; }
+.btn-secundario { border-color: rgba(165, 199, 232, .22); background: rgba(255,255,255,.02); }
+.btn-secundario:hover { border-color: rgba(138, 200, 255, .55); }
+
+/* O movimento original do carrossel permanece; apenas sua moldura fica mais contida. */
+.banner-servicos {
+    border-color: rgba(138, 200, 255, .31);
+    border-radius: 14px;
+    background: #0c1828;
+    box-shadow: 0 30px 70px rgba(0,0,0,.35), 0 0 48px rgba(31,133,243,.09);
+}
+.banner-servicos:hover, .banner-servicos:focus-within {
+    border-color: rgba(138, 200, 255, .56);
+    box-shadow: 0 32px 72px rgba(0,0,0,.38), 0 0 54px rgba(31,133,243,.15);
+}
+.banner-cabecalho, .banner-rodape { background: #101e30; }
+.banner-cabecalho { padding: 13px 20px; color: #bad0e7; }
+.banner-luz { background: #78c1fc; box-shadow: 0 0 0 4px rgba(120,193,252,.1); }
+.banner-arte { height: clamp(198px, 20vw, 255px); }
+.banner-conteudo { min-height: 188px; padding: 22px 25px 24px; background: #13243a; }
+.banner-conteudo::before { top: 22px; bottom: 22px; width: 2px; background: #7fc3fa; box-shadow: none; }
+.banner-categoria { color: #9dccf2; font-size: .67rem; }
+.banner-conteudo h2 { font-family: 'Inter', sans-serif; font-size: clamp(1.45rem, 1.8vw, 1.78rem); font-weight: 650; letter-spacing: -.045em; text-shadow: none; }
+.banner-conteudo p { color: #bdd0e0; font-size: .84rem; }
+.banner-conteudo a { margin-top: 10px; padding: 0; border: 0; border-radius: 0; background: none; box-shadow: none; color: #a9d9ff; font-weight: 650; }
+.banner-conteudo a:hover { border: 0; background: none; color: #fff; }
+.banner-rodape { padding: 12px 20px; }
+.banner-pontos button.is-active { background: #315678; }
+.banner-pontos button.is-active::after { background: #88c9ff; box-shadow: none; }
+
+.diferenciais { max-width: 1280px; padding: 0 28px 92px; gap: 12px; }
+.diferencial, .diferencial:first-child, .diferencial:last-child {
+    border: 1px solid rgba(165, 199, 232, .12);
+    border-radius: 9px;
+    background: rgba(19, 32, 49, .72);
+    padding: 24px;
+}
+.diferencial + .diferencial { border-left: 1px solid rgba(165, 199, 232, .12); }
+.diferencial i { color: #91caff; font-size: 1.2rem; margin-bottom: 18px; }
+.diferencial h3 { font-size: .99rem; font-weight: 650; letter-spacing: -.025em; }
+.diferencial p { color: #9daec0; font-size: .84rem; line-height: 1.6; }
+
+.secao-servicos { padding: 92px 28px 108px; background: #0c1624; border-top: 1px solid rgba(165, 199, 232, .1); }
+.secao-intro { display: flex; align-items: end; justify-content: space-between; gap: 48px; max-width: 1200px; margin: 0 auto 38px; }
+.secao-kicker { display: block; margin-bottom: 13px; color: #84bce9; font-size: .7rem; font-weight: 700; letter-spacing: .16em; }
+.secao-titulo { text-align: left; font-size: clamp(2.1rem, 3.2vw, 3.1rem); line-height: 1.12; font-weight: 650; letter-spacing: -.055em; }
+.secao-titulo::after { display: none; }
+.secao-subtitulo { max-width: 390px; margin: 0; color: #adbed0; font-size: .94rem; line-height: 1.75; text-align: left; }
+.secao-servicos .grade-servicos { max-width: 1200px; }
+.grade-servicos { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.servico {
+    min-height: 240px;
+    border: 1px solid rgba(165, 199, 232, .14);
+    border-radius: 9px;
+    background: #111e2e;
+    padding: 28px;
+    transition: transform .2s, border-color .2s, background .2s;
+}
+.servico:hover { transform: translateY(-3px); border-color: rgba(138, 200, 255, .42); background: #15253a; }
+.servico > i { color: #8ac8ff; font-size: 1.4rem; margin-bottom: 26px; }
+.servico h3 { font-size: 1.11rem; font-weight: 650; line-height: 1.35; }
+.servico p { color: #a8bacc; font-size: .86rem; }
+.servico .servico-orcamento {
+    display: inline-flex; justify-content: flex-start; gap: 11px; align-self: flex-start;
+    padding: 0; border: 0; background: none; color: #91caff;
+    font-size: .82rem; text-align: left;
+}
+.servico .servico-orcamento:hover { background: none; color: #fff; }
+.servico .servico-orcamento i { font-size: .7rem; }
+
+.rodape { padding-top: 65px; background: #080f19; }
+.rodape-colunas { gap: 44px; }
+.rodape-logo { width: 88px; }
+.rodape-coluna h4 { color: #ecf4fb; font-size: .87rem; font-weight: 650; letter-spacing: 0; }
+.rodape-coluna p { color: #9daec0; font-size: .84rem; line-height: 1.7; }
+.rodape-coluna i { color: #8ac8ff; }
+.whats-flutuante { left: auto; right: 23px; width: 52px; height: 52px; background: #28c96a; box-shadow: 0 10px 24px rgba(0,0,0,.32); font-size: 1.5rem; }
+
+/* Catálogo: a mesma identidade, sem alterar dados ou a lógica dos filtros. */
+main.secao:not(.secao-servicos) { max-width: 1248px; min-height: 60vh; padding: 78px 28px 105px; }
+main.secao:not(.secao-servicos) .secao-titulo { text-align: center; }
+main.secao:not(.secao-servicos) .secao-subtitulo { max-width: none; margin: 15px 0 34px; text-align: center; }
+.filtro { border-radius: 7px; background: #142238; }
+.filtro.ativo { background: #4d9be0; color: #06111e; border-color: #4d9be0; }
+.produto, .catalogo-vazio { border-radius: 9px; background: #111e2e; }
+.produto:hover { border-color: rgba(138, 200, 255, .42); }
+.produto-nome { font-weight: 650; }
+.selo { border-radius: 5px; }
+.btn-comprar-whats { border-radius: 7px; }
+
+@media (max-width: 1050px) {
+    .hero { gap: 30px; }
+    .hero h1 { font-size: clamp(2.9rem, 5vw, 4.2rem); }
+    .grade-servicos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 860px) {
+    .header { min-height: 68px; }
+    .hero { grid-template-columns: 1fr; max-width: 700px; min-height: 0; padding: 63px 24px 70px; }
+    .hero h1 { max-width: 650px; }
+    .nav { background: #101a29; }
+    .diferenciais { max-width: 700px; grid-template-columns: repeat(2, minmax(0, 1fr)); padding-bottom: 76px; }
+    .diferencial:nth-child(2), .diferencial:nth-child(3) { border: 1px solid rgba(165, 199, 232, .12); border-radius: 9px; }
+}
+@media (max-width: 620px) {
+    .topbar { padding: 7px 15px; gap: 0 13px; font-size: .65rem; }
+    .topbar span:last-child { display: none; }
+    .header { padding: 10px 18px; }
+    .brand-name { font-size: .96rem; }
+    .header .btn-header-whats { display: none; }
+    .menu-toggle { padding: 8px; }
+    .hero { padding: 48px 20px 58px; }
+    .hero-tag { font-size: .61rem; line-height: 1.5; margin-bottom: 23px; }
+    .hero h1 { font-size: clamp(2.55rem, 10vw, 3.6rem); }
+    .hero-texto { font-size: .91rem; }
+    .hero-assinatura { margin-top: 31px; }
+    .banner-arte { height: 205px; }
+    .banner-conteudo { min-height: 0; padding: 20px 22px 23px; }
+    .banner-conteudo h2 { font-size: 1.42rem; }
+    .diferenciais { grid-template-columns: 1fr; gap: 10px; padding: 0 20px 62px; }
+    .diferencial, .diferencial:first-child, .diferencial:nth-child(2), .diferencial:nth-child(3), .diferencial:last-child { border: 1px solid rgba(165, 199, 232, .12); border-radius: 9px; padding: 20px; }
+    .secao-servicos { padding: 67px 20px 80px; }
+    .secao-intro { display: block; margin-bottom: 27px; }
+    .secao-subtitulo { margin-top: 15px; }
+    .grade-servicos { grid-template-columns: 1fr; gap: 11px; }
+    .servico { min-height: 0; padding: 23px; }
+    .servico > i { margin-bottom: 19px; }
+    main.secao:not(.secao-servicos) { padding: 63px 20px 85px; }
+    .rodape { padding-top: 54px; }
+    .whats-flutuante { bottom: 18px; right: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .servico { transition: none; }
+}
