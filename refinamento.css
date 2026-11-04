@@ -224,8 +224,8 @@ main.secao:not(.secao-servicos) .secao-subtitulo { max-width: none; margin: 15px
 }
 .banner-arte::before, .banner-arte::after, .banner-arte > svg,
 .banner-arte-tag { display: none; }
-.cena-formatacao { background-image: url("img/servico-sistema.webp?v=1"); }
-.cena-manutencao { background-image: url("img/servico-manutencao.webp?v=1"); }
-.cena-upgrade { background-image: url("img/servico-upgrade.webp?v=1"); }
-.cena-montagem { background-image: url("img/servico-montagem.webp?v=1"); }
-.cena-dados { background-image: url("img/servico-dados.webp?v=1"); }
+.cena-formatacao { background-image: url("img/servico-sistema.webp"); }
+.cena-manutencao { background-image: url("img/servico-manutencao.webp"); }
+.cena-upgrade { background-image: url("img/servico-upgrade.webp"); }
+.cena-montagem { background-image: url("img/servico-montagem.webp"); }
+.cena-dados { background-image: url("img/servico-dados.webp"); }
