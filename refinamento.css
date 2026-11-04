@@ -211,3 +211,21 @@ main.secao:not(.secao-servicos) .secao-subtitulo { max-width: none; margin: 15px
 @media (prefers-reduced-motion: reduce) {
     .servico { transition: none; }
 }
+
+/* Ilustrações 3D do carrossel: imagem sem texto, composição responsiva. */
+.banner-arte {
+    height: auto;
+    aspect-ratio: 800 / 460;
+    background-color: #e8f3ff;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: none;
+}
+.banner-arte::before, .banner-arte::after, .banner-arte > svg,
+.banner-arte-tag { display: none; }
+.cena-formatacao { background-image: url("img/servico-sistema.webp?v=1"); }
+.cena-manutencao { background-image: url("img/servico-manutencao.webp?v=1"); }
+.cena-upgrade { background-image: url("img/servico-upgrade.webp?v=1"); }
+.cena-montagem { background-image: url("img/servico-montagem.webp?v=1"); }
+.cena-dados { background-image: url("img/servico-dados.webp?v=1"); }
