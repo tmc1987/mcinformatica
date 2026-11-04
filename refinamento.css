@@ -437,3 +437,6 @@ body { background: #f4f6f4; color: #101b2b; }
 .cena-upgrade { background-image: url("img/servico-upgrade.webp"); }
 .cena-montagem { background-image: url("img/servico-montagem.webp"); }
 .cena-dados { background-image: url("img/servico-dados.webp"); }
+
+/* Mostra o escudo completo da logo no cabeçalho, sem cortar suas bordas. */
+.brand-badge img { transform: scale(1.7) translateY(10%); }
