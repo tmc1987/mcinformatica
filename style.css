@@ -516,6 +516,9 @@ a { color: inherit; }
     margin: 0 auto;
 }
 
+.rodape-copy a { color: var(--prata); }
+.rodape-copy a:hover { color: var(--verde-whats); }
+
 /* ---------- WhatsApp flutuante ---------- */
 .whats-flutuante {
     position: fixed;
