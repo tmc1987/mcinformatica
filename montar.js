@@ -177,6 +177,7 @@ function escolherPeca(id, categoria) {
     } else {
         if (!opcoesCompativeis(categoria).some((p) => p.id === id)) return;
         montagem[categoria] = peca;
+        etapaAberta = proximaPendente(categoria);
     }
     limparIncompativeis();
     salvarMontagem();
@@ -240,6 +241,17 @@ function cartaoPeca(peca, escolhida) {
         </article>`;
 }
 
+let etapaAberta = undefined;
+
+function proximaPendente(categoria) {
+    const indiceAtual = ETAPAS.findIndex((e) => e.slug === categoria);
+    const depois = ETAPAS.slice(indiceAtual + 1);
+    const antes = ETAPAS.slice(0, indiceAtual + 1);
+    const pendente = [...depois, ...antes].find((e) => e.obrigatoria && !montagem[e.slug])
+        || [...depois, ...antes].find((e) => !montagem[e.slug]);
+    return pendente ? pendente.slug : null;
+}
+
 function renderizarEtapas() {
     if (PECAS.length === 0) {
         etapasEl.innerHTML = `
@@ -251,21 +263,30 @@ function renderizarEtapas() {
         return;
     }
 
+    if (etapaAberta === undefined) {
+        etapaAberta = (ETAPAS.find((e) => !montagem[e.slug]) || {}).slug || null;
+    }
+
     etapasEl.innerHTML = ETAPAS.map((etapa, indice) => {
         const escolhida = montagem[etapa.slug];
+        const aberta = etapaAberta === etapa.slug;
         const opcoes = opcoesCompativeis(etapa.slug);
         const corpo = opcoes.length === 0
             ? '<p class="montador-aviso">Nenhuma peça compatível com as escolhas atuais.</p>'
             : `<div class="montador-opcoes">${opcoes.map((p) => cartaoPeca(p, escolhida)).join("")}</div>`;
+        const situacao = escolhida
+            ? `<span class="montador-escolhida"><i class="fa-solid fa-check"></i> ${esc(escolhida.nome)}</span>`
+            : (etapa.obrigatoria ? "" : '<span class="montador-opcional">Opcional</span>');
         return `
-            <section class="montador-etapa${escolhida ? " concluida" : ""}">
-                <header class="montador-etapa-cabecalho">
+            <section class="montador-etapa${escolhida ? " concluida" : ""}${aberta ? " aberta" : ""}">
+                <button class="montador-etapa-cabecalho" data-etapa="${etapa.slug}" aria-expanded="${aberta}">
                     <span class="montador-numero">${indice + 1}</span>
                     <i class="${ICONES_ETAPA[etapa.slug]}"></i>
                     <h2>${esc(etapa.nome)}</h2>
-                    ${etapa.obrigatoria ? "" : '<span class="montador-opcional">Opcional</span>'}
-                </header>
-                ${corpo}
+                    ${situacao}
+                    <i class="fa-solid fa-chevron-down montador-seta"></i>
+                </button>
+                ${aberta ? `<div class="montador-etapa-corpo">${corpo}</div>` : ""}
             </section>`;
     }).join("");
 }
@@ -321,6 +342,13 @@ function renderizarTudo() {
 }
 
 etapasEl.addEventListener("click", (e) => {
+    const cabecalho = e.target.closest("button[data-etapa]");
+    if (cabecalho) {
+        const slug = cabecalho.dataset.etapa;
+        etapaAberta = etapaAberta === slug ? null : slug;
+        renderizarEtapas();
+        return;
+    }
     const botao = e.target.closest("button[data-id]");
     if (!botao) return;
     escolherPeca(botao.dataset.id, botao.dataset.categoria);
@@ -328,6 +356,7 @@ etapasEl.addEventListener("click", (e) => {
 
 document.getElementById("btn-limpar").addEventListener("click", () => {
     montagem = {};
+    etapaAberta = undefined;
     salvarMontagem();
     renderizarTudo();
 });

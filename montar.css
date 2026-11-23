@@ -37,6 +37,17 @@
     display: flex;
     align-items: center;
     gap: 12px;
+    width: 100%;
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    font: inherit;
+    text-align: left;
+    color: #10243d;
+}
+
+.montador-etapa.aberta .montador-etapa-cabecalho {
     margin-bottom: 16px;
 }
 
@@ -45,6 +56,27 @@
     font-size: 1.35rem;
     margin: 0;
     color: #10243d;
+}
+
+.montador-escolhida {
+    margin-left: auto;
+    font-size: 0.9rem;
+    color: #15803d;
+    font-weight: 600;
+    text-align: right;
+}
+
+.montador-seta {
+    color: #5c6c7d;
+    transition: transform .2s ease;
+}
+
+.montador-etapa.aberta .montador-seta {
+    transform: rotate(180deg);
+}
+
+.montador-etapa-cabecalho h2 + .montador-seta {
+    margin-left: auto;
 }
 
 .montador-etapa-cabecalho > i {
