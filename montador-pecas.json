@@ -1,104 +1,1101 @@
 [
-  {"id":"intel-i3-6100","categoria":"processador","nome":"Intel Core i3-6100","descricao":"6ª geração (2015), 2 núcleos / 4 threads, 3,7 GHz.","condicao":"novo","specs":{"socket":"LGA1151","tdp":51}},
-  {"id":"intel-i5-6500","categoria":"processador","nome":"Intel Core i5-6500","descricao":"6ª geração (2015), 4 núcleos / 4 threads, até 3,6 GHz.","condicao":"novo","specs":{"socket":"LGA1151","tdp":65}},
-  {"id":"intel-i7-6700","categoria":"processador","nome":"Intel Core i7-6700","descricao":"6ª geração (2015), 4 núcleos / 8 threads, até 4,0 GHz.","condicao":"novo","specs":{"socket":"LGA1151","tdp":65}},
-  {"id":"intel-i7-6700k","categoria":"processador","nome":"Intel Core i7-6700K","descricao":"6ª geração (2015), desbloqueado para overclock, 4 núcleos / 8 threads.","condicao":"novo","specs":{"socket":"LGA1151","tdp":91}},
-  {"id":"intel-i5-7400","categoria":"processador","nome":"Intel Core i5-7400","descricao":"7ª geração (2017), 4 núcleos / 4 threads, até 3,5 GHz.","condicao":"novo","specs":{"socket":"LGA1151","tdp":65}},
-  {"id":"intel-i7-7700","categoria":"processador","nome":"Intel Core i7-7700","descricao":"7ª geração (2017), 4 núcleos / 8 threads, até 4,2 GHz.","condicao":"novo","specs":{"socket":"LGA1151","tdp":65}},
-  {"id":"intel-i5-8400","categoria":"processador","nome":"Intel Core i5-8400","descricao":"8ª geração (2017), 6 núcleos / 6 threads, até 4,0 GHz.","condicao":"novo","specs":{"socket":"LGA1151-v2","tdp":65}},
-  {"id":"intel-i7-8700","categoria":"processador","nome":"Intel Core i7-8700","descricao":"8ª geração (2017), 6 núcleos / 12 threads, até 4,6 GHz.","condicao":"novo","specs":{"socket":"LGA1151-v2","tdp":65}},
-  {"id":"intel-i5-9400f","categoria":"processador","nome":"Intel Core i5-9400F","descricao":"9ª geração (2019), 6 núcleos / 6 threads, sem vídeo integrado.","condicao":"novo","specs":{"socket":"LGA1151-v2","tdp":65}},
-  {"id":"intel-i9-9900k","categoria":"processador","nome":"Intel Core i9-9900K","descricao":"9ª geração (2019), 8 núcleos / 16 threads, desbloqueado.","condicao":"novo","specs":{"socket":"LGA1151-v2","tdp":95}},
-  {"id":"intel-i5-10400","categoria":"processador","nome":"Intel Core i5-10400","descricao":"10ª geração (2020), 6 núcleos / 12 threads.","condicao":"novo","specs":{"socket":"LGA1200","tdp":65}},
-  {"id":"intel-i7-10700k","categoria":"processador","nome":"Intel Core i7-10700K","descricao":"10ª geração (2020), 8 núcleos / 16 threads, desbloqueado.","condicao":"novo","specs":{"socket":"LGA1200","tdp":125}},
-  {"id":"intel-i5-11400","categoria":"processador","nome":"Intel Core i5-11400","descricao":"11ª geração (2021), 6 núcleos / 12 threads.","condicao":"novo","specs":{"socket":"LGA1200","tdp":65}},
-  {"id":"intel-i7-11700k","categoria":"processador","nome":"Intel Core i7-11700K","descricao":"11ª geração (2021), 8 núcleos / 16 threads, desbloqueado.","condicao":"novo","specs":{"socket":"LGA1200","tdp":125}},
-  {"id":"intel-i5-12400","categoria":"processador","nome":"Intel Core i5-12400","descricao":"12ª geração (2022), 6 núcleos / 12 threads, DDR4 ou DDR5 conforme a placa.","condicao":"novo","specs":{"socket":"LGA1700","tdp":65}},
-  {"id":"intel-i7-12700k","categoria":"processador","nome":"Intel Core i7-12700K","descricao":"12ª geração (2021), 12 núcleos / 20 threads, desbloqueado.","condicao":"novo","specs":{"socket":"LGA1700","tdp":125}},
-  {"id":"intel-i5-13400","categoria":"processador","nome":"Intel Core i5-13400","descricao":"13ª geração (2023), 10 núcleos / 16 threads.","condicao":"novo","specs":{"socket":"LGA1700","tdp":65}},
-  {"id":"intel-i7-13700k","categoria":"processador","nome":"Intel Core i7-13700K","descricao":"13ª geração (2022), 16 núcleos / 24 threads, desbloqueado.","condicao":"novo","specs":{"socket":"LGA1700","tdp":125}},
-  {"id":"intel-i5-14600k","categoria":"processador","nome":"Intel Core i5-14600K","descricao":"14ª geração (2023), 14 núcleos / 20 threads, desbloqueado.","condicao":"novo","specs":{"socket":"LGA1700","tdp":125}},
-  {"id":"intel-i9-14900k","categoria":"processador","nome":"Intel Core i9-14900K","descricao":"14ª geração (2023), 24 núcleos / 32 threads, desbloqueado.","condicao":"novo","specs":{"socket":"LGA1700","tdp":125}},
-  {"id":"amd-fx-8320e","categoria":"processador","nome":"AMD FX-8320E","descricao":"Plataforma AM3+ (2015), 8 núcleos, DDR3.","condicao":"novo","specs":{"socket":"AM3+","tdp":95}},
-  {"id":"amd-a10-7860k","categoria":"processador","nome":"AMD A10-7860K","descricao":"APU FM2+ (2015), 4 núcleos com gráficos Radeon integrados, DDR3.","condicao":"novo","specs":{"socket":"FM2+","tdp":95}},
-  {"id":"amd-athlon-x4-880k","categoria":"processador","nome":"AMD Athlon X4 880K","descricao":"Plataforma FM2+ (2015), 4 núcleos, desbloqueado, DDR3.","condicao":"novo","specs":{"socket":"FM2+","tdp":95}},
-  {"id":"amd-ryzen-3-1200","categoria":"processador","nome":"AMD Ryzen 3 1200","descricao":"Plataforma AM4 (2017), 4 núcleos / 4 threads, DDR4.","condicao":"novo","specs":{"socket":"AM4","tdp":65}},
-  {"id":"amd-ryzen-5-1600","categoria":"processador","nome":"AMD Ryzen 5 1600","descricao":"Plataforma AM4 (2017), 6 núcleos / 12 threads, DDR4.","condicao":"novo","specs":{"socket":"AM4","tdp":65}},
-  {"id":"amd-ryzen-5-2600","categoria":"processador","nome":"AMD Ryzen 5 2600","descricao":"Plataforma AM4 (2018), 6 núcleos / 12 threads, DDR4.","condicao":"novo","specs":{"socket":"AM4","tdp":65}},
-  {"id":"amd-ryzen-7-2700x","categoria":"processador","nome":"AMD Ryzen 7 2700X","descricao":"Plataforma AM4 (2018), 8 núcleos / 16 threads, DDR4.","condicao":"novo","specs":{"socket":"AM4","tdp":105}},
-  {"id":"amd-ryzen-5-3600","categoria":"processador","nome":"AMD Ryzen 5 3600","descricao":"Plataforma AM4 (2019), 6 núcleos / 12 threads, DDR4.","condicao":"novo","specs":{"socket":"AM4","tdp":65}},
-  {"id":"amd-ryzen-7-3700x","categoria":"processador","nome":"AMD Ryzen 7 3700X","descricao":"Plataforma AM4 (2019), 8 núcleos / 16 threads, DDR4.","condicao":"novo","specs":{"socket":"AM4","tdp":65}},
-  {"id":"amd-ryzen-9-3900x","categoria":"processador","nome":"AMD Ryzen 9 3900X","descricao":"Plataforma AM4 (2019), 12 núcleos / 24 threads, DDR4.","condicao":"novo","specs":{"socket":"AM4","tdp":105}},
-  {"id":"amd-ryzen-5-4600g","categoria":"processador","nome":"AMD Ryzen 5 4600G","descricao":"APU AM4 (2020), 6 núcleos com gráficos Radeon integrados, DDR4.","condicao":"novo","specs":{"socket":"AM4","tdp":65}},
-  {"id":"amd-ryzen-5-5600x","categoria":"processador","nome":"AMD Ryzen 5 5600X","descricao":"Plataforma AM4 (2020), 6 núcleos / 12 threads, DDR4.","condicao":"novo","specs":{"socket":"AM4","tdp":65}},
-  {"id":"amd-ryzen-7-5800x","categoria":"processador","nome":"AMD Ryzen 7 5800X","descricao":"Plataforma AM4 (2020), 8 núcleos / 16 threads, DDR4.","condicao":"novo","specs":{"socket":"AM4","tdp":105}},
-  {"id":"amd-ryzen-5-5600g","categoria":"processador","nome":"AMD Ryzen 5 5600G","descricao":"APU AM4 (2021), 6 núcleos com gráficos Radeon integrados, DDR4.","condicao":"novo","specs":{"socket":"AM4","tdp":65}},
-  {"id":"amd-ryzen-5-7600","categoria":"processador","nome":"AMD Ryzen 5 7600","descricao":"Plataforma AM5 (2022), 6 núcleos / 12 threads, DDR5.","condicao":"novo","specs":{"socket":"AM5","tdp":65}},
-  {"id":"amd-ryzen-7-7700","categoria":"processador","nome":"AMD Ryzen 7 7700","descricao":"Plataforma AM5 (2022), 8 núcleos / 16 threads, DDR5.","condicao":"novo","specs":{"socket":"AM5","tdp":65}},
-  {"id":"amd-ryzen-9-7900x","categoria":"processador","nome":"AMD Ryzen 9 7900X","descricao":"Plataforma AM5 (2022), 12 núcleos / 24 threads, DDR5.","condicao":"novo","specs":{"socket":"AM5","tdp":170}},
-  {"id":"amd-ryzen-7-7800x3d","categoria":"processador","nome":"AMD Ryzen 7 7800X3D","descricao":"Plataforma AM5 (2023), 8 núcleos com cache 3D, DDR5.","condicao":"novo","specs":{"socket":"AM5","tdp":120}},
-  {"id":"amd-ryzen-5-8600g","categoria":"processador","nome":"AMD Ryzen 5 8600G","descricao":"APU AM5 (2024), 6 núcleos com gráficos Radeon integrados, DDR5.","condicao":"novo","specs":{"socket":"AM5","tdp":65}},
-  {"id":"amd-ryzen-5-9600x","categoria":"processador","nome":"AMD Ryzen 5 9600X","descricao":"Plataforma AM5 (2024), 6 núcleos / 12 threads, DDR5.","condicao":"novo","specs":{"socket":"AM5","tdp":65}},
-  {"id":"amd-ryzen-7-9700x","categoria":"processador","nome":"AMD Ryzen 7 9700X","descricao":"Plataforma AM5 (2024), 8 núcleos / 16 threads, DDR5.","condicao":"novo","specs":{"socket":"AM5","tdp":65}},
-
-  {"id":"mb-lga1151-h110","categoria":"placa_mae","nome":"Placa-mãe H110 (LGA1151)","descricao":"Para processadores Intel 6ª e 7ª geração, DDR4, micro-ATX.","condicao":"novo","specs":{"socket":"LGA1151","memoria":"DDR4","formato":"micro-ATX"}},
-  {"id":"mb-lga1151-b250","categoria":"placa_mae","nome":"Placa-mãe B250 (LGA1151)","descricao":"Para processadores Intel 6ª e 7ª geração, DDR4, ATX.","condicao":"novo","specs":{"socket":"LGA1151","memoria":"DDR4","formato":"ATX"}},
-  {"id":"mb-lga1151-z170","categoria":"placa_mae","nome":"Placa-mãe Z170 (LGA1151)","descricao":"Para processadores Intel 6ª e 7ª geração, DDR4, ATX, com overclock.","condicao":"novo","specs":{"socket":"LGA1151","memoria":"DDR4","formato":"ATX"}},
-  {"id":"mb-lga1151v2-h310","categoria":"placa_mae","nome":"Placa-mãe H310 (LGA1151 v2)","descricao":"Para processadores Intel 8ª e 9ª geração, DDR4, micro-ATX.","condicao":"novo","specs":{"socket":"LGA1151-v2","memoria":"DDR4","formato":"micro-ATX"}},
-  {"id":"mb-lga1151v2-b360","categoria":"placa_mae","nome":"Placa-mãe B360 (LGA1151 v2)","descricao":"Para processadores Intel 8ª e 9ª geração, DDR4, ATX.","condicao":"novo","specs":{"socket":"LGA1151-v2","memoria":"DDR4","formato":"ATX"}},
-  {"id":"mb-lga1151v2-z370","categoria":"placa_mae","nome":"Placa-mãe Z370 (LGA1151 v2)","descricao":"Para processadores Intel 8ª e 9ª geração, DDR4, ATX, com overclock.","condicao":"novo","specs":{"socket":"LGA1151-v2","memoria":"DDR4","formato":"ATX"}},
-  {"id":"mb-lga1200-h510","categoria":"placa_mae","nome":"Placa-mãe H510 (LGA1200)","descricao":"Para processadores Intel 10ª e 11ª geração, DDR4, micro-ATX.","condicao":"novo","specs":{"socket":"LGA1200","memoria":"DDR4","formato":"micro-ATX"}},
-  {"id":"mb-lga1200-b460","categoria":"placa_mae","nome":"Placa-mãe B460 (LGA1200)","descricao":"Para processadores Intel 10ª e 11ª geração, DDR4, ATX.","condicao":"novo","specs":{"socket":"LGA1200","memoria":"DDR4","formato":"ATX"}},
-  {"id":"mb-lga1200-z490","categoria":"placa_mae","nome":"Placa-mãe Z490 (LGA1200)","descricao":"Para processadores Intel 10ª e 11ª geração, DDR4, ATX, com overclock.","condicao":"novo","specs":{"socket":"LGA1200","memoria":"DDR4","formato":"ATX"}},
-  {"id":"mb-lga1700-h610-ddr4","categoria":"placa_mae","nome":"Placa-mãe H610 DDR4 (LGA1700)","descricao":"Para processadores Intel 12ª a 14ª geração, memória DDR4, micro-ATX.","condicao":"novo","specs":{"socket":"LGA1700","memoria":"DDR4","formato":"micro-ATX"}},
-  {"id":"mb-lga1700-b660-ddr4","categoria":"placa_mae","nome":"Placa-mãe B660 DDR4 (LGA1700)","descricao":"Para processadores Intel 12ª a 14ª geração, memória DDR4, ATX.","condicao":"novo","specs":{"socket":"LGA1700","memoria":"DDR4","formato":"ATX"}},
-  {"id":"mb-lga1700-b760-ddr5","categoria":"placa_mae","nome":"Placa-mãe B760 DDR5 (LGA1700)","descricao":"Para processadores Intel 12ª a 14ª geração, memória DDR5, ATX.","condicao":"novo","specs":{"socket":"LGA1700","memoria":"DDR5","formato":"ATX"}},
-  {"id":"mb-lga1700-z790-ddr5","categoria":"placa_mae","nome":"Placa-mãe Z790 DDR5 (LGA1700)","descricao":"Para processadores Intel 12ª a 14ª geração, memória DDR5, ATX, com overclock.","condicao":"novo","specs":{"socket":"LGA1700","memoria":"DDR5","formato":"ATX"}},
-  {"id":"mb-am3-970","categoria":"placa_mae","nome":"Placa-mãe 970 (AM3+)","descricao":"Para processadores AMD AM3+, memória DDR3, ATX.","condicao":"novo","specs":{"socket":"AM3+","memoria":"DDR3","formato":"ATX"}},
-  {"id":"mb-fm2-a88x","categoria":"placa_mae","nome":"Placa-mãe A88X (FM2+)","descricao":"Para APUs AMD FM2+, memória DDR3, ATX.","condicao":"novo","specs":{"socket":"FM2+","memoria":"DDR3","formato":"ATX"}},
-  {"id":"mb-am4-a320","categoria":"placa_mae","nome":"Placa-mãe A320 (AM4)","descricao":"Para processadores AMD AM4, memória DDR4, micro-ATX.","condicao":"novo","specs":{"socket":"AM4","memoria":"DDR4","formato":"micro-ATX"}},
-  {"id":"mb-am4-b450","categoria":"placa_mae","nome":"Placa-mãe B450 (AM4)","descricao":"Para processadores AMD AM4, memória DDR4, ATX.","condicao":"novo","specs":{"socket":"AM4","memoria":"DDR4","formato":"ATX"}},
-  {"id":"mb-am4-b550","categoria":"placa_mae","nome":"Placa-mãe B550 (AM4)","descricao":"Para processadores AMD AM4, memória DDR4, ATX, com PCIe 4.0.","condicao":"novo","specs":{"socket":"AM4","memoria":"DDR4","formato":"ATX"}},
-  {"id":"mb-am4-x570","categoria":"placa_mae","nome":"Placa-mãe X570 (AM4)","descricao":"Para processadores AMD AM4, memória DDR4, ATX, com overclock e PCIe 4.0.","condicao":"novo","specs":{"socket":"AM4","memoria":"DDR4","formato":"ATX"}},
-  {"id":"mb-am5-a620","categoria":"placa_mae","nome":"Placa-mãe A620 (AM5)","descricao":"Para processadores AMD AM5, memória DDR5, micro-ATX.","condicao":"novo","specs":{"socket":"AM5","memoria":"DDR5","formato":"micro-ATX"}},
-  {"id":"mb-am5-b650","categoria":"placa_mae","nome":"Placa-mãe B650 (AM5)","descricao":"Para processadores AMD AM5, memória DDR5, ATX.","condicao":"novo","specs":{"socket":"AM5","memoria":"DDR5","formato":"ATX"}},
-  {"id":"mb-am5-x670","categoria":"placa_mae","nome":"Placa-mãe X670 (AM5)","descricao":"Para processadores AMD AM5, memória DDR5, ATX, com overclock.","condicao":"novo","specs":{"socket":"AM5","memoria":"DDR5","formato":"ATX"}},
-
-  {"id":"mem-ddr3-8gb-1600","categoria":"memoria","nome":"Memória DDR3 8 GB 1600 MHz","descricao":"Para placas AM3+, FM2+ e notebooks DDR3.","condicao":"novo","specs":{"memoria":"DDR3"}},
-  {"id":"mem-ddr4-8gb-2666","categoria":"memoria","nome":"Memória DDR4 8 GB 2666 MHz","descricao":"Módulo DDR4 de 8 GB para uso geral.","condicao":"novo","specs":{"memoria":"DDR4"}},
-  {"id":"mem-ddr4-16gb-3200","categoria":"memoria","nome":"Memória DDR4 16 GB 3200 MHz","descricao":"Kit DDR4 de 16 GB (2x8 GB), bom para jogos e trabalho.","condicao":"novo","specs":{"memoria":"DDR4"}},
-  {"id":"mem-ddr4-32gb-3600","categoria":"memoria","nome":"Memória DDR4 32 GB 3600 MHz","descricao":"Kit DDR4 de 32 GB (2x16 GB) para uso pesado.","condicao":"novo","specs":{"memoria":"DDR4"}},
-  {"id":"mem-ddr5-16gb-5600","categoria":"memoria","nome":"Memória DDR5 16 GB 5600 MHz","descricao":"Kit DDR5 de 16 GB (2x8 GB).","condicao":"novo","specs":{"memoria":"DDR5"}},
-  {"id":"mem-ddr5-32gb-6000","categoria":"memoria","nome":"Memória DDR5 32 GB 6000 MHz","descricao":"Kit DDR5 de 32 GB (2x16 GB) para jogos e edição.","condicao":"novo","specs":{"memoria":"DDR5"}},
-
-  {"id":"gpu-gtx1050ti","categoria":"placa_video","nome":"NVIDIA GeForce GTX 1050 Ti 4 GB","descricao":"Placa de entrada (2016), jogos em HD.","condicao":"novo","specs":{"tdp":75}},
-  {"id":"gpu-gtx1650","categoria":"placa_video","nome":"NVIDIA GeForce GTX 1650 4 GB","descricao":"Placa de entrada (2019), não exige cabo de energia extra.","condicao":"novo","specs":{"tdp":75}},
-  {"id":"gpu-gtx1060-6gb","categoria":"placa_video","nome":"NVIDIA GeForce GTX 1060 6 GB","descricao":"Placa intermediária (2016), jogos em Full HD.","condicao":"novo","specs":{"tdp":120}},
-  {"id":"gpu-gtx1660s","categoria":"placa_video","nome":"NVIDIA GeForce GTX 1660 Super 6 GB","descricao":"Placa intermediária (2019), jogos em Full HD.","condicao":"novo","specs":{"tdp":125}},
-  {"id":"gpu-rx580-8gb","categoria":"placa_video","nome":"AMD Radeon RX 580 8 GB","descricao":"Placa intermediária AMD (2017), jogos em Full HD.","condicao":"novo","specs":{"tdp":185}},
-  {"id":"gpu-rtx2060","categoria":"placa_video","nome":"NVIDIA GeForce RTX 2060 6 GB","descricao":"Placa com ray tracing (2019), jogos em Full HD e 1440p.","condicao":"novo","specs":{"tdp":160}},
-  {"id":"gpu-rx6600","categoria":"placa_video","nome":"AMD Radeon RX 6600 8 GB","descricao":"Placa intermediária AMD (2021), jogos em Full HD.","condicao":"novo","specs":{"tdp":132}},
-  {"id":"gpu-rtx3060","categoria":"placa_video","nome":"NVIDIA GeForce RTX 3060 12 GB","descricao":"Placa com ray tracing (2021), jogos em Full HD e 1440p.","condicao":"novo","specs":{"tdp":170}},
-  {"id":"gpu-rx7600","categoria":"placa_video","nome":"AMD Radeon RX 7600 8 GB","descricao":"Placa AMD (2023), jogos em Full HD.","condicao":"novo","specs":{"tdp":165}},
-  {"id":"gpu-rtx4060","categoria":"placa_video","nome":"NVIDIA GeForce RTX 4060 8 GB","descricao":"Placa NVIDIA (2023), consumo baixo e DLSS 3.","condicao":"novo","specs":{"tdp":115}},
-
-  {"id":"fonte-350w","categoria":"fonte","nome":"Fonte 350 W","descricao":"Para computadores básicos, sem placa de vídeo dedicada.","condicao":"novo","specs":{"potencia":350}},
-  {"id":"fonte-450w-80plus","categoria":"fonte","nome":"Fonte 450 W 80 Plus","descricao":"Para computadores básicos ou de entrada.","condicao":"novo","specs":{"potencia":450}},
-  {"id":"fonte-500w-80plus","categoria":"fonte","nome":"Fonte 500 W 80 Plus","descricao":"Para configurações de entrada e intermediárias.","condicao":"novo","specs":{"potencia":500}},
-  {"id":"fonte-600w-80plus","categoria":"fonte","nome":"Fonte 600 W 80 Plus","descricao":"Para configurações intermediárias com placa de vídeo.","condicao":"novo","specs":{"potencia":600}},
-  {"id":"fonte-650w-80plus","categoria":"fonte","nome":"Fonte 650 W 80 Plus Bronze","descricao":"Para configurações com placa de vídeo intermediária ou superior.","condicao":"novo","specs":{"potencia":650}},
-  {"id":"fonte-750w-80plus","categoria":"fonte","nome":"Fonte 750 W 80 Plus Gold","descricao":"Para configurações de alto desempenho.","condicao":"novo","specs":{"potencia":750}},
-  {"id":"fonte-850w-80plus","categoria":"fonte","nome":"Fonte 850 W 80 Plus Gold","descricao":"Para configurações de alto desempenho com folga para upgrade.","condicao":"novo","specs":{"potencia":850}},
-
-  {"id":"ssd-sata-240gb","categoria":"armazenamento","nome":"SSD SATA 240 GB","descricao":"Armazenamento de estado sólido para sistema e programas.","condicao":"novo","specs":{}},
-  {"id":"ssd-sata-480gb","categoria":"armazenamento","nome":"SSD SATA 480 GB","descricao":"Armazenamento de estado sólido para sistema e programas.","condicao":"novo","specs":{}},
-  {"id":"ssd-sata-1tb","categoria":"armazenamento","nome":"SSD SATA 1 TB","descricao":"Armazenamento de estado sólido com mais espaço.","condicao":"novo","specs":{}},
-  {"id":"ssd-nvme-500gb","categoria":"armazenamento","nome":"SSD NVMe 500 GB","descricao":"SSD NVMe M.2, muito mais rápido que o SATA.","condicao":"novo","specs":{}},
-  {"id":"ssd-nvme-1tb","categoria":"armazenamento","nome":"SSD NVMe 1 TB","descricao":"SSD NVMe M.2 com 1 TB de espaço.","condicao":"novo","specs":{}},
-  {"id":"hd-1tb","categoria":"armazenamento","nome":"HD 1 TB 7200 RPM","descricao":"Disco rígido para armazenar arquivos em grande volume.","condicao":"novo","specs":{}},
-  {"id":"hd-2tb","categoria":"armazenamento","nome":"HD 2 TB 7200 RPM","descricao":"Disco rígido de 2 TB para arquivos e backups.","condicao":"novo","specs":{}},
-
-  {"id":"gab-atx-vidro","categoria":"gabinete","nome":"Gabinete ATX com janela de vidro","descricao":"Para placas ATX, micro-ATX e mini-ITX.","condicao":"novo","specs":{"formatos":["ATX","micro-ATX","mini-ITX"]}},
-  {"id":"gab-microatx","categoria":"gabinete","nome":"Gabinete micro-ATX","descricao":"Para placas micro-ATX e mini-ITX.","condicao":"novo","specs":{"formatos":["micro-ATX","mini-ITX"]}},
-  {"id":"gab-atx-basico","categoria":"gabinete","nome":"Gabinete ATX básico","descricao":"Gabinete simples para placas ATX, micro-ATX e mini-ITX.","condicao":"novo","specs":{"formatos":["ATX","micro-ATX","mini-ITX"]}}
+  {
+    "id": "intel-i3-6100",
+    "categoria": "processador",
+    "nome": "Intel Core i3-6100",
+    "descricao": "6ª geração (2015), 2 núcleos / 4 threads, 3,7 GHz.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "LGA1151",
+      "tdp": 51,
+      "desempenho": 25
+    }
+  },
+  {
+    "id": "intel-i5-6500",
+    "categoria": "processador",
+    "nome": "Intel Core i5-6500",
+    "descricao": "6ª geração (2015), 4 núcleos / 4 threads, até 3,6 GHz.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "LGA1151",
+      "tdp": 65,
+      "desempenho": 35
+    }
+  },
+  {
+    "id": "intel-i7-6700",
+    "categoria": "processador",
+    "nome": "Intel Core i7-6700",
+    "descricao": "6ª geração (2015), 4 núcleos / 8 threads, até 4,0 GHz.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "LGA1151",
+      "tdp": 65,
+      "desempenho": 38
+    }
+  },
+  {
+    "id": "intel-i7-6700k",
+    "categoria": "processador",
+    "nome": "Intel Core i7-6700K",
+    "descricao": "6ª geração (2015), desbloqueado para overclock, 4 núcleos / 8 threads.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "LGA1151",
+      "tdp": 91,
+      "desempenho": 40
+    }
+  },
+  {
+    "id": "intel-i5-7400",
+    "categoria": "processador",
+    "nome": "Intel Core i5-7400",
+    "descricao": "7ª geração (2017), 4 núcleos / 4 threads, até 3,5 GHz.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "LGA1151",
+      "tdp": 65,
+      "desempenho": 40
+    }
+  },
+  {
+    "id": "intel-i7-7700",
+    "categoria": "processador",
+    "nome": "Intel Core i7-7700",
+    "descricao": "7ª geração (2017), 4 núcleos / 8 threads, até 4,2 GHz.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "LGA1151",
+      "tdp": 65,
+      "desempenho": 44
+    }
+  },
+  {
+    "id": "intel-i5-8400",
+    "categoria": "processador",
+    "nome": "Intel Core i5-8400",
+    "descricao": "8ª geração (2017), 6 núcleos / 6 threads, até 4,0 GHz.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "LGA1151-v2",
+      "tdp": 65,
+      "desempenho": 52
+    }
+  },
+  {
+    "id": "intel-i7-8700",
+    "categoria": "processador",
+    "nome": "Intel Core i7-8700",
+    "descricao": "8ª geração (2017), 6 núcleos / 12 threads, até 4,6 GHz.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "LGA1151-v2",
+      "tdp": 65,
+      "desempenho": 60
+    }
+  },
+  {
+    "id": "intel-i5-9400f",
+    "categoria": "processador",
+    "nome": "Intel Core i5-9400F",
+    "descricao": "9ª geração (2019), 6 núcleos / 6 threads, sem vídeo integrado.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "LGA1151-v2",
+      "tdp": 65,
+      "desempenho": 55
+    }
+  },
+  {
+    "id": "intel-i9-9900k",
+    "categoria": "processador",
+    "nome": "Intel Core i9-9900K",
+    "descricao": "9ª geração (2019), 8 núcleos / 16 threads, desbloqueado.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "LGA1151-v2",
+      "tdp": 95,
+      "desempenho": 75
+    }
+  },
+  {
+    "id": "intel-i5-10400",
+    "categoria": "processador",
+    "nome": "Intel Core i5-10400",
+    "descricao": "10ª geração (2020), 6 núcleos / 12 threads.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "LGA1200",
+      "tdp": 65,
+      "desempenho": 58
+    }
+  },
+  {
+    "id": "intel-i7-10700k",
+    "categoria": "processador",
+    "nome": "Intel Core i7-10700K",
+    "descricao": "10ª geração (2020), 8 núcleos / 16 threads, desbloqueado.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "LGA1200",
+      "tdp": 125,
+      "desempenho": 70
+    }
+  },
+  {
+    "id": "intel-i5-11400",
+    "categoria": "processador",
+    "nome": "Intel Core i5-11400",
+    "descricao": "11ª geração (2021), 6 núcleos / 12 threads.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "LGA1200",
+      "tdp": 65,
+      "desempenho": 62
+    }
+  },
+  {
+    "id": "intel-i7-11700k",
+    "categoria": "processador",
+    "nome": "Intel Core i7-11700K",
+    "descricao": "11ª geração (2021), 8 núcleos / 16 threads, desbloqueado.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "LGA1200",
+      "tdp": 125,
+      "desempenho": 72
+    }
+  },
+  {
+    "id": "intel-i5-12400",
+    "categoria": "processador",
+    "nome": "Intel Core i5-12400",
+    "descricao": "12ª geração (2022), 6 núcleos / 12 threads, DDR4 ou DDR5 conforme a placa.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "LGA1700",
+      "tdp": 65,
+      "desempenho": 70
+    }
+  },
+  {
+    "id": "intel-i7-12700k",
+    "categoria": "processador",
+    "nome": "Intel Core i7-12700K",
+    "descricao": "12ª geração (2021), 12 núcleos / 20 threads, desbloqueado.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "LGA1700",
+      "tdp": 125,
+      "desempenho": 85
+    }
+  },
+  {
+    "id": "intel-i5-13400",
+    "categoria": "processador",
+    "nome": "Intel Core i5-13400",
+    "descricao": "13ª geração (2023), 10 núcleos / 16 threads.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "LGA1700",
+      "tdp": 65,
+      "desempenho": 80
+    }
+  },
+  {
+    "id": "intel-i7-13700k",
+    "categoria": "processador",
+    "nome": "Intel Core i7-13700K",
+    "descricao": "13ª geração (2022), 16 núcleos / 24 threads, desbloqueado.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "LGA1700",
+      "tdp": 125,
+      "desempenho": 92
+    }
+  },
+  {
+    "id": "intel-i5-14600k",
+    "categoria": "processador",
+    "nome": "Intel Core i5-14600K",
+    "descricao": "14ª geração (2023), 14 núcleos / 20 threads, desbloqueado.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "LGA1700",
+      "tdp": 125,
+      "desempenho": 88
+    }
+  },
+  {
+    "id": "intel-i9-14900k",
+    "categoria": "processador",
+    "nome": "Intel Core i9-14900K",
+    "descricao": "14ª geração (2023), 24 núcleos / 32 threads, desbloqueado.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "LGA1700",
+      "tdp": 125,
+      "desempenho": 100
+    }
+  },
+  {
+    "id": "amd-fx-8320e",
+    "categoria": "processador",
+    "nome": "AMD FX-8320E",
+    "descricao": "Plataforma AM3+ (2015), 8 núcleos, DDR3.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "AM3+",
+      "tdp": 95,
+      "desempenho": 30
+    }
+  },
+  {
+    "id": "amd-a10-7860k",
+    "categoria": "processador",
+    "nome": "AMD A10-7860K",
+    "descricao": "APU FM2+ (2015), 4 núcleos com gráficos Radeon integrados, DDR3.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "FM2+",
+      "tdp": 95,
+      "desempenho": 25
+    }
+  },
+  {
+    "id": "amd-athlon-x4-880k",
+    "categoria": "processador",
+    "nome": "AMD Athlon X4 880K",
+    "descricao": "Plataforma FM2+ (2015), 4 núcleos, desbloqueado, DDR3.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "FM2+",
+      "tdp": 95,
+      "desempenho": 22
+    }
+  },
+  {
+    "id": "amd-ryzen-3-1200",
+    "categoria": "processador",
+    "nome": "AMD Ryzen 3 1200",
+    "descricao": "Plataforma AM4 (2017), 4 núcleos / 4 threads, DDR4.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "AM4",
+      "tdp": 65,
+      "desempenho": 30
+    }
+  },
+  {
+    "id": "amd-ryzen-5-1600",
+    "categoria": "processador",
+    "nome": "AMD Ryzen 5 1600",
+    "descricao": "Plataforma AM4 (2017), 6 núcleos / 12 threads, DDR4.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "AM4",
+      "tdp": 65,
+      "desempenho": 45
+    }
+  },
+  {
+    "id": "amd-ryzen-5-2600",
+    "categoria": "processador",
+    "nome": "AMD Ryzen 5 2600",
+    "descricao": "Plataforma AM4 (2018), 6 núcleos / 12 threads, DDR4.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "AM4",
+      "tdp": 65,
+      "desempenho": 50
+    }
+  },
+  {
+    "id": "amd-ryzen-7-2700x",
+    "categoria": "processador",
+    "nome": "AMD Ryzen 7 2700X",
+    "descricao": "Plataforma AM4 (2018), 8 núcleos / 16 threads, DDR4.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "AM4",
+      "tdp": 105,
+      "desempenho": 58
+    }
+  },
+  {
+    "id": "amd-ryzen-5-3600",
+    "categoria": "processador",
+    "nome": "AMD Ryzen 5 3600",
+    "descricao": "Plataforma AM4 (2019), 6 núcleos / 12 threads, DDR4.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "AM4",
+      "tdp": 65,
+      "desempenho": 65
+    }
+  },
+  {
+    "id": "amd-ryzen-7-3700x",
+    "categoria": "processador",
+    "nome": "AMD Ryzen 7 3700X",
+    "descricao": "Plataforma AM4 (2019), 8 núcleos / 16 threads, DDR4.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "AM4",
+      "tdp": 65,
+      "desempenho": 72
+    }
+  },
+  {
+    "id": "amd-ryzen-9-3900x",
+    "categoria": "processador",
+    "nome": "AMD Ryzen 9 3900X",
+    "descricao": "Plataforma AM4 (2019), 12 núcleos / 24 threads, DDR4.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "AM4",
+      "tdp": 105,
+      "desempenho": 82
+    }
+  },
+  {
+    "id": "amd-ryzen-5-4600g",
+    "categoria": "processador",
+    "nome": "AMD Ryzen 5 4600G",
+    "descricao": "APU AM4 (2020), 6 núcleos com gráficos Radeon integrados, DDR4.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "AM4",
+      "tdp": 65,
+      "desempenho": 60
+    }
+  },
+  {
+    "id": "amd-ryzen-5-5600x",
+    "categoria": "processador",
+    "nome": "AMD Ryzen 5 5600X",
+    "descricao": "Plataforma AM4 (2020), 6 núcleos / 12 threads, DDR4.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "AM4",
+      "tdp": 65,
+      "desempenho": 72
+    }
+  },
+  {
+    "id": "amd-ryzen-7-5800x",
+    "categoria": "processador",
+    "nome": "AMD Ryzen 7 5800X",
+    "descricao": "Plataforma AM4 (2020), 8 núcleos / 16 threads, DDR4.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "AM4",
+      "tdp": 105,
+      "desempenho": 78
+    }
+  },
+  {
+    "id": "amd-ryzen-5-5600g",
+    "categoria": "processador",
+    "nome": "AMD Ryzen 5 5600G",
+    "descricao": "APU AM4 (2021), 6 núcleos com gráficos Radeon integrados, DDR4.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "AM4",
+      "tdp": 65,
+      "desempenho": 62
+    }
+  },
+  {
+    "id": "amd-ryzen-5-7600",
+    "categoria": "processador",
+    "nome": "AMD Ryzen 5 7600",
+    "descricao": "Plataforma AM5 (2022), 6 núcleos / 12 threads, DDR5.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "AM5",
+      "tdp": 65,
+      "desempenho": 80
+    }
+  },
+  {
+    "id": "amd-ryzen-7-7700",
+    "categoria": "processador",
+    "nome": "AMD Ryzen 7 7700",
+    "descricao": "Plataforma AM5 (2022), 8 núcleos / 16 threads, DDR5.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "AM5",
+      "tdp": 65,
+      "desempenho": 85
+    }
+  },
+  {
+    "id": "amd-ryzen-9-7900x",
+    "categoria": "processador",
+    "nome": "AMD Ryzen 9 7900X",
+    "descricao": "Plataforma AM5 (2022), 12 núcleos / 24 threads, DDR5.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "AM5",
+      "tdp": 170,
+      "desempenho": 92
+    }
+  },
+  {
+    "id": "amd-ryzen-7-7800x3d",
+    "categoria": "processador",
+    "nome": "AMD Ryzen 7 7800X3D",
+    "descricao": "Plataforma AM5 (2023), 8 núcleos com cache 3D, DDR5.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "AM5",
+      "tdp": 120,
+      "desempenho": 88
+    }
+  },
+  {
+    "id": "amd-ryzen-5-8600g",
+    "categoria": "processador",
+    "nome": "AMD Ryzen 5 8600G",
+    "descricao": "APU AM5 (2024), 6 núcleos com gráficos Radeon integrados, DDR5.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "AM5",
+      "tdp": 65,
+      "desempenho": 75
+    }
+  },
+  {
+    "id": "amd-ryzen-5-9600x",
+    "categoria": "processador",
+    "nome": "AMD Ryzen 5 9600X",
+    "descricao": "Plataforma AM5 (2024), 6 núcleos / 12 threads, DDR5.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "AM5",
+      "tdp": 65,
+      "desempenho": 84
+    }
+  },
+  {
+    "id": "amd-ryzen-7-9700x",
+    "categoria": "processador",
+    "nome": "AMD Ryzen 7 9700X",
+    "descricao": "Plataforma AM5 (2024), 8 núcleos / 16 threads, DDR5.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "AM5",
+      "tdp": 65,
+      "desempenho": 90
+    }
+  },
+  {
+    "id": "mb-lga1151-h110",
+    "categoria": "placa_mae",
+    "nome": "Placa-mãe H110 (LGA1151)",
+    "descricao": "Para processadores Intel 6ª e 7ª geração, DDR4, micro-ATX.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "LGA1151",
+      "memoria": "DDR4",
+      "formato": "micro-ATX"
+    }
+  },
+  {
+    "id": "mb-lga1151-b250",
+    "categoria": "placa_mae",
+    "nome": "Placa-mãe B250 (LGA1151)",
+    "descricao": "Para processadores Intel 6ª e 7ª geração, DDR4, ATX.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "LGA1151",
+      "memoria": "DDR4",
+      "formato": "ATX"
+    }
+  },
+  {
+    "id": "mb-lga1151-z170",
+    "categoria": "placa_mae",
+    "nome": "Placa-mãe Z170 (LGA1151)",
+    "descricao": "Para processadores Intel 6ª e 7ª geração, DDR4, ATX, com overclock.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "LGA1151",
+      "memoria": "DDR4",
+      "formato": "ATX"
+    }
+  },
+  {
+    "id": "mb-lga1151v2-h310",
+    "categoria": "placa_mae",
+    "nome": "Placa-mãe H310 (LGA1151 v2)",
+    "descricao": "Para processadores Intel 8ª e 9ª geração, DDR4, micro-ATX.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "LGA1151-v2",
+      "memoria": "DDR4",
+      "formato": "micro-ATX"
+    }
+  },
+  {
+    "id": "mb-lga1151v2-b360",
+    "categoria": "placa_mae",
+    "nome": "Placa-mãe B360 (LGA1151 v2)",
+    "descricao": "Para processadores Intel 8ª e 9ª geração, DDR4, ATX.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "LGA1151-v2",
+      "memoria": "DDR4",
+      "formato": "ATX"
+    }
+  },
+  {
+    "id": "mb-lga1151v2-z370",
+    "categoria": "placa_mae",
+    "nome": "Placa-mãe Z370 (LGA1151 v2)",
+    "descricao": "Para processadores Intel 8ª e 9ª geração, DDR4, ATX, com overclock.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "LGA1151-v2",
+      "memoria": "DDR4",
+      "formato": "ATX"
+    }
+  },
+  {
+    "id": "mb-lga1200-h510",
+    "categoria": "placa_mae",
+    "nome": "Placa-mãe H510 (LGA1200)",
+    "descricao": "Para processadores Intel 10ª e 11ª geração, DDR4, micro-ATX.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "LGA1200",
+      "memoria": "DDR4",
+      "formato": "micro-ATX"
+    }
+  },
+  {
+    "id": "mb-lga1200-b460",
+    "categoria": "placa_mae",
+    "nome": "Placa-mãe B460 (LGA1200)",
+    "descricao": "Para processadores Intel 10ª e 11ª geração, DDR4, ATX.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "LGA1200",
+      "memoria": "DDR4",
+      "formato": "ATX"
+    }
+  },
+  {
+    "id": "mb-lga1200-z490",
+    "categoria": "placa_mae",
+    "nome": "Placa-mãe Z490 (LGA1200)",
+    "descricao": "Para processadores Intel 10ª e 11ª geração, DDR4, ATX, com overclock.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "LGA1200",
+      "memoria": "DDR4",
+      "formato": "ATX"
+    }
+  },
+  {
+    "id": "mb-lga1700-h610-ddr4",
+    "categoria": "placa_mae",
+    "nome": "Placa-mãe H610 DDR4 (LGA1700)",
+    "descricao": "Para processadores Intel 12ª a 14ª geração, memória DDR4, micro-ATX.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "LGA1700",
+      "memoria": "DDR4",
+      "formato": "micro-ATX"
+    }
+  },
+  {
+    "id": "mb-lga1700-b660-ddr4",
+    "categoria": "placa_mae",
+    "nome": "Placa-mãe B660 DDR4 (LGA1700)",
+    "descricao": "Para processadores Intel 12ª a 14ª geração, memória DDR4, ATX.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "LGA1700",
+      "memoria": "DDR4",
+      "formato": "ATX"
+    }
+  },
+  {
+    "id": "mb-lga1700-b760-ddr5",
+    "categoria": "placa_mae",
+    "nome": "Placa-mãe B760 DDR5 (LGA1700)",
+    "descricao": "Para processadores Intel 12ª a 14ª geração, memória DDR5, ATX.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "LGA1700",
+      "memoria": "DDR5",
+      "formato": "ATX"
+    }
+  },
+  {
+    "id": "mb-lga1700-z790-ddr5",
+    "categoria": "placa_mae",
+    "nome": "Placa-mãe Z790 DDR5 (LGA1700)",
+    "descricao": "Para processadores Intel 12ª a 14ª geração, memória DDR5, ATX, com overclock.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "LGA1700",
+      "memoria": "DDR5",
+      "formato": "ATX"
+    }
+  },
+  {
+    "id": "mb-am3-970",
+    "categoria": "placa_mae",
+    "nome": "Placa-mãe 970 (AM3+)",
+    "descricao": "Para processadores AMD AM3+, memória DDR3, ATX.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "AM3+",
+      "memoria": "DDR3",
+      "formato": "ATX"
+    }
+  },
+  {
+    "id": "mb-fm2-a88x",
+    "categoria": "placa_mae",
+    "nome": "Placa-mãe A88X (FM2+)",
+    "descricao": "Para APUs AMD FM2+, memória DDR3, ATX.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "FM2+",
+      "memoria": "DDR3",
+      "formato": "ATX"
+    }
+  },
+  {
+    "id": "mb-am4-a320",
+    "categoria": "placa_mae",
+    "nome": "Placa-mãe A320 (AM4)",
+    "descricao": "Para processadores AMD AM4, memória DDR4, micro-ATX.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "AM4",
+      "memoria": "DDR4",
+      "formato": "micro-ATX"
+    }
+  },
+  {
+    "id": "mb-am4-b450",
+    "categoria": "placa_mae",
+    "nome": "Placa-mãe B450 (AM4)",
+    "descricao": "Para processadores AMD AM4, memória DDR4, ATX.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "AM4",
+      "memoria": "DDR4",
+      "formato": "ATX"
+    }
+  },
+  {
+    "id": "mb-am4-b550",
+    "categoria": "placa_mae",
+    "nome": "Placa-mãe B550 (AM4)",
+    "descricao": "Para processadores AMD AM4, memória DDR4, ATX, com PCIe 4.0.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "AM4",
+      "memoria": "DDR4",
+      "formato": "ATX"
+    }
+  },
+  {
+    "id": "mb-am4-x570",
+    "categoria": "placa_mae",
+    "nome": "Placa-mãe X570 (AM4)",
+    "descricao": "Para processadores AMD AM4, memória DDR4, ATX, com overclock e PCIe 4.0.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "AM4",
+      "memoria": "DDR4",
+      "formato": "ATX"
+    }
+  },
+  {
+    "id": "mb-am5-a620",
+    "categoria": "placa_mae",
+    "nome": "Placa-mãe A620 (AM5)",
+    "descricao": "Para processadores AMD AM5, memória DDR5, micro-ATX.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "AM5",
+      "memoria": "DDR5",
+      "formato": "micro-ATX"
+    }
+  },
+  {
+    "id": "mb-am5-b650",
+    "categoria": "placa_mae",
+    "nome": "Placa-mãe B650 (AM5)",
+    "descricao": "Para processadores AMD AM5, memória DDR5, ATX.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "AM5",
+      "memoria": "DDR5",
+      "formato": "ATX"
+    }
+  },
+  {
+    "id": "mb-am5-x670",
+    "categoria": "placa_mae",
+    "nome": "Placa-mãe X670 (AM5)",
+    "descricao": "Para processadores AMD AM5, memória DDR5, ATX, com overclock.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "AM5",
+      "memoria": "DDR5",
+      "formato": "ATX"
+    }
+  },
+  {
+    "id": "mem-ddr3-8gb-1600",
+    "categoria": "memoria",
+    "nome": "Memória DDR3 8 GB 1600 MHz",
+    "descricao": "Para placas AM3+, FM2+ e notebooks DDR3.",
+    "condicao": "novo",
+    "specs": {
+      "memoria": "DDR3",
+      "capacidade": 8
+    }
+  },
+  {
+    "id": "mem-ddr4-8gb-2666",
+    "categoria": "memoria",
+    "nome": "Memória DDR4 8 GB 2666 MHz",
+    "descricao": "Módulo DDR4 de 8 GB para uso geral.",
+    "condicao": "novo",
+    "specs": {
+      "memoria": "DDR4",
+      "capacidade": 8
+    }
+  },
+  {
+    "id": "mem-ddr4-16gb-3200",
+    "categoria": "memoria",
+    "nome": "Memória DDR4 16 GB 3200 MHz",
+    "descricao": "Kit DDR4 de 16 GB (2x8 GB), bom para jogos e trabalho.",
+    "condicao": "novo",
+    "specs": {
+      "memoria": "DDR4",
+      "capacidade": 16
+    }
+  },
+  {
+    "id": "mem-ddr4-32gb-3600",
+    "categoria": "memoria",
+    "nome": "Memória DDR4 32 GB 3600 MHz",
+    "descricao": "Kit DDR4 de 32 GB (2x16 GB) para uso pesado.",
+    "condicao": "novo",
+    "specs": {
+      "memoria": "DDR4",
+      "capacidade": 32
+    }
+  },
+  {
+    "id": "mem-ddr5-16gb-5600",
+    "categoria": "memoria",
+    "nome": "Memória DDR5 16 GB 5600 MHz",
+    "descricao": "Kit DDR5 de 16 GB (2x8 GB).",
+    "condicao": "novo",
+    "specs": {
+      "memoria": "DDR5",
+      "capacidade": 16
+    }
+  },
+  {
+    "id": "mem-ddr5-32gb-6000",
+    "categoria": "memoria",
+    "nome": "Memória DDR5 32 GB 6000 MHz",
+    "descricao": "Kit DDR5 de 32 GB (2x16 GB) para jogos e edição.",
+    "condicao": "novo",
+    "specs": {
+      "memoria": "DDR5",
+      "capacidade": 32
+    }
+  },
+  {
+    "id": "gpu-gtx1050ti",
+    "categoria": "placa_video",
+    "nome": "NVIDIA GeForce GTX 1050 Ti 4 GB",
+    "descricao": "Placa de entrada (2016), jogos em HD.",
+    "condicao": "novo",
+    "specs": {
+      "tdp": 75,
+      "desempenho": 25
+    }
+  },
+  {
+    "id": "gpu-gtx1650",
+    "categoria": "placa_video",
+    "nome": "NVIDIA GeForce GTX 1650 4 GB",
+    "descricao": "Placa de entrada (2019), não exige cabo de energia extra.",
+    "condicao": "novo",
+    "specs": {
+      "tdp": 75,
+      "desempenho": 25
+    }
+  },
+  {
+    "id": "gpu-gtx1060-6gb",
+    "categoria": "placa_video",
+    "nome": "NVIDIA GeForce GTX 1060 6 GB",
+    "descricao": "Placa intermediária (2016), jogos em Full HD.",
+    "condicao": "novo",
+    "specs": {
+      "tdp": 120,
+      "desempenho": 40
+    }
+  },
+  {
+    "id": "gpu-gtx1660s",
+    "categoria": "placa_video",
+    "nome": "NVIDIA GeForce GTX 1660 Super 6 GB",
+    "descricao": "Placa intermediária (2019), jogos em Full HD.",
+    "condicao": "novo",
+    "specs": {
+      "tdp": 125,
+      "desempenho": 48
+    }
+  },
+  {
+    "id": "gpu-rx580-8gb",
+    "categoria": "placa_video",
+    "nome": "AMD Radeon RX 580 8 GB",
+    "descricao": "Placa intermediária AMD (2017), jogos em Full HD.",
+    "condicao": "novo",
+    "specs": {
+      "tdp": 185,
+      "desempenho": 40
+    }
+  },
+  {
+    "id": "gpu-rtx2060",
+    "categoria": "placa_video",
+    "nome": "NVIDIA GeForce RTX 2060 6 GB",
+    "descricao": "Placa com ray tracing (2019), jogos em Full HD e 1440p.",
+    "condicao": "novo",
+    "specs": {
+      "tdp": 160,
+      "desempenho": 55
+    }
+  },
+  {
+    "id": "gpu-rx6600",
+    "categoria": "placa_video",
+    "nome": "AMD Radeon RX 6600 8 GB",
+    "descricao": "Placa intermediária AMD (2021), jogos em Full HD.",
+    "condicao": "novo",
+    "specs": {
+      "tdp": 132,
+      "desempenho": 62
+    }
+  },
+  {
+    "id": "gpu-rtx3060",
+    "categoria": "placa_video",
+    "nome": "NVIDIA GeForce RTX 3060 12 GB",
+    "descricao": "Placa com ray tracing (2021), jogos em Full HD e 1440p.",
+    "condicao": "novo",
+    "specs": {
+      "tdp": 170,
+      "desempenho": 66
+    }
+  },
+  {
+    "id": "gpu-rx7600",
+    "categoria": "placa_video",
+    "nome": "AMD Radeon RX 7600 8 GB",
+    "descricao": "Placa AMD (2023), jogos em Full HD.",
+    "condicao": "novo",
+    "specs": {
+      "tdp": 165,
+      "desempenho": 68
+    }
+  },
+  {
+    "id": "gpu-rtx4060",
+    "categoria": "placa_video",
+    "nome": "NVIDIA GeForce RTX 4060 8 GB",
+    "descricao": "Placa NVIDIA (2023), consumo baixo e DLSS 3.",
+    "condicao": "novo",
+    "specs": {
+      "tdp": 115,
+      "desempenho": 72
+    }
+  },
+  {
+    "id": "fonte-350w",
+    "categoria": "fonte",
+    "nome": "Fonte 350 W",
+    "descricao": "Para computadores básicos, sem placa de vídeo dedicada.",
+    "condicao": "novo",
+    "specs": {
+      "potencia": 350
+    }
+  },
+  {
+    "id": "fonte-450w-80plus",
+    "categoria": "fonte",
+    "nome": "Fonte 450 W 80 Plus",
+    "descricao": "Para computadores básicos ou de entrada.",
+    "condicao": "novo",
+    "specs": {
+      "potencia": 450
+    }
+  },
+  {
+    "id": "fonte-500w-80plus",
+    "categoria": "fonte",
+    "nome": "Fonte 500 W 80 Plus",
+    "descricao": "Para configurações de entrada e intermediárias.",
+    "condicao": "novo",
+    "specs": {
+      "potencia": 500
+    }
+  },
+  {
+    "id": "fonte-600w-80plus",
+    "categoria": "fonte",
+    "nome": "Fonte 600 W 80 Plus",
+    "descricao": "Para configurações intermediárias com placa de vídeo.",
+    "condicao": "novo",
+    "specs": {
+      "potencia": 600
+    }
+  },
+  {
+    "id": "fonte-650w-80plus",
+    "categoria": "fonte",
+    "nome": "Fonte 650 W 80 Plus Bronze",
+    "descricao": "Para configurações com placa de vídeo intermediária ou superior.",
+    "condicao": "novo",
+    "specs": {
+      "potencia": 650
+    }
+  },
+  {
+    "id": "fonte-750w-80plus",
+    "categoria": "fonte",
+    "nome": "Fonte 750 W 80 Plus Gold",
+    "descricao": "Para configurações de alto desempenho.",
+    "condicao": "novo",
+    "specs": {
+      "potencia": 750
+    }
+  },
+  {
+    "id": "fonte-850w-80plus",
+    "categoria": "fonte",
+    "nome": "Fonte 850 W 80 Plus Gold",
+    "descricao": "Para configurações de alto desempenho com folga para upgrade.",
+    "condicao": "novo",
+    "specs": {
+      "potencia": 850
+    }
+  },
+  {
+    "id": "ssd-sata-240gb",
+    "categoria": "armazenamento",
+    "nome": "SSD SATA 240 GB",
+    "descricao": "Armazenamento de estado sólido para sistema e programas.",
+    "condicao": "novo",
+    "specs": {}
+  },
+  {
+    "id": "ssd-sata-480gb",
+    "categoria": "armazenamento",
+    "nome": "SSD SATA 480 GB",
+    "descricao": "Armazenamento de estado sólido para sistema e programas.",
+    "condicao": "novo",
+    "specs": {}
+  },
+  {
+    "id": "ssd-sata-1tb",
+    "categoria": "armazenamento",
+    "nome": "SSD SATA 1 TB",
+    "descricao": "Armazenamento de estado sólido com mais espaço.",
+    "condicao": "novo",
+    "specs": {}
+  },
+  {
+    "id": "ssd-nvme-500gb",
+    "categoria": "armazenamento",
+    "nome": "SSD NVMe 500 GB",
+    "descricao": "SSD NVMe M.2, muito mais rápido que o SATA.",
+    "condicao": "novo",
+    "specs": {}
+  },
+  {
+    "id": "ssd-nvme-1tb",
+    "categoria": "armazenamento",
+    "nome": "SSD NVMe 1 TB",
+    "descricao": "SSD NVMe M.2 com 1 TB de espaço.",
+    "condicao": "novo",
+    "specs": {}
+  },
+  {
+    "id": "hd-1tb",
+    "categoria": "armazenamento",
+    "nome": "HD 1 TB 7200 RPM",
+    "descricao": "Disco rígido para armazenar arquivos em grande volume.",
+    "condicao": "novo",
+    "specs": {}
+  },
+  {
+    "id": "hd-2tb",
+    "categoria": "armazenamento",
+    "nome": "HD 2 TB 7200 RPM",
+    "descricao": "Disco rígido de 2 TB para arquivos e backups.",
+    "condicao": "novo",
+    "specs": {}
+  },
+  {
+    "id": "gab-atx-vidro",
+    "categoria": "gabinete",
+    "nome": "Gabinete ATX com janela de vidro",
+    "descricao": "Para placas ATX, micro-ATX e mini-ITX.",
+    "condicao": "novo",
+    "specs": {
+      "formatos": [
+        "ATX",
+        "micro-ATX",
+        "mini-ITX"
+      ]
+    }
+  },
+  {
+    "id": "gab-microatx",
+    "categoria": "gabinete",
+    "nome": "Gabinete micro-ATX",
+    "descricao": "Para placas micro-ATX e mini-ITX.",
+    "condicao": "novo",
+    "specs": {
+      "formatos": [
+        "micro-ATX",
+        "mini-ITX"
+      ]
+    }
+  },
+  {
+    "id": "gab-atx-basico",
+    "categoria": "gabinete",
+    "nome": "Gabinete ATX básico",
+    "descricao": "Gabinete simples para placas ATX, micro-ATX e mini-ITX.",
+    "condicao": "novo",
+    "specs": {
+      "formatos": [
+        "ATX",
+        "micro-ATX",
+        "mini-ITX"
+      ]
+    }
+  }
 ]

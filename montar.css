@@ -166,10 +166,69 @@
     color: var(--prata-escuro);
 }
 
-.resumo-avisos .aviso-item {
+.analise {
+    margin-top: 6px;
+}
+
+.analise-nota {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 12px;
+    border-radius: 12px;
+    margin-bottom: 14px;
+    background: var(--marinho-escuro);
+}
+
+.analise-nota strong {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.8rem;
+}
+
+.analise-nota span {
+    font-size: 0.9rem;
+    color: var(--prata-escuro);
+}
+
+.analise-nota.analise-boa strong {
+    color: var(--verde-whats);
+}
+
+.analise-nota.analise-fraca strong {
     color: var(--laranja);
+}
+
+.analise-itens {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.analise-item {
+    display: flex;
+    gap: 10px;
     font-size: 0.88rem;
-    margin: 0 0 8px;
+}
+
+.analise-item i {
+    margin-top: 2px;
+}
+
+.analise-item p {
+    margin: 2px 0 0;
+    color: var(--prata-escuro);
+}
+
+.analise-item.nivel-ok i { color: var(--verde-whats); }
+.analise-item.nivel-aviso i { color: var(--laranja); }
+.analise-item.nivel-erro i { color: #ff5f5f; }
+.analise-item.nivel-info i { color: var(--azul-claro); }
+
+.analise-sugestao {
+    color: var(--azul-claro) !important;
 }
 
 .resumo-acoes {
