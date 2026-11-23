@@ -220,25 +220,37 @@ function carregarMontagemSalva() {
     }
 }
 
-function cartaoPeca(peca, escolhida) {
+const normalizar = (texto) =>
+    String(texto ?? "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+
+const buscas = {};
+
+function linhaPeca(peca, escolhida, termo = "") {
     const ativa = escolhida && escolhida.id === peca.id;
-    const imagem = peca.imagem
-        ? `<img src="${esc(peca.imagem)}" alt="${esc(peca.nome)}" loading="lazy">`
-        : `<i class="${ICONES_ETAPA[peca.categoria] || "fa-solid fa-box"} icone-placeholder" aria-hidden="true"></i>`;
-    const selo = peca.condicao === "usado"
-        ? '<span class="selo selo-usado">Usado</span>'
-        : '<span class="selo selo-novo">Novo</span>';
+    const texto = normalizar(`${peca.nome} ${peca.descricao}`);
+    const oculta = termo && !texto.includes(termo);
     return `
-        <article class="montador-peca${ativa ? " selecionada" : ""}">
-            <div class="montador-peca-imagem">${imagem}${selo}</div>
-            <div class="montador-peca-corpo">
-                <h3>${esc(peca.nome)}</h3>
-                <p>${esc(peca.descricao)}</p>
-                <button class="btn ${ativa ? "btn-secundario" : "btn-escolher"}" data-id="${esc(peca.id)}" data-categoria="${esc(peca.categoria)}">
-                    ${ativa ? '<i class="fa-solid fa-check"></i> Escolhida (remover)' : "Escolher"}
-                </button>
+        <li class="montador-linha${ativa ? " selecionada" : ""}" data-texto="${esc(texto)}"${oculta ? " hidden" : ""}>
+            <div class="montador-linha-info">
+                <strong>${esc(peca.nome)}</strong>
+                <span>${esc(peca.descricao)}</span>
             </div>
-        </article>`;
+            <button class="btn ${ativa ? "btn-secundario" : "btn-escolher"}" data-id="${esc(peca.id)}" data-categoria="${esc(peca.categoria)}">
+                ${ativa ? '<i class="fa-solid fa-check"></i> Escolhida' : "Escolher"}
+            </button>
+        </li>`;
+}
+
+function corpoEtapa(etapa, escolhida, opcoes) {
+    const busca = buscas[etapa.slug] || "";
+    const termo = normalizar(busca.trim());
+    const visiveis = opcoes.filter((p) => normalizar(`${p.nome} ${p.descricao}`).includes(termo)).length;
+    return `
+        <div class="montador-etapa-corpo">
+            <input type="search" class="montador-busca" data-etapa="${etapa.slug}" placeholder="Buscar ${esc(etapa.nome.toLowerCase())}..." value="${esc(busca)}" aria-label="Buscar ${esc(etapa.nome)}">
+            <ul class="montador-lista">${opcoes.map((p) => linhaPeca(p, escolhida, termo)).join("")}</ul>
+            <p class="montador-sem-resultado"${visiveis ? " hidden" : ""}>Nenhuma peça encontrada com essa busca.</p>
+        </div>`;
 }
 
 let etapaAberta = undefined;
@@ -272,8 +284,8 @@ function renderizarEtapas() {
         const aberta = etapaAberta === etapa.slug;
         const opcoes = opcoesCompativeis(etapa.slug);
         const corpo = opcoes.length === 0
-            ? '<p class="montador-aviso">Nenhuma peça compatível com as escolhas atuais.</p>'
-            : `<div class="montador-opcoes">${opcoes.map((p) => cartaoPeca(p, escolhida)).join("")}</div>`;
+            ? '<div class="montador-etapa-corpo"><p class="montador-aviso">Nenhuma peça compatível com as escolhas atuais.</p></div>'
+            : corpoEtapa(etapa, escolhida, opcoes);
         const situacao = escolhida
             ? `<span class="montador-escolhida"><i class="fa-solid fa-check"></i> ${esc(escolhida.nome)}</span>`
             : (etapa.obrigatoria ? "" : '<span class="montador-opcional">Opcional</span>');
@@ -286,7 +298,7 @@ function renderizarEtapas() {
                     ${situacao}
                     <i class="fa-solid fa-chevron-down montador-seta"></i>
                 </button>
-                ${aberta ? `<div class="montador-etapa-corpo">${corpo}</div>` : ""}
+                ${aberta ? corpo : ""}
             </section>`;
     }).join("");
 }
@@ -340,6 +352,22 @@ function renderizarTudo() {
     renderizarEtapas();
     renderizarResumo();
 }
+
+etapasEl.addEventListener("input", (e) => {
+    const campo = e.target.closest(".montador-busca");
+    if (!campo) return;
+    const slug = campo.dataset.etapa;
+    buscas[slug] = campo.value;
+    const termo = normalizar(campo.value.trim());
+    const bloco = campo.closest(".montador-etapa-corpo");
+    let visiveis = 0;
+    bloco.querySelectorAll(".montador-linha").forEach((linha) => {
+        const ok = !termo || linha.dataset.texto.includes(termo);
+        linha.hidden = !ok;
+        if (ok) visiveis++;
+    });
+    bloco.querySelector(".montador-sem-resultado").hidden = visiveis > 0;
+});
 
 etapasEl.addEventListener("click", (e) => {
     const cabecalho = e.target.closest("button[data-etapa]");
