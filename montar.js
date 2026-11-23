@@ -47,12 +47,19 @@ const analiseEl = document.getElementById("analise");
 
 const pecasDaCategoria = (slug) => PECAS.filter((p) => p.categoria === slug);
 
-// Potência mínima recomendada (margem de 20%) para o conjunto escolhido
+// Potência recomendada: consumo estimado (CPU + GPU + ~120 W de placa-mãe, memória e discos)
+// com margem de 50% para folga e estabilidade, arredondada para múltiplos de 50 W
 function potenciaNecessaria(conjunto) {
     const cpu = conjunto.processador;
     if (!cpu) return null;
-    const consumo = (cpu.specs.tdp || 0) + (conjunto.placa_video?.specs.tdp || 0) + 100;
-    return Math.ceil(consumo * 1.2);
+    const consumo = (cpu.specs.tdp || 0) + (conjunto.placa_video?.specs.tdp || 0) + 120;
+    return Math.ceil((consumo * 1.5) / 50) * 50;
+}
+
+// Placa de vídeo precisa de conector de energia PCIe, que a fonte tem que fornecer
+function conectorOk(placa, fonte) {
+    if (!placa || placa.specs.conector === "nenhum") return true;
+    return Number(fonte.specs.pcie_conectores || 0) >= 1;
 }
 
 // Uma peça é compatível se combina com todas as peças já escolhidas
@@ -73,11 +80,13 @@ function ehCompativel(candidata, categoria, conjunto = montagem) {
     if (categoria === "gabinete" && mae) return (candidata.specs.formatos || []).includes(mae.specs.formato);
     if (categoria === "fonte") {
         const necessaria = potenciaNecessaria({ ...conjunto, fonte: candidata });
-        return necessaria === null || Number(candidata.specs.potencia) >= necessaria;
+        if (necessaria !== null && Number(candidata.specs.potencia) < necessaria) return false;
+        return conectorOk(conjunto.placa_video, candidata);
     }
     if (categoria === "placa_video" && fonte) {
         const necessaria = potenciaNecessaria({ ...conjunto, placa_video: candidata });
-        return necessaria === null || Number(fonte.specs.potencia) >= necessaria;
+        if (necessaria !== null && Number(fonte.specs.potencia) < necessaria) return false;
+        return conectorOk(candidata, fonte);
     }
     return true;
 }
@@ -146,14 +155,44 @@ function analisarMontagem() {
             : { nivel: "erro", titulo: "Gabinete", texto: `O gabinete não aceita placa ${mae.specs.formato}.` });
     }
 
+    if (video && mae) {
+        const geracaoMae = Number(mae.specs.pcie);
+        const geracaoVideo = Number(video.specs.pcie);
+        if (geracaoMae < geracaoVideo) {
+            itens.push({ nivel: "aviso", titulo: "Versão PCIe", texto: `${video.nome} usa PCIe ${video.specs.pcie}, mas a placa-mãe tem PCIe ${mae.specs.pcie}. A placa de vídeo funciona, porém com perda de desempenho.`, sugestao: sugerirPlacaMaePcie(geracaoVideo) });
+        } else {
+            itens.push({ nivel: "ok", titulo: "Versão PCIe", texto: `Placa-mãe PCIe ${mae.specs.pcie} compatível com a placa de vídeo PCIe ${video.specs.pcie}.` });
+        }
+    }
+
+    if (video) {
+        if (video.specs.conector === "nenhum") {
+            itens.push({ nivel: "ok", titulo: "Energia da placa de vídeo", texto: "Esta placa é alimentada só pelo slot PCIe, sem cabo extra." });
+        } else if (!fonte) {
+            itens.push({ nivel: "info", titulo: "Energia da placa de vídeo", texto: `Esta placa precisa de conector de ${video.specs.conector}. Escolha a fonte para verificar.` });
+        } else if (conectorOk(video, fonte)) {
+            itens.push({ nivel: "ok", titulo: "Energia da placa de vídeo", texto: `A fonte tem conector PCIe para a placa (${video.specs.conector}).` });
+        } else {
+            itens.push({ nivel: "erro", titulo: "Fonte sem conector PCIe", texto: `A placa de vídeo precisa de conector de ${video.specs.conector}, e a fonte escolhida não tem.`, sugestao: sugerirFonte(0) });
+        }
+    }
+
     const necessaria = potenciaNecessaria(montagem);
     if (fonte && necessaria) {
         itens.push(Number(fonte.specs.potencia) >= necessaria
-            ? { nivel: "ok", titulo: "Fonte", texto: `${fonte.specs.potencia} W atende o consumo estimado (mínimo ${necessaria} W).` }
-            : { nivel: "erro", titulo: "Fonte insuficiente", texto: `O conjunto pede pelo menos ${necessaria} W, e a fonte tem ${fonte.specs.potencia} W.`, sugestao: sugerirFonte(necessaria) });
+            ? { nivel: "ok", titulo: "Fonte", texto: `${fonte.specs.potencia} W atende o consumo estimado com folga (recomendado: ${necessaria} W).` }
+            : { nivel: "erro", titulo: "Fonte insuficiente", texto: `O conjunto recomenda pelo menos ${necessaria} W, e a fonte tem ${fonte.specs.potencia} W.`, sugestao: sugerirFonte(necessaria) });
     }
 
     return itens;
+}
+
+function sugerirPlacaMaePcie(geracao) {
+    const cpu = montagem.processador;
+    const mae = pecasDaCategoria("placa_mae").filter((p) =>
+        Number(p.specs.pcie) >= geracao && (!cpu || p.specs.socket === cpu.specs.socket))
+        .sort((a, b) => Number(a.specs.pcie) - Number(b.specs.pcie))[0];
+    return mae ? `Opção com PCIe ${mae.specs.pcie}: ${mae.nome}.` : null;
 }
 
 function sugerirMemoria() {

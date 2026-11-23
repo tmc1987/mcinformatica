@@ -500,7 +500,8 @@
     "specs": {
       "socket": "LGA1151",
       "memoria": "DDR4",
-      "formato": "micro-ATX"
+      "formato": "micro-ATX",
+      "pcie": "3.0"
     }
   },
   {
@@ -512,7 +513,8 @@
     "specs": {
       "socket": "LGA1151",
       "memoria": "DDR4",
-      "formato": "ATX"
+      "formato": "ATX",
+      "pcie": "3.0"
     }
   },
   {
@@ -524,7 +526,8 @@
     "specs": {
       "socket": "LGA1151",
       "memoria": "DDR4",
-      "formato": "ATX"
+      "formato": "ATX",
+      "pcie": "3.0"
     }
   },
   {
@@ -536,7 +539,8 @@
     "specs": {
       "socket": "LGA1151-v2",
       "memoria": "DDR4",
-      "formato": "micro-ATX"
+      "formato": "micro-ATX",
+      "pcie": "3.0"
     }
   },
   {
@@ -548,7 +552,8 @@
     "specs": {
       "socket": "LGA1151-v2",
       "memoria": "DDR4",
-      "formato": "ATX"
+      "formato": "ATX",
+      "pcie": "3.0"
     }
   },
   {
@@ -560,7 +565,8 @@
     "specs": {
       "socket": "LGA1151-v2",
       "memoria": "DDR4",
-      "formato": "ATX"
+      "formato": "ATX",
+      "pcie": "3.0"
     }
   },
   {
@@ -572,7 +578,8 @@
     "specs": {
       "socket": "LGA1200",
       "memoria": "DDR4",
-      "formato": "micro-ATX"
+      "formato": "micro-ATX",
+      "pcie": "3.0"
     }
   },
   {
@@ -584,7 +591,8 @@
     "specs": {
       "socket": "LGA1200",
       "memoria": "DDR4",
-      "formato": "ATX"
+      "formato": "ATX",
+      "pcie": "3.0"
     }
   },
   {
@@ -596,7 +604,8 @@
     "specs": {
       "socket": "LGA1200",
       "memoria": "DDR4",
-      "formato": "ATX"
+      "formato": "ATX",
+      "pcie": "3.0"
     }
   },
   {
@@ -608,7 +617,8 @@
     "specs": {
       "socket": "LGA1700",
       "memoria": "DDR4",
-      "formato": "micro-ATX"
+      "formato": "micro-ATX",
+      "pcie": "3.0"
     }
   },
   {
@@ -620,7 +630,8 @@
     "specs": {
       "socket": "LGA1700",
       "memoria": "DDR4",
-      "formato": "ATX"
+      "formato": "ATX",
+      "pcie": "4.0"
     }
   },
   {
@@ -632,7 +643,8 @@
     "specs": {
       "socket": "LGA1700",
       "memoria": "DDR5",
-      "formato": "ATX"
+      "formato": "ATX",
+      "pcie": "4.0"
     }
   },
   {
@@ -644,7 +656,8 @@
     "specs": {
       "socket": "LGA1700",
       "memoria": "DDR5",
-      "formato": "ATX"
+      "formato": "ATX",
+      "pcie": "5.0"
     }
   },
   {
@@ -656,7 +669,8 @@
     "specs": {
       "socket": "AM3+",
       "memoria": "DDR3",
-      "formato": "ATX"
+      "formato": "ATX",
+      "pcie": "2.0"
     }
   },
   {
@@ -668,7 +682,8 @@
     "specs": {
       "socket": "FM2+",
       "memoria": "DDR3",
-      "formato": "ATX"
+      "formato": "ATX",
+      "pcie": "3.0"
     }
   },
   {
@@ -680,7 +695,8 @@
     "specs": {
       "socket": "AM4",
       "memoria": "DDR4",
-      "formato": "micro-ATX"
+      "formato": "micro-ATX",
+      "pcie": "3.0"
     }
   },
   {
@@ -692,7 +708,8 @@
     "specs": {
       "socket": "AM4",
       "memoria": "DDR4",
-      "formato": "ATX"
+      "formato": "ATX",
+      "pcie": "3.0"
     }
   },
   {
@@ -704,7 +721,8 @@
     "specs": {
       "socket": "AM4",
       "memoria": "DDR4",
-      "formato": "ATX"
+      "formato": "ATX",
+      "pcie": "4.0"
     }
   },
   {
@@ -716,7 +734,8 @@
     "specs": {
       "socket": "AM4",
       "memoria": "DDR4",
-      "formato": "ATX"
+      "formato": "ATX",
+      "pcie": "4.0"
     }
   },
   {
@@ -728,7 +747,8 @@
     "specs": {
       "socket": "AM5",
       "memoria": "DDR5",
-      "formato": "micro-ATX"
+      "formato": "micro-ATX",
+      "pcie": "4.0"
     }
   },
   {
@@ -740,7 +760,8 @@
     "specs": {
       "socket": "AM5",
       "memoria": "DDR5",
-      "formato": "ATX"
+      "formato": "ATX",
+      "pcie": "4.0"
     }
   },
   {
@@ -752,7 +773,8 @@
     "specs": {
       "socket": "AM5",
       "memoria": "DDR5",
-      "formato": "ATX"
+      "formato": "ATX",
+      "pcie": "5.0"
     }
   },
   {
@@ -829,7 +851,9 @@
     "condicao": "novo",
     "specs": {
       "tdp": 75,
-      "desempenho": 25
+      "desempenho": 25,
+      "pcie": "3.0",
+      "conector": "nenhum"
     }
   },
   {
@@ -840,7 +864,9 @@
     "condicao": "novo",
     "specs": {
       "tdp": 75,
-      "desempenho": 25
+      "desempenho": 25,
+      "pcie": "3.0",
+      "conector": "nenhum"
     }
   },
   {
@@ -851,7 +877,9 @@
     "condicao": "novo",
     "specs": {
       "tdp": 120,
-      "desempenho": 40
+      "desempenho": 40,
+      "pcie": "3.0",
+      "conector": "6 pinos"
     }
   },
   {
@@ -862,7 +890,9 @@
     "condicao": "novo",
     "specs": {
       "tdp": 125,
-      "desempenho": 48
+      "desempenho": 48,
+      "pcie": "3.0",
+      "conector": "6 pinos"
     }
   },
   {
@@ -873,7 +903,9 @@
     "condicao": "novo",
     "specs": {
       "tdp": 185,
-      "desempenho": 40
+      "desempenho": 40,
+      "pcie": "3.0",
+      "conector": "8 pinos"
     }
   },
   {
@@ -884,7 +916,9 @@
     "condicao": "novo",
     "specs": {
       "tdp": 160,
-      "desempenho": 55
+      "desempenho": 55,
+      "pcie": "3.0",
+      "conector": "8 pinos"
     }
   },
   {
@@ -895,7 +929,9 @@
     "condicao": "novo",
     "specs": {
       "tdp": 132,
-      "desempenho": 62
+      "desempenho": 62,
+      "pcie": "4.0",
+      "conector": "8 pinos"
     }
   },
   {
@@ -906,7 +942,9 @@
     "condicao": "novo",
     "specs": {
       "tdp": 170,
-      "desempenho": 66
+      "desempenho": 66,
+      "pcie": "4.0",
+      "conector": "8 pinos"
     }
   },
   {
@@ -917,7 +955,9 @@
     "condicao": "novo",
     "specs": {
       "tdp": 165,
-      "desempenho": 68
+      "desempenho": 68,
+      "pcie": "4.0",
+      "conector": "8 pinos"
     }
   },
   {
@@ -928,7 +968,9 @@
     "condicao": "novo",
     "specs": {
       "tdp": 115,
-      "desempenho": 72
+      "desempenho": 72,
+      "pcie": "4.0",
+      "conector": "8 pinos"
     }
   },
   {
@@ -938,7 +980,8 @@
     "descricao": "Para computadores básicos, sem placa de vídeo dedicada.",
     "condicao": "novo",
     "specs": {
-      "potencia": 350
+      "potencia": 350,
+      "pcie_conectores": 0
     }
   },
   {
@@ -948,7 +991,8 @@
     "descricao": "Para computadores básicos ou de entrada.",
     "condicao": "novo",
     "specs": {
-      "potencia": 450
+      "potencia": 450,
+      "pcie_conectores": 1
     }
   },
   {
@@ -958,7 +1002,8 @@
     "descricao": "Para configurações de entrada e intermediárias.",
     "condicao": "novo",
     "specs": {
-      "potencia": 500
+      "potencia": 500,
+      "pcie_conectores": 1
     }
   },
   {
@@ -968,7 +1013,8 @@
     "descricao": "Para configurações intermediárias com placa de vídeo.",
     "condicao": "novo",
     "specs": {
-      "potencia": 600
+      "potencia": 600,
+      "pcie_conectores": 2
     }
   },
   {
@@ -978,7 +1024,8 @@
     "descricao": "Para configurações com placa de vídeo intermediária ou superior.",
     "condicao": "novo",
     "specs": {
-      "potencia": 650
+      "potencia": 650,
+      "pcie_conectores": 2
     }
   },
   {
@@ -988,7 +1035,8 @@
     "descricao": "Para configurações de alto desempenho.",
     "condicao": "novo",
     "specs": {
-      "potencia": 750
+      "potencia": 750,
+      "pcie_conectores": 2
     }
   },
   {
@@ -998,7 +1046,8 @@
     "descricao": "Para configurações de alto desempenho com folga para upgrade.",
     "condicao": "novo",
     "specs": {
-      "potencia": 850
+      "potencia": 850,
+      "pcie_conectores": 4
     }
   },
   {
