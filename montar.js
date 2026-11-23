@@ -45,14 +45,6 @@ const etapasEl = document.getElementById("etapas");
 const resumoListaEl = document.getElementById("resumo-lista");
 const analiseEl = document.getElementById("analise");
 
-const esc = (texto) =>
-    String(texto ?? "")
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#39;");
-
 const pecasDaCategoria = (slug) => PECAS.filter((p) => p.categoria === slug);
 
 // Potência mínima recomendada (margem de 20%) para o conjunto escolhido

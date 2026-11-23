@@ -1,8 +1,13 @@
-/* Monte seu PC — usa as variáveis e componentes de style.css */
+/* Monte seu PC — tema claro, igual aos cards de produtos (refinamento.css) */
+
+.montador .catalogo-intro,
+.avaliacoes-secao .catalogo-intro {
+    text-align: center;
+}
 
 .montador-layout {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 320px;
+    grid-template-columns: minmax(0, 1fr) 340px;
     gap: 28px;
     align-items: start;
     margin-top: 36px;
@@ -12,17 +17,20 @@
     display: flex;
     flex-direction: column;
     gap: 22px;
+    min-width: 0;
 }
 
 .montador-etapa {
-    background: var(--marinho);
-    border: 1px solid var(--borda);
+    background: #fff;
+    border: 1px solid #dce5eb;
     border-radius: 16px;
     padding: 22px;
+    color: #10243d;
+    box-shadow: 0 12px 30px rgba(31, 58, 87, .05);
 }
 
 .montador-etapa.concluida {
-    border-color: var(--azul-claro);
+    border-color: #1461dd;
 }
 
 .montador-etapa-cabecalho {
@@ -36,10 +44,11 @@
     font-family: 'Rajdhani', sans-serif;
     font-size: 1.35rem;
     margin: 0;
+    color: #10243d;
 }
 
 .montador-etapa-cabecalho > i {
-    color: var(--azul-claro);
+    color: #1461dd;
 }
 
 .montador-numero {
@@ -49,7 +58,7 @@
     width: 28px;
     height: 28px;
     border-radius: 50%;
-    background: var(--azul);
+    background: #1461dd;
     color: #fff;
     font-weight: 700;
     font-size: 0.9rem;
@@ -58,7 +67,7 @@
 .montador-opcional {
     margin-left: auto;
     font-size: 0.8rem;
-    color: var(--prata-escuro);
+    color: #5c6c7d;
 }
 
 .montador-opcoes {
@@ -68,17 +77,17 @@
 }
 
 .montador-peca {
-    border: 1px solid var(--borda);
+    border: 1px solid #dce5eb;
     border-radius: 12px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    background: var(--marinho-claro);
+    background: #f7f9fb;
 }
 
 .montador-peca.selecionada {
-    border-color: var(--laranja);
-    box-shadow: 0 0 0 1px var(--laranja);
+    border-color: #ff8c1a;
+    box-shadow: 0 0 0 1px #ff8c1a;
 }
 
 .montador-peca-imagem {
@@ -87,7 +96,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--marinho-escuro);
+    background: #eef2f6;
 }
 
 .montador-peca-imagem img {
@@ -98,7 +107,7 @@
 
 .montador-peca-imagem .icone-placeholder {
     font-size: 2.4rem;
-    color: var(--prata-escuro);
+    color: #8794a3;
 }
 
 .montador-peca-imagem .selo {
@@ -118,11 +127,12 @@
 .montador-peca-corpo h3 {
     font-size: 1rem;
     margin: 0;
+    color: #10243d;
 }
 
 .montador-peca-corpo p {
     font-size: 0.88rem;
-    color: var(--prata-escuro);
+    color: #5c6c7d;
     margin: 0;
     flex: 1;
 }
@@ -133,23 +143,26 @@
 }
 
 .montador-aviso {
-    color: var(--prata-escuro);
+    color: #5c6c7d;
     margin: 0;
 }
 
 .montador-resumo {
     position: sticky;
     top: 90px;
-    background: var(--marinho);
-    border: 1px solid var(--borda);
+    background: #fff;
+    border: 1px solid #dce5eb;
     border-radius: 16px;
     padding: 22px;
+    color: #10243d;
+    box-shadow: 0 12px 30px rgba(31, 58, 87, .05);
 }
 
 .montador-resumo h2 {
     font-family: 'Rajdhani', sans-serif;
     font-size: 1.3rem;
     margin: 0 0 12px;
+    color: #10243d;
 }
 
 .resumo-lista {
@@ -163,7 +176,16 @@
 }
 
 .resumo-lista li.pendente {
-    color: var(--prata-escuro);
+    color: #5c6c7d;
+}
+
+.resumo-acoes {
+    margin-top: 16px;
+}
+
+.resumo-acoes .btn {
+    width: 100%;
+    justify-content: center;
 }
 
 .analise {
@@ -177,25 +199,26 @@
     padding: 12px;
     border-radius: 12px;
     margin-bottom: 14px;
-    background: var(--marinho-escuro);
+    background: #f1f5f9;
 }
 
 .analise-nota strong {
     font-family: 'Rajdhani', sans-serif;
     font-size: 1.8rem;
+    color: #10243d;
 }
 
 .analise-nota span {
     font-size: 0.9rem;
-    color: var(--prata-escuro);
+    color: #5c6c7d;
 }
 
 .analise-nota.analise-boa strong {
-    color: var(--verde-whats);
+    color: #15803d;
 }
 
 .analise-nota.analise-fraca strong {
-    color: var(--laranja);
+    color: #c2410c;
 }
 
 .analise-itens {
@@ -211,6 +234,7 @@
     display: flex;
     gap: 10px;
     font-size: 0.88rem;
+    color: #10243d;
 }
 
 .analise-item i {
@@ -219,28 +243,16 @@
 
 .analise-item p {
     margin: 2px 0 0;
-    color: var(--prata-escuro);
+    color: #5c6c7d;
 }
 
-.analise-item.nivel-ok i { color: var(--verde-whats); }
-.analise-item.nivel-aviso i { color: var(--laranja); }
-.analise-item.nivel-erro i { color: #ff5f5f; }
-.analise-item.nivel-info i { color: var(--azul-claro); }
+.analise-item.nivel-ok i { color: #15803d; }
+.analise-item.nivel-aviso i { color: #c2410c; }
+.analise-item.nivel-erro i { color: #b91c1c; }
+.analise-item.nivel-info i { color: #1461dd; }
 
 .analise-sugestao {
-    color: var(--azul-claro) !important;
-}
-
-.resumo-acoes {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 16px;
-}
-
-.resumo-acoes .btn {
-    width: 100%;
-    justify-content: center;
+    color: #1461dd !important;
 }
 
 .avaliacoes-layout {
@@ -258,10 +270,11 @@
 }
 
 .avaliacao {
-    background: var(--marinho);
-    border: 1px solid var(--borda);
+    background: #fff;
+    border: 1px solid #dce5eb;
     border-radius: 14px;
     padding: 18px;
+    color: #10243d;
 }
 
 .avaliacao header {
@@ -273,7 +286,7 @@
 }
 
 .avaliacao-nota {
-    color: var(--laranja);
+    color: #ff8c1a;
     letter-spacing: 2px;
 }
 
@@ -291,25 +304,28 @@
 
 .avaliacao-montagem {
     font-size: 0.85rem;
-    color: var(--prata-escuro);
+    color: #5c6c7d;
     padding-left: 18px;
     margin: 0;
 }
 
 .form-avaliacao {
-    background: var(--marinho);
-    border: 1px solid var(--borda);
+    background: #fff;
+    border: 1px solid #dce5eb;
     border-radius: 16px;
     padding: 22px;
     display: flex;
     flex-direction: column;
     gap: 14px;
+    color: #10243d;
+    box-shadow: 0 12px 30px rgba(31, 58, 87, .05);
 }
 
 .form-avaliacao h3 {
     font-family: 'Rajdhani', sans-serif;
     margin: 0;
     font-size: 1.3rem;
+    color: #10243d;
 }
 
 .form-avaliacao label {
@@ -317,14 +333,15 @@
     flex-direction: column;
     gap: 6px;
     font-size: 0.9rem;
+    color: #10243d;
 }
 
 .form-avaliacao input,
 .form-avaliacao select,
 .form-avaliacao textarea {
-    background: var(--marinho-escuro);
-    color: var(--branco);
-    border: 1px solid var(--borda);
+    background: #f7f9fb;
+    color: #10243d;
+    border: 1px solid #cddbe6;
     border-radius: 8px;
     padding: 9px 11px;
     font: inherit;
@@ -333,11 +350,11 @@
 .aviso-avaliacao {
     margin: 0;
     font-size: 0.9rem;
-    color: var(--prata);
+    color: #5c6c7d;
 }
 
 .aviso-avaliacao[data-tipo="erro"] {
-    color: var(--laranja);
+    color: #c2410c;
 }
 
 @media (max-width: 900px) {
