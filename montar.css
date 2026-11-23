@@ -1,0 +1,293 @@
+/* Monte seu PC — usa as variáveis e componentes de style.css */
+
+.montador-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 320px;
+    gap: 28px;
+    align-items: start;
+    margin-top: 36px;
+}
+
+.montador-etapas {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.montador-etapa {
+    background: var(--marinho);
+    border: 1px solid var(--borda);
+    border-radius: 16px;
+    padding: 22px;
+}
+
+.montador-etapa.concluida {
+    border-color: var(--azul-claro);
+}
+
+.montador-etapa-cabecalho {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.montador-etapa-cabecalho h2 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.35rem;
+    margin: 0;
+}
+
+.montador-etapa-cabecalho > i {
+    color: var(--azul-claro);
+}
+
+.montador-numero {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--azul);
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.montador-opcional {
+    margin-left: auto;
+    font-size: 0.8rem;
+    color: var(--prata-escuro);
+}
+
+.montador-opcoes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 14px;
+}
+
+.montador-peca {
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background: var(--marinho-claro);
+}
+
+.montador-peca.selecionada {
+    border-color: var(--laranja);
+    box-shadow: 0 0 0 1px var(--laranja);
+}
+
+.montador-peca-imagem {
+    position: relative;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--marinho-escuro);
+}
+
+.montador-peca-imagem img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.montador-peca-imagem .icone-placeholder {
+    font-size: 2.4rem;
+    color: var(--prata-escuro);
+}
+
+.montador-peca-imagem .selo {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+}
+
+.montador-peca-corpo {
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+.montador-peca-corpo h3 {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.montador-peca-corpo p {
+    font-size: 0.88rem;
+    color: var(--prata-escuro);
+    margin: 0;
+    flex: 1;
+}
+
+.montador-peca-corpo .btn {
+    width: 100%;
+    justify-content: center;
+}
+
+.montador-aviso {
+    color: var(--prata-escuro);
+    margin: 0;
+}
+
+.montador-resumo {
+    position: sticky;
+    top: 90px;
+    background: var(--marinho);
+    border: 1px solid var(--borda);
+    border-radius: 16px;
+    padding: 22px;
+}
+
+.montador-resumo h2 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.3rem;
+    margin: 0 0 12px;
+}
+
+.resumo-lista {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 0.92rem;
+}
+
+.resumo-lista li.pendente {
+    color: var(--prata-escuro);
+}
+
+.resumo-avisos .aviso-item {
+    color: var(--laranja);
+    font-size: 0.88rem;
+    margin: 0 0 8px;
+}
+
+.resumo-acoes {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.resumo-acoes .btn {
+    width: 100%;
+    justify-content: center;
+}
+
+.avaliacoes-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 360px;
+    gap: 28px;
+    align-items: start;
+    margin-top: 36px;
+}
+
+.avaliacoes-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.avaliacao {
+    background: var(--marinho);
+    border: 1px solid var(--borda);
+    border-radius: 14px;
+    padding: 18px;
+}
+
+.avaliacao header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.avaliacao-nota {
+    color: var(--laranja);
+    letter-spacing: 2px;
+}
+
+.avaliacao p {
+    margin: 0 0 10px;
+}
+
+.avaliacao-foto {
+    display: block;
+    max-width: 100%;
+    max-height: 280px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.avaliacao-montagem {
+    font-size: 0.85rem;
+    color: var(--prata-escuro);
+    padding-left: 18px;
+    margin: 0;
+}
+
+.form-avaliacao {
+    background: var(--marinho);
+    border: 1px solid var(--borda);
+    border-radius: 16px;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.form-avaliacao h3 {
+    font-family: 'Rajdhani', sans-serif;
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+.form-avaliacao label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 0.9rem;
+}
+
+.form-avaliacao input,
+.form-avaliacao select,
+.form-avaliacao textarea {
+    background: var(--marinho-escuro);
+    color: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    padding: 9px 11px;
+    font: inherit;
+}
+
+.aviso-avaliacao {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--prata);
+}
+
+.aviso-avaliacao[data-tipo="erro"] {
+    color: var(--laranja);
+}
+
+@media (max-width: 900px) {
+    .montador-layout,
+    .avaliacoes-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .montador-resumo {
+        position: static;
+    }
+}
