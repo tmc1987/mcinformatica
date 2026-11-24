@@ -2078,5 +2078,304 @@
       "potencia": 1200,
       "pcie_conectores": 6
     }
+  },
+  {
+    "id": "gpu-rx580-4gb",
+    "categoria": "placa_video",
+    "nome": "AMD Radeon RX 580 4 GB",
+    "descricao": "Placa AMD (2017), jogos em Full HD leves.",
+    "condicao": "novo",
+    "specs": {
+      "desempenho": 34,
+      "tdp": 120,
+      "pcie": "3.0",
+      "conector": "6 pinos"
+    }
+  },
+  {
+    "id": "gpu-rtx2080",
+    "categoria": "placa_video",
+    "nome": "NVIDIA GeForce RTX 2080 8 GB",
+    "descricao": "Placa topo com ray tracing (2018), jogos em 1440p.",
+    "condicao": "novo",
+    "specs": {
+      "desempenho": 70,
+      "tdp": 215,
+      "pcie": "3.0",
+      "conector": "2x 8 pinos"
+    }
+  },
+  {
+    "id": "gpu-rtx2080ti",
+    "categoria": "placa_video",
+    "nome": "NVIDIA GeForce RTX 2080 Ti 11 GB",
+    "descricao": "Placa topo da gera��o Turing (2018), jogos em 1440p e 4K leves.",
+    "condicao": "novo",
+    "specs": {
+      "desempenho": 80,
+      "tdp": 250,
+      "pcie": "3.0",
+      "conector": "2x 8 pinos"
+    }
+  },
+  {
+    "id": "gpu-rtx4060ti16",
+    "categoria": "placa_video",
+    "nome": "NVIDIA GeForce RTX 4060 Ti 16 GB",
+    "descricao": "Placa NVIDIA (2023), mais mem�ria para jogos e edi��o.",
+    "condicao": "novo",
+    "specs": {
+      "desempenho": 80,
+      "tdp": 165,
+      "pcie": "4.0",
+      "conector": "8 pinos"
+    }
+  },
+  {
+    "id": "gpu-rtx4070ti",
+    "categoria": "placa_video",
+    "nome": "NVIDIA GeForce RTX 4070 Ti 12 GB",
+    "descricao": "Placa NVIDIA (2023), jogos em 1440p e 4K leve.",
+    "condicao": "novo",
+    "specs": {
+      "desempenho": 90,
+      "tdp": 285,
+      "pcie": "4.0",
+      "conector": "12VHPWR"
+    }
+  },
+  {
+    "id": "gpu-rtx4070ti-s",
+    "categoria": "placa_video",
+    "nome": "NVIDIA GeForce RTX 4070 Ti SUPER 16 GB",
+    "descricao": "Placa NVIDIA (2024), jogos em 4K leve e 1440p.",
+    "condicao": "novo",
+    "specs": {
+      "desempenho": 93,
+      "tdp": 285,
+      "pcie": "4.0",
+      "conector": "12VHPWR"
+    }
+  },
+  {
+    "id": "gpu-rtx5050",
+    "categoria": "placa_video",
+    "nome": "NVIDIA GeForce RTX 5050 8 GB",
+    "descricao": "Placa de entrada NVIDIA (2025), ray tracing e DLSS 4, jogos em Full HD.",
+    "condicao": "novo",
+    "specs": {
+      "desempenho": 66,
+      "tdp": 130,
+      "pcie": "5.0",
+      "conector": "8 pinos"
+    }
+  },
+  {
+    "id": "gpu-rtx5060",
+    "categoria": "placa_video",
+    "nome": "NVIDIA GeForce RTX 5060 8 GB",
+    "descricao": "Placa NVIDIA (2025), jogos em Full HD e 1440p leves, DLSS 4.",
+    "condicao": "novo",
+    "specs": {
+      "desempenho": 80,
+      "tdp": 145,
+      "pcie": "5.0",
+      "conector": "8 pinos"
+    }
+  },
+  {
+    "id": "gpu-rtx5060ti-8",
+    "categoria": "placa_video",
+    "nome": "NVIDIA GeForce RTX 5060 Ti 8 GB",
+    "descricao": "Placa NVIDIA (2025), jogos em 1440p, DLSS 4.",
+    "condicao": "novo",
+    "specs": {
+      "desempenho": 84,
+      "tdp": 150,
+      "pcie": "5.0",
+      "conector": "8 pinos"
+    }
+  },
+  {
+    "id": "gpu-rtx5060ti-16",
+    "categoria": "placa_video",
+    "nome": "NVIDIA GeForce RTX 5060 Ti 16 GB",
+    "descricao": "Placa NVIDIA (2025), jogos em 1440p com mais mem�ria.",
+    "condicao": "novo",
+    "specs": {
+      "desempenho": 88,
+      "tdp": 180,
+      "pcie": "5.0",
+      "conector": "8 pinos"
+    }
+  },
+  {
+    "id": "gpu-rtx5070",
+    "categoria": "placa_video",
+    "nome": "NVIDIA GeForce RTX 5070 12 GB",
+    "descricao": "Placa NVIDIA (2025), jogos em 1440p e 4K leve.",
+    "condicao": "novo",
+    "specs": {
+      "desempenho": 93,
+      "tdp": 250,
+      "pcie": "5.0",
+      "conector": "12V-2x6"
+    }
+  },
+  {
+    "id": "gpu-rtx5070ti",
+    "categoria": "placa_video",
+    "nome": "NVIDIA GeForce RTX 5070 Ti 16 GB",
+    "descricao": "Placa NVIDIA (2025), jogos em 4K leve e 1440p.",
+    "condicao": "novo",
+    "specs": {
+      "desempenho": 97,
+      "tdp": 300,
+      "pcie": "5.0",
+      "conector": "12V-2x6"
+    }
+  },
+  {
+    "id": "gpu-rtx5080",
+    "categoria": "placa_video",
+    "nome": "NVIDIA GeForce RTX 5080 16 GB",
+    "descricao": "Placa NVIDIA topo de linha (2025), jogos em 4K.",
+    "condicao": "novo",
+    "specs": {
+      "desempenho": 99,
+      "tdp": 360,
+      "pcie": "5.0",
+      "conector": "12V-2x6"
+    }
+  },
+  {
+    "id": "gpu-rtx5090",
+    "categoria": "placa_video",
+    "nome": "NVIDIA GeForce RTX 5090 32 GB",
+    "descricao": "Placa mais potente da linha (2025), jogos em 4K e cria��o de conte�do.",
+    "condicao": "novo",
+    "specs": {
+      "desempenho": 100,
+      "tdp": 575,
+      "pcie": "5.0",
+      "conector": "12V-2x6"
+    }
+  },
+  {
+    "id": "gpu-rx7600xt",
+    "categoria": "placa_video",
+    "nome": "AMD Radeon RX 7600 XT 16 GB",
+    "descricao": "Placa AMD (2024), jogos em 1440p leves.",
+    "condicao": "novo",
+    "specs": {
+      "desempenho": 70,
+      "tdp": 190,
+      "pcie": "4.0",
+      "conector": "8 pinos"
+    }
+  },
+  {
+    "id": "gpu-rx7900gre",
+    "categoria": "placa_video",
+    "nome": "AMD Radeon RX 7900 GRE 16 GB",
+    "descricao": "Placa AMD (2023), jogos em 1440p e 4K leve.",
+    "condicao": "novo",
+    "specs": {
+      "desempenho": 88,
+      "tdp": 260,
+      "pcie": "4.0",
+      "conector": "2x 8 pinos"
+    }
+  },
+  {
+    "id": "gpu-rx6750xt",
+    "categoria": "placa_video",
+    "nome": "AMD Radeon RX 6750 XT 12 GB",
+    "descricao": "Placa AMD (2022), jogos em 1440p.",
+    "condicao": "novo",
+    "specs": {
+      "desempenho": 76,
+      "tdp": 250,
+      "pcie": "4.0",
+      "conector": "2x 8 pinos"
+    }
+  },
+  {
+    "id": "gpu-rx9060xt-8",
+    "categoria": "placa_video",
+    "nome": "AMD Radeon RX 9060 XT 8 GB",
+    "descricao": "Placa AMD RDNA 4 (2025), jogos em Full HD e 1440p.",
+    "condicao": "novo",
+    "specs": {
+      "desempenho": 74,
+      "tdp": 150,
+      "pcie": "5.0",
+      "conector": "8 pinos"
+    }
+  },
+  {
+    "id": "gpu-rx9060xt-16",
+    "categoria": "placa_video",
+    "nome": "AMD Radeon RX 9060 XT 16 GB",
+    "descricao": "Placa AMD RDNA 4 (2025), jogos em 1440p.",
+    "condicao": "novo",
+    "specs": {
+      "desempenho": 80,
+      "tdp": 160,
+      "pcie": "5.0",
+      "conector": "8 pinos"
+    }
+  },
+  {
+    "id": "gpu-rx9070",
+    "categoria": "placa_video",
+    "nome": "AMD Radeon RX 9070 16 GB",
+    "descricao": "Placa AMD RDNA 4 (2025), jogos em 1440p e 4K leve.",
+    "condicao": "novo",
+    "specs": {
+      "desempenho": 90,
+      "tdp": 220,
+      "pcie": "5.0",
+      "conector": "2x 8 pinos"
+    }
+  },
+  {
+    "id": "gpu-rx9070xt",
+    "categoria": "placa_video",
+    "nome": "AMD Radeon RX 9070 XT 16 GB",
+    "descricao": "Placa AMD RDNA 4 topo (2025), jogos em 1440p e 4K leve.",
+    "condicao": "novo",
+    "specs": {
+      "desempenho": 95,
+      "tdp": 304,
+      "pcie": "5.0",
+      "conector": "2x 8 pinos"
+    }
+  },
+  {
+    "id": "gpu-arc-b570",
+    "categoria": "placa_video",
+    "nome": "Intel Arc B570 10 GB",
+    "descricao": "Placa Intel (2025), jogos em Full HD.",
+    "condicao": "novo",
+    "specs": {
+      "desempenho": 66,
+      "tdp": 150,
+      "pcie": "4.0",
+      "conector": "8 pinos"
+    }
+  },
+  {
+    "id": "gpu-arc-b580",
+    "categoria": "placa_video",
+    "nome": "Intel Arc B580 12 GB",
+    "descricao": "Placa Intel (2024), jogos em Full HD e 1440p leves.",
+    "condicao": "novo",
+    "specs": {
+      "desempenho": 74,
+      "tdp": 190,
+      "pcie": "4.0",
+      "conector": "8 pinos"
+    }
   }
 ]
