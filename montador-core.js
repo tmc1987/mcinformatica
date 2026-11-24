@@ -49,10 +49,18 @@ function potenciaNecessaria(conjunto) {
     return Math.ceil((consumo * 1.5) / 50) * 50;
 }
 
-// Placa de vídeo que precisa de cabo exige fonte com conector PCIe
+// Quantos cabos PCIe a placa exige: "nenhum" = 0, "8 pinos" = 1, "2x 8 pinos" = 2, "3x 8 pinos" = 3
+function conectoresNecessarios(conector) {
+    if (!conector || conector === "nenhum") return 0;
+    const multiplo = String(conector).match(/^(\d)x/);
+    return multiplo ? Number(multiplo[1]) : 1;
+}
+
+// Placa de vídeo que precisa de cabo exige fonte com a quantidade de conectores PCIe
 function conectorOk(placa, fonte) {
-    if (!placa || placa.specs.conector === "nenhum") return true;
-    return Number(fonte.specs.pcie_conectores || 0) >= 1;
+    const necessarios = conectoresNecessarios(placa?.specs.conector);
+    if (!necessarios) return true;
+    return Number(fonte.specs.pcie_conectores || 0) >= necessarios;
 }
 
 // Uma peça é compatível se combina com as demais peças já escolhidas

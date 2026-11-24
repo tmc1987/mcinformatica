@@ -1146,5 +1146,937 @@
         "mini-ITX"
       ]
     }
+  },
+  {
+    "id": "mb-lga1151-prime-z170-a",
+    "categoria": "placa_mae",
+    "nome": "Placa-m�e ASUS Prime Z170-A (LGA1151)",
+    "descricao": "Para processadores Intel 6� e 7� gera��o, DDR4, ATX, com overclock.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "LGA1151",
+      "memoria": "DDR4",
+      "formato": "ATX",
+      "pcie": "3.0"
+    }
+  },
+  {
+    "id": "mb-lga1151-b250m-pro-vdh",
+    "categoria": "placa_mae",
+    "nome": "Placa-m�e MSI B250M PRO-VDH (LGA1151)",
+    "descricao": "Para processadores Intel 6� e 7� gera��o, DDR4, micro-ATX.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "LGA1151",
+      "memoria": "DDR4",
+      "formato": "micro-ATX",
+      "pcie": "3.0"
+    }
+  },
+  {
+    "id": "mb-lga1151-h110m-s2",
+    "categoria": "placa_mae",
+    "nome": "Placa-m�e Gigabyte H110M-S2 (LGA1151)",
+    "descricao": "Para processadores Intel 6� e 7� gera��o, DDR4, micro-ATX.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "LGA1151",
+      "memoria": "DDR4",
+      "formato": "micro-ATX",
+      "pcie": "3.0"
+    }
+  },
+  {
+    "id": "mb-lga1151-b250m-pro4",
+    "categoria": "placa_mae",
+    "nome": "Placa-m�e ASRock B250M Pro4 (LGA1151)",
+    "descricao": "Para processadores Intel 6� e 7� gera��o, DDR4, micro-ATX.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "LGA1151",
+      "memoria": "DDR4",
+      "formato": "micro-ATX",
+      "pcie": "3.0"
+    }
+  },
+  {
+    "id": "mb-lga1151v2-b360m-mortar",
+    "categoria": "placa_mae",
+    "nome": "Placa-m�e MSI B360M MORTAR (LGA1151 v2)",
+    "descricao": "Para processadores Intel 8� e 9� gera��o, DDR4, micro-ATX.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "LGA1151-v2",
+      "memoria": "DDR4",
+      "formato": "micro-ATX",
+      "pcie": "3.0"
+    }
+  },
+  {
+    "id": "mb-lga1151v2-prime-b360-plus",
+    "categoria": "placa_mae",
+    "nome": "Placa-m�e ASUS Prime B360-Plus (LGA1151 v2)",
+    "descricao": "Para processadores Intel 8� e 9� gera��o, DDR4, ATX.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "LGA1151-v2",
+      "memoria": "DDR4",
+      "formato": "ATX",
+      "pcie": "3.0"
+    }
+  },
+  {
+    "id": "mb-lga1151v2-z390-ud",
+    "categoria": "placa_mae",
+    "nome": "Placa-m�e Gigabyte Z390 UD (LGA1151 v2)",
+    "descricao": "Para processadores Intel 8� e 9� gera��o, DDR4, ATX, com overclock.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "LGA1151-v2",
+      "memoria": "DDR4",
+      "formato": "ATX",
+      "pcie": "3.0"
+    }
+  },
+  {
+    "id": "mb-lga1151v2-h310m-hdv",
+    "categoria": "placa_mae",
+    "nome": "Placa-m�e ASRock H310M-HDV (LGA1151 v2)",
+    "descricao": "Para processadores Intel 8� e 9� gera��o, DDR4, micro-ATX.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "LGA1151-v2",
+      "memoria": "DDR4",
+      "formato": "micro-ATX",
+      "pcie": "3.0"
+    }
+  },
+  {
+    "id": "mb-lga1200-b460m-mortar",
+    "categoria": "placa_mae",
+    "nome": "Placa-m�e MSI B460M MORTAR (LGA1200)",
+    "descricao": "Para processadores Intel 10� e 11� gera��o, DDR4, micro-ATX.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "LGA1200",
+      "memoria": "DDR4",
+      "formato": "micro-ATX",
+      "pcie": "3.0"
+    }
+  },
+  {
+    "id": "mb-lga1200-tuf-b460-plus",
+    "categoria": "placa_mae",
+    "nome": "Placa-m�e ASUS TUF Gaming B460-Plus (LGA1200)",
+    "descricao": "Para processadores Intel 10� e 11� gera��o, DDR4, ATX.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "LGA1200",
+      "memoria": "DDR4",
+      "formato": "ATX",
+      "pcie": "3.0"
+    }
+  },
+  {
+    "id": "mb-lga1200-z490-aorus-elite",
+    "categoria": "placa_mae",
+    "nome": "Placa-m�e Gigabyte Z490 AORUS ELITE (LGA1200)",
+    "descricao": "Para processadores Intel 10� e 11� gera��o, DDR4, ATX, com overclock.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "LGA1200",
+      "memoria": "DDR4",
+      "formato": "ATX",
+      "pcie": "3.0"
+    }
+  },
+  {
+    "id": "mb-lga1200-h510m-hdv",
+    "categoria": "placa_mae",
+    "nome": "Placa-m�e ASRock H510M-HDV (LGA1200)",
+    "descricao": "Para processadores Intel 10� e 11� gera��o, DDR4, micro-ATX.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "LGA1200",
+      "memoria": "DDR4",
+      "formato": "micro-ATX",
+      "pcie": "3.0"
+    }
+  },
+  {
+    "id": "mb-lga1700-b660m-mortar-ddr4",
+    "categoria": "placa_mae",
+    "nome": "Placa-m�e MSI PRO B660M-A DDR4 (LGA1700)",
+    "descricao": "Para processadores Intel 12� a 14� gera��o, mem�ria DDR4, micro-ATX, PCIe 4.0.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "LGA1700",
+      "memoria": "DDR4",
+      "formato": "micro-ATX",
+      "pcie": "4.0"
+    }
+  },
+  {
+    "id": "mb-lga1700-b660-ds3h-ddr4",
+    "categoria": "placa_mae",
+    "nome": "Placa-m�e Gigabyte B660 DS3H DDR4 (LGA1700)",
+    "descricao": "Para processadores Intel 12� a 14� gera��o, mem�ria DDR4, ATX, PCIe 4.0.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "LGA1700",
+      "memoria": "DDR4",
+      "formato": "ATX",
+      "pcie": "4.0"
+    }
+  },
+  {
+    "id": "mb-lga1700-h610m-hdv-ddr4",
+    "categoria": "placa_mae",
+    "nome": "Placa-m�e ASRock H610M-HDV DDR4 (LGA1700)",
+    "descricao": "Para processadores Intel 12� a 14� gera��o, mem�ria DDR4, micro-ATX.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "LGA1700",
+      "memoria": "DDR4",
+      "formato": "micro-ATX",
+      "pcie": "3.0"
+    }
+  },
+  {
+    "id": "mb-lga1700-b760-prime-plus-ddr5",
+    "categoria": "placa_mae",
+    "nome": "Placa-m�e ASUS Prime B760-Plus DDR5 (LGA1700)",
+    "descricao": "Para processadores Intel 12� a 14� gera��o, mem�ria DDR5, ATX, PCIe 4.0.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "LGA1700",
+      "memoria": "DDR5",
+      "formato": "ATX",
+      "pcie": "4.0"
+    }
+  },
+  {
+    "id": "mb-lga1700-z790-tomahawk-ddr5",
+    "categoria": "placa_mae",
+    "nome": "Placa-m�e MSI MAG Z790 TOMAHAWK WIFI DDR5 (LGA1700)",
+    "descricao": "Para processadores Intel 12� a 14� gera��o, mem�ria DDR5, ATX, com overclock e PCIe 5.0.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "LGA1700",
+      "memoria": "DDR5",
+      "formato": "ATX",
+      "pcie": "5.0"
+    }
+  },
+  {
+    "id": "mb-lga1700-b760m-aorus-elite-ddr5",
+    "categoria": "placa_mae",
+    "nome": "Placa-m�e Gigabyte B760M AORUS ELITE AX DDR5 (LGA1700)",
+    "descricao": "Para processadores Intel 12� a 14� gera��o, mem�ria DDR5, micro-ATX, PCIe 4.0.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "LGA1700",
+      "memoria": "DDR5",
+      "formato": "micro-ATX",
+      "pcie": "4.0"
+    }
+  },
+  {
+    "id": "mb-lga1700-z790-strix-e-ddr5",
+    "categoria": "placa_mae",
+    "nome": "Placa-m�e ASUS ROG STRIX Z790-E GAMING WIFI DDR5 (LGA1700)",
+    "descricao": "Para processadores Intel 12� a 14� gera��o, mem�ria DDR5, ATX, topo de linha, PCIe 5.0.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "LGA1700",
+      "memoria": "DDR5",
+      "formato": "ATX",
+      "pcie": "5.0"
+    }
+  },
+  {
+    "id": "mb-am4-prime-a320m-k",
+    "categoria": "placa_mae",
+    "nome": "Placa-m�e ASUS Prime A320M-K (AM4)",
+    "descricao": "Para processadores AMD AM4, mem�ria DDR4, micro-ATX.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "AM4",
+      "memoria": "DDR4",
+      "formato": "micro-ATX",
+      "pcie": "3.0"
+    }
+  },
+  {
+    "id": "mb-am4-b450m-pro-vdh-max",
+    "categoria": "placa_mae",
+    "nome": "Placa-m�e MSI B450M PRO-VDH MAX (AM4)",
+    "descricao": "Para processadores AMD AM4, mem�ria DDR4, micro-ATX.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "AM4",
+      "memoria": "DDR4",
+      "formato": "micro-ATX",
+      "pcie": "3.0"
+    }
+  },
+  {
+    "id": "mb-am4-b450-aorus-pro",
+    "categoria": "placa_mae",
+    "nome": "Placa-m�e Gigabyte B450 AORUS PRO (AM4)",
+    "descricao": "Para processadores AMD AM4, mem�ria DDR4, ATX.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "AM4",
+      "memoria": "DDR4",
+      "formato": "ATX",
+      "pcie": "3.0"
+    }
+  },
+  {
+    "id": "mb-am4-tuf-b550-plus",
+    "categoria": "placa_mae",
+    "nome": "Placa-m�e ASUS TUF Gaming B550-Plus (AM4)",
+    "descricao": "Para processadores AMD AM4, mem�ria DDR4, ATX, com PCIe 4.0.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "AM4",
+      "memoria": "DDR4",
+      "formato": "ATX",
+      "pcie": "4.0"
+    }
+  },
+  {
+    "id": "mb-am4-b550m-aorus-elite",
+    "categoria": "placa_mae",
+    "nome": "Placa-m�e Gigabyte B550M AORUS ELITE (AM4)",
+    "descricao": "Para processadores AMD AM4, mem�ria DDR4, micro-ATX, com PCIe 4.0.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "AM4",
+      "memoria": "DDR4",
+      "formato": "micro-ATX",
+      "pcie": "4.0"
+    }
+  },
+  {
+    "id": "mb-am4-b550-tomahawk",
+    "categoria": "placa_mae",
+    "nome": "Placa-m�e MSI MAG B550 TOMAHAWK (AM4)",
+    "descricao": "Para processadores AMD AM4, mem�ria DDR4, ATX, com PCIe 4.0.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "AM4",
+      "memoria": "DDR4",
+      "formato": "ATX",
+      "pcie": "4.0"
+    }
+  },
+  {
+    "id": "mb-am4-x570-phantom-gaming-4",
+    "categoria": "placa_mae",
+    "nome": "Placa-m�e ASRock X570 Phantom Gaming 4 (AM4)",
+    "descricao": "Para processadores AMD AM4, mem�ria DDR4, ATX, com PCIe 4.0.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "AM4",
+      "memoria": "DDR4",
+      "formato": "ATX",
+      "pcie": "4.0"
+    }
+  },
+  {
+    "id": "mb-am4-x570-strix-e",
+    "categoria": "placa_mae",
+    "nome": "Placa-m�e ASUS ROG STRIX X570-E GAMING (AM4)",
+    "descricao": "Para processadores AMD AM4, mem�ria DDR4, ATX, topo de linha, PCIe 4.0.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "AM4",
+      "memoria": "DDR4",
+      "formato": "ATX",
+      "pcie": "4.0"
+    }
+  },
+  {
+    "id": "mb-am3-m5a97-r2",
+    "categoria": "placa_mae",
+    "nome": "Placa-m�e ASUS M5A97 R2.0 (AM3+)",
+    "descricao": "Para processadores AMD AM3+, mem�ria DDR3, ATX.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "AM3+",
+      "memoria": "DDR3",
+      "formato": "ATX",
+      "pcie": "2.0"
+    }
+  },
+  {
+    "id": "mb-am3-ga-990fxa-ud3",
+    "categoria": "placa_mae",
+    "nome": "Placa-m�e Gigabyte GA-990FXA-UD3 (AM3+)",
+    "descricao": "Para processadores AMD AM3+, mem�ria DDR3, ATX.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "AM3+",
+      "memoria": "DDR3",
+      "formato": "ATX",
+      "pcie": "2.0"
+    }
+  },
+  {
+    "id": "mb-fm2-a88xm-plus",
+    "categoria": "placa_mae",
+    "nome": "Placa-m�e ASUS A88XM-PLUS (FM2+)",
+    "descricao": "Para APUs AMD FM2+, mem�ria DDR3, micro-ATX.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "FM2+",
+      "memoria": "DDR3",
+      "formato": "micro-ATX",
+      "pcie": "3.0"
+    }
+  },
+  {
+    "id": "mb-fm2-ga-f2a88x-d3h",
+    "categoria": "placa_mae",
+    "nome": "Placa-m�e Gigabyte GA-F2A88X-D3H (FM2+)",
+    "descricao": "Para APUs AMD FM2+, mem�ria DDR3, ATX.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "FM2+",
+      "memoria": "DDR3",
+      "formato": "ATX",
+      "pcie": "3.0"
+    }
+  },
+  {
+    "id": "mb-am5-a620m-k",
+    "categoria": "placa_mae",
+    "nome": "Placa-m�e ASUS Prime A620M-K (AM5)",
+    "descricao": "Para processadores AMD AM5, mem�ria DDR5, micro-ATX.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "AM5",
+      "memoria": "DDR5",
+      "formato": "micro-ATX",
+      "pcie": "4.0"
+    }
+  },
+  {
+    "id": "mb-am5-b650m-prime",
+    "categoria": "placa_mae",
+    "nome": "Placa-m�e ASUS Prime B650M-A (AM5)",
+    "descricao": "Para processadores AMD AM5, mem�ria DDR5, micro-ATX, com PCIe 4.0.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "AM5",
+      "memoria": "DDR5",
+      "formato": "micro-ATX",
+      "pcie": "4.0"
+    }
+  },
+  {
+    "id": "mb-am5-b650-pro-wifi",
+    "categoria": "placa_mae",
+    "nome": "Placa-m�e MSI PRO B650-P WIFI (AM5)",
+    "descricao": "Para processadores AMD AM5, mem�ria DDR5, ATX, com PCIe 4.0.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "AM5",
+      "memoria": "DDR5",
+      "formato": "ATX",
+      "pcie": "4.0"
+    }
+  },
+  {
+    "id": "mb-am5-b650-aorus-elite-ax",
+    "categoria": "placa_mae",
+    "nome": "Placa-m�e Gigabyte B650 AORUS ELITE AX (AM5)",
+    "descricao": "Para processadores AMD AM5, mem�ria DDR5, ATX, com PCIe 4.0.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "AM5",
+      "memoria": "DDR5",
+      "formato": "ATX",
+      "pcie": "4.0"
+    }
+  },
+  {
+    "id": "mb-am5-x670e-strix",
+    "categoria": "placa_mae",
+    "nome": "Placa-m�e ASUS ROG STRIX X670E-E GAMING WIFI (AM5)",
+    "descricao": "Para processadores AMD AM5, mem�ria DDR5, ATX, topo de linha, PCIe 5.0.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "AM5",
+      "memoria": "DDR5",
+      "formato": "ATX",
+      "pcie": "5.0"
+    }
+  },
+  {
+    "id": "mb-am5-x670e-tomahawk",
+    "categoria": "placa_mae",
+    "nome": "Placa-m�e MSI MAG X670E TOMAHAWK WIFI (AM5)",
+    "descricao": "Para processadores AMD AM5, mem�ria DDR5, ATX, com PCIe 5.0.",
+    "condicao": "novo",
+    "specs": {
+      "socket": "AM5",
+      "memoria": "DDR5",
+      "formato": "ATX",
+      "pcie": "5.0"
+    }
+  },
+  {
+    "id": "gpu-gtx1050-2gb",
+    "categoria": "placa_video",
+    "nome": "NVIDIA GeForce GTX 1050 2 GB",
+    "descricao": "Placa de entrada (2016), jogos leves em HD.",
+    "condicao": "novo",
+    "specs": {
+      "desempenho": 18,
+      "tdp": 75,
+      "pcie": "3.0",
+      "conector": "nenhum"
+    }
+  },
+  {
+    "id": "gpu-gtx1060-3gb",
+    "categoria": "placa_video",
+    "nome": "NVIDIA GeForce GTX 1060 3 GB",
+    "descricao": "Placa de entrada (2016), jogos em HD.",
+    "condicao": "novo",
+    "specs": {
+      "desempenho": 36,
+      "tdp": 120,
+      "pcie": "3.0",
+      "conector": "6 pinos"
+    }
+  },
+  {
+    "id": "gpu-gtx1070",
+    "categoria": "placa_video",
+    "nome": "NVIDIA GeForce GTX 1070 8 GB",
+    "descricao": "Placa de alto desempenho da gera��o Pascal (2016).",
+    "condicao": "novo",
+    "specs": {
+      "desempenho": 50,
+      "tdp": 150,
+      "pcie": "3.0",
+      "conector": "8 pinos"
+    }
+  },
+  {
+    "id": "gpu-gtx1080",
+    "categoria": "placa_video",
+    "nome": "NVIDIA GeForce GTX 1080 8 GB",
+    "descricao": "Placa topo da gera��o Pascal (2016), jogos em Full HD e 1440p.",
+    "condicao": "novo",
+    "specs": {
+      "desempenho": 60,
+      "tdp": 180,
+      "pcie": "3.0",
+      "conector": "8 pinos"
+    }
+  },
+  {
+    "id": "gpu-gtx1660",
+    "categoria": "placa_video",
+    "nome": "NVIDIA GeForce GTX 1660 6 GB",
+    "descricao": "Placa de entrada (2019), jogos em Full HD.",
+    "condicao": "novo",
+    "specs": {
+      "desempenho": 46,
+      "tdp": 120,
+      "pcie": "3.0",
+      "conector": "6 pinos"
+    }
+  },
+  {
+    "id": "gpu-rtx2060s",
+    "categoria": "placa_video",
+    "nome": "NVIDIA GeForce RTX 2060 SUPER 8 GB",
+    "descricao": "Placa com ray tracing (2019), jogos em Full HD e 1440p.",
+    "condicao": "novo",
+    "specs": {
+      "desempenho": 58,
+      "tdp": 175,
+      "pcie": "3.0",
+      "conector": "8 pinos"
+    }
+  },
+  {
+    "id": "gpu-rtx2070",
+    "categoria": "placa_video",
+    "nome": "NVIDIA GeForce RTX 2070 8 GB",
+    "descricao": "Placa com ray tracing (2018), jogos em 1440p.",
+    "condicao": "novo",
+    "specs": {
+      "desempenho": 65,
+      "tdp": 175,
+      "pcie": "3.0",
+      "conector": "8 pinos"
+    }
+  },
+  {
+    "id": "gpu-rtx2080s",
+    "categoria": "placa_video",
+    "nome": "NVIDIA GeForce RTX 2080 SUPER 8 GB",
+    "descricao": "Placa topo com ray tracing (2019), jogos em 1440p.",
+    "condicao": "novo",
+    "specs": {
+      "desempenho": 75,
+      "tdp": 250,
+      "pcie": "3.0",
+      "conector": "2x 8 pinos"
+    }
+  },
+  {
+    "id": "gpu-rtx3050",
+    "categoria": "placa_video",
+    "nome": "NVIDIA GeForce RTX 3050 8 GB",
+    "descricao": "Placa de entrada com ray tracing (2022), jogos em Full HD.",
+    "condicao": "novo",
+    "specs": {
+      "desempenho": 46,
+      "tdp": 130,
+      "pcie": "4.0",
+      "conector": "8 pinos"
+    }
+  },
+  {
+    "id": "gpu-rtx3060ti",
+    "categoria": "placa_video",
+    "nome": "NVIDIA GeForce RTX 3060 Ti 8 GB",
+    "descricao": "Placa com ray tracing (2020), jogos em 1440p.",
+    "condicao": "novo",
+    "specs": {
+      "desempenho": 85,
+      "tdp": 200,
+      "pcie": "4.0",
+      "conector": "8 pinos"
+    }
+  },
+  {
+    "id": "gpu-rtx3070",
+    "categoria": "placa_video",
+    "nome": "NVIDIA GeForce RTX 3070 8 GB",
+    "descricao": "Placa com ray tracing (2020), jogos em 1440p.",
+    "condicao": "novo",
+    "specs": {
+      "desempenho": 88,
+      "tdp": 220,
+      "pcie": "4.0",
+      "conector": "2x 8 pinos"
+    }
+  },
+  {
+    "id": "gpu-rtx3080",
+    "categoria": "placa_video",
+    "nome": "NVIDIA GeForce RTX 3080 10 GB",
+    "descricao": "Placa topo (2020), jogos em 1440p e 4K.",
+    "condicao": "novo",
+    "specs": {
+      "desempenho": 96,
+      "tdp": 320,
+      "pcie": "4.0",
+      "conector": "2x 8 pinos"
+    }
+  },
+  {
+    "id": "gpu-rtx4060ti",
+    "categoria": "placa_video",
+    "nome": "NVIDIA GeForce RTX 4060 Ti 8 GB",
+    "descricao": "Placa NVIDIA (2023), DLSS 3, jogos em 1440p.",
+    "condicao": "novo",
+    "specs": {
+      "desempenho": 78,
+      "tdp": 160,
+      "pcie": "4.0",
+      "conector": "8 pinos"
+    }
+  },
+  {
+    "id": "gpu-rtx4070",
+    "categoria": "placa_video",
+    "nome": "NVIDIA GeForce RTX 4070 12 GB",
+    "descricao": "Placa NVIDIA (2023), jogos em 1440p.",
+    "condicao": "novo",
+    "specs": {
+      "desempenho": 85,
+      "tdp": 200,
+      "pcie": "4.0",
+      "conector": "12VHPWR"
+    }
+  },
+  {
+    "id": "gpu-rtx4070s",
+    "categoria": "placa_video",
+    "nome": "NVIDIA GeForce RTX 4070 SUPER 12 GB",
+    "descricao": "Placa NVIDIA (2024), jogos em 1440p e 4K leves.",
+    "condicao": "novo",
+    "specs": {
+      "desempenho": 90,
+      "tdp": 220,
+      "pcie": "4.0",
+      "conector": "12VHPWR"
+    }
+  },
+  {
+    "id": "gpu-rtx4080",
+    "categoria": "placa_video",
+    "nome": "NVIDIA GeForce RTX 4080 16 GB",
+    "descricao": "Placa topo NVIDIA (2022), jogos em 4K.",
+    "condicao": "novo",
+    "specs": {
+      "desempenho": 96,
+      "tdp": 320,
+      "pcie": "4.0",
+      "conector": "12VHPWR"
+    }
+  },
+  {
+    "id": "gpu-rtx4090",
+    "categoria": "placa_video",
+    "nome": "NVIDIA GeForce RTX 4090 24 GB",
+    "descricao": "Placa mais potente da linha (2022), jogos em 4K.",
+    "condicao": "novo",
+    "specs": {
+      "desempenho": 100,
+      "tdp": 450,
+      "pcie": "4.0",
+      "conector": "12VHPWR"
+    }
+  },
+  {
+    "id": "gpu-rx550",
+    "categoria": "placa_video",
+    "nome": "AMD Radeon RX 550 4 GB",
+    "descricao": "Placa de entrada (2017), alimentada s� pelo slot.",
+    "condicao": "novo",
+    "specs": {
+      "desempenho": 15,
+      "tdp": 50,
+      "pcie": "3.0",
+      "conector": "nenhum"
+    }
+  },
+  {
+    "id": "gpu-rx570",
+    "categoria": "placa_video",
+    "nome": "AMD Radeon RX 570 8 GB",
+    "descricao": "Placa de entrada AMD (2017), jogos em Full HD leves.",
+    "condicao": "novo",
+    "specs": {
+      "desempenho": 36,
+      "tdp": 150,
+      "pcie": "3.0",
+      "conector": "8 pinos"
+    }
+  },
+  {
+    "id": "gpu-rx5500xt",
+    "categoria": "placa_video",
+    "nome": "AMD Radeon RX 5500 XT 8 GB",
+    "descricao": "Placa de entrada AMD (2019), jogos em Full HD.",
+    "condicao": "novo",
+    "specs": {
+      "desempenho": 40,
+      "tdp": 130,
+      "pcie": "4.0",
+      "conector": "8 pinos"
+    }
+  },
+  {
+    "id": "gpu-rx5600xt",
+    "categoria": "placa_video",
+    "nome": "AMD Radeon RX 5600 XT 6 GB",
+    "descricao": "Placa AMD (2020), jogos em Full HD e 1440p leves.",
+    "condicao": "novo",
+    "specs": {
+      "desempenho": 46,
+      "tdp": 150,
+      "pcie": "4.0",
+      "conector": "8 pinos"
+    }
+  },
+  {
+    "id": "gpu-rx5700",
+    "categoria": "placa_video",
+    "nome": "AMD Radeon RX 5700 8 GB",
+    "descricao": "Placa AMD (2019), jogos em 1440p.",
+    "condicao": "novo",
+    "specs": {
+      "desempenho": 52,
+      "tdp": 180,
+      "pcie": "4.0",
+      "conector": "8 pinos"
+    }
+  },
+  {
+    "id": "gpu-rx5700xt",
+    "categoria": "placa_video",
+    "nome": "AMD Radeon RX 5700 XT 8 GB",
+    "descricao": "Placa AMD (2019), jogos em 1440p.",
+    "condicao": "novo",
+    "specs": {
+      "desempenho": 58,
+      "tdp": 225,
+      "pcie": "4.0",
+      "conector": "2x 8 pinos"
+    }
+  },
+  {
+    "id": "gpu-rx6500xt",
+    "categoria": "placa_video",
+    "nome": "AMD Radeon RX 6500 XT 4 GB",
+    "descricao": "Placa de entrada AMD (2022), alimentada s� pelo slot.",
+    "condicao": "novo",
+    "specs": {
+      "desempenho": 30,
+      "tdp": 107,
+      "pcie": "4.0",
+      "conector": "nenhum"
+    }
+  },
+  {
+    "id": "gpu-rx6600xt",
+    "categoria": "placa_video",
+    "nome": "AMD Radeon RX 6600 XT 8 GB",
+    "descricao": "Placa AMD (2021), jogos em Full HD e 1440p leves.",
+    "condicao": "novo",
+    "specs": {
+      "desempenho": 68,
+      "tdp": 160,
+      "pcie": "4.0",
+      "conector": "8 pinos"
+    }
+  },
+  {
+    "id": "gpu-rx6650xt",
+    "categoria": "placa_video",
+    "nome": "AMD Radeon RX 6650 XT 8 GB",
+    "descricao": "Placa AMD (2022), jogos em Full HD e 1440p.",
+    "condicao": "novo",
+    "specs": {
+      "desempenho": 70,
+      "tdp": 180,
+      "pcie": "4.0",
+      "conector": "8 pinos"
+    }
+  },
+  {
+    "id": "gpu-rx6700xt",
+    "categoria": "placa_video",
+    "nome": "AMD Radeon RX 6700 XT 12 GB",
+    "descricao": "Placa AMD (2021), jogos em 1440p.",
+    "condicao": "novo",
+    "specs": {
+      "desempenho": 78,
+      "tdp": 230,
+      "pcie": "4.0",
+      "conector": "2x 8 pinos"
+    }
+  },
+  {
+    "id": "gpu-rx6800",
+    "categoria": "placa_video",
+    "nome": "AMD Radeon RX 6800 16 GB",
+    "descricao": "Placa AMD (2020), jogos em 1440p.",
+    "condicao": "novo",
+    "specs": {
+      "desempenho": 85,
+      "tdp": 250,
+      "pcie": "4.0",
+      "conector": "2x 8 pinos"
+    }
+  },
+  {
+    "id": "gpu-rx6800xt",
+    "categoria": "placa_video",
+    "nome": "AMD Radeon RX 6800 XT 16 GB",
+    "descricao": "Placa topo AMD (2020), jogos em 1440p e 4K leves.",
+    "condicao": "novo",
+    "specs": {
+      "desempenho": 90,
+      "tdp": 300,
+      "pcie": "4.0",
+      "conector": "2x 8 pinos"
+    }
+  },
+  {
+    "id": "gpu-rx7700xt",
+    "categoria": "placa_video",
+    "nome": "AMD Radeon RX 7700 XT 12 GB",
+    "descricao": "Placa AMD (2023), jogos em 1440p.",
+    "condicao": "novo",
+    "specs": {
+      "desempenho": 82,
+      "tdp": 245,
+      "pcie": "4.0",
+      "conector": "2x 8 pinos"
+    }
+  },
+  {
+    "id": "gpu-rx7800xt",
+    "categoria": "placa_video",
+    "nome": "AMD Radeon RX 7800 XT 16 GB",
+    "descricao": "Placa AMD (2023), jogos em 1440p.",
+    "condicao": "novo",
+    "specs": {
+      "desempenho": 86,
+      "tdp": 263,
+      "pcie": "4.0",
+      "conector": "2x 8 pinos"
+    }
+  },
+  {
+    "id": "gpu-rx7900xt",
+    "categoria": "placa_video",
+    "nome": "AMD Radeon RX 7900 XT 20 GB",
+    "descricao": "Placa topo AMD (2022), jogos em 4K.",
+    "condicao": "novo",
+    "specs": {
+      "desempenho": 95,
+      "tdp": 315,
+      "pcie": "4.0",
+      "conector": "2x 8 pinos"
+    }
+  },
+  {
+    "id": "gpu-rx7900xtx",
+    "categoria": "placa_video",
+    "nome": "AMD Radeon RX 7900 XTX 24 GB",
+    "descricao": "Placa topo AMD (2022), jogos em 4K.",
+    "condicao": "novo",
+    "specs": {
+      "desempenho": 100,
+      "tdp": 355,
+      "pcie": "4.0",
+      "conector": "3x 8 pinos"
+    }
+  },
+  {
+    "id": "fonte-1000w-80plus-gold",
+    "categoria": "fonte",
+    "nome": "Fonte 1000 W 80 Plus Gold",
+    "descricao": "Para configura��es de alto desempenho com placas de v�deo topo de linha.",
+    "condicao": "novo",
+    "specs": {
+      "potencia": 1000,
+      "pcie_conectores": 6
+    }
+  },
+  {
+    "id": "fonte-1200w-80plus-platinum",
+    "categoria": "fonte",
+    "nome": "Fonte 1200 W 80 Plus Platinum",
+    "descricao": "Para os conjuntos mais exigentes, com folga para overclock.",
+    "condicao": "novo",
+    "specs": {
+      "potencia": 1200,
+      "pcie_conectores": 6
+    }
   }
 ]
