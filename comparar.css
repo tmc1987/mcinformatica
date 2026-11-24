@@ -169,3 +169,152 @@
         align-items: stretch;
     }
 }
+
+/* ---------- Configurações lado a lado ---------- */
+
+.comparar-colunas {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+    align-items: start;
+}
+
+.comparar-coluna {
+    background: #fff;
+    border: 1px solid #dce5eb;
+    border-radius: 16px;
+    padding: 20px;
+    color: #10243d;
+    box-shadow: 0 12px 30px rgba(31, 58, 87, .05);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    min-width: 0;
+}
+
+.comparar-coluna-cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    border-bottom: 1px solid #eef2f6;
+    padding-bottom: 12px;
+}
+
+.comparar-coluna-cabecalho h2 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.4rem;
+    margin: 0;
+    color: #10243d;
+}
+
+.comparar-coluna-cabecalho .btn {
+    padding: 8px 14px;
+}
+
+.comparar-etapas {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.comparar-etapas .montador-etapa {
+    padding: 14px;
+}
+
+.comparar-resumo .resumo-lista {
+    margin: 0 0 8px;
+}
+
+.comparar-tecnologia {
+    border-top: 1px solid #eef2f6;
+    padding-top: 14px;
+}
+
+.comparar-tecnologia .comparar-subtitulo {
+    margin-top: 0;
+}
+
+.tec-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.tec-card {
+    border: 1px solid #dce5eb;
+    border-radius: 12px;
+    padding: 14px;
+    background: #f7f9fb;
+}
+
+.tec-card h3 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.1rem;
+    margin: 0 0 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #10243d;
+}
+
+.tec-card h3 i {
+    color: #1461dd;
+}
+
+.tec-glossario {
+    font-size: 0.85rem;
+    color: #5c6c7d;
+    margin: 0 0 10px;
+}
+
+.tec-lista,
+.tec-termos dl {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.tec-linha,
+.tec-termo {
+    display: grid;
+    grid-template-columns: minmax(110px, 40%) 1fr;
+    gap: 10px;
+    font-size: 0.88rem;
+}
+
+.tec-linha dt,
+.tec-termo dt {
+    color: #5c6c7d;
+    font-weight: 600;
+}
+
+.tec-linha dd,
+.tec-termo dd {
+    margin: 0;
+    color: #10243d;
+}
+
+.tec-termos {
+    margin-top: 14px;
+    font-size: 0.9rem;
+}
+
+.tec-termos summary {
+    cursor: pointer;
+    color: #1461dd;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.tec-termo {
+    grid-template-columns: 110px 1fr;
+}
+
+@media (max-width: 900px) {
+    .comparar-colunas {
+        grid-template-columns: 1fr;
+    }
+}

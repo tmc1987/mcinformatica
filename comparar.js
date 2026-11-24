@@ -1,30 +1,35 @@
 /* ============================================================
-   MC INFORMÁTICA — Comparar montagens
-   Usa montador-core.js (regras e análise) e montador-ui.js (HTML).
-   NUMERO_WHATSAPP vem de app.js.
+   MC INFORMÁTICA — Comparar montagens (A e B lado a lado)
+   Usa montador-core.js (regras, análise, tecnologia) e
+   montador-ui.js (HTML). NUMERO_WHATSAPP vem de app.js.
    ============================================================ */
 
 const CHAVE_COMPARAR = "mc-comparar-v1";
 const LIMITE_EMPATE_DESEMPENHO = 3;
 const LIMITE_EMPATE_GERAL = 2;
+const CONSTRUCOES = ["A", "B"];
 
 const configs = { A: {}, B: {} };
 const estados = {
     A: { aberta: undefined, buscas: {} },
     B: { aberta: undefined, buscas: {} }
 };
-let atual = "A";
 
-const etapasEl = document.getElementById("etapas");
-const resumoListaEl = document.getElementById("resumo-lista");
-const analiseEl = document.getElementById("analise");
-const tituloResumoEl = document.getElementById("titulo-resumo");
+const elementos = {};
+CONSTRUCOES.forEach((k) => {
+    elementos[k] = {
+        etapas: document.getElementById(`etapas-${k}`),
+        resumo: document.getElementById(`resumo-lista-${k}`),
+        analise: document.getElementById(`analise-${k}`),
+        tecnologia: document.getElementById(`tecnologia-${k}`)
+    };
+});
 const tabelaEl = document.getElementById("tabela-comparacao");
 const vereditoEl = document.getElementById("conteudo-veredito");
 
 function salvar() {
     const ids = {};
-    ["A", "B"].forEach((k) => {
+    CONSTRUCOES.forEach((k) => {
         ids[k] = Object.fromEntries(Object.entries(configs[k]).map(([slug, p]) => [slug, p.id]));
     });
     localStorage.setItem(CHAVE_COMPARAR, JSON.stringify(ids));
@@ -33,7 +38,7 @@ function salvar() {
 function carregarSalvo() {
     try {
         const ids = JSON.parse(localStorage.getItem(CHAVE_COMPARAR) || "{}");
-        ["A", "B"].forEach((k) => {
+        CONSTRUCOES.forEach((k) => {
             configs[k] = {};
             Object.entries(ids[k] || {}).forEach(([slug, id]) => {
                 const peca = PECAS.find((p) => p.id === id);
@@ -48,7 +53,6 @@ function carregarSalvo() {
 
 // ---------- Comparação peça a peça ----------
 
-// Retorna quem leva vantagem em uma etapa e o texto explicativo
 function vantagemEtapa(slug, a, b) {
     if (!a || !b) return { lado: null, texto: "Falta escolher" };
     if (a.id === b.id) return { lado: null, texto: "Mesma peça" };
@@ -202,24 +206,24 @@ document.getElementById("btn-compartilhar").addEventListener("click", () => {
 
 // ---------- Renderização e eventos ----------
 
+function renderizarColuna(k) {
+    const conjunto = configs[k];
+    const estado = estados[k];
+    if (estado.aberta === undefined) estado.aberta = primeiraPendente(conjunto);
+    elementos[k].etapas.innerHTML = htmlEtapas(conjunto, estado, k);
+    elementos[k].resumo.innerHTML = htmlListaResumo(conjunto);
+    elementos[k].analise.innerHTML = htmlAnalise(conjunto);
+    elementos[k].tecnologia.innerHTML = htmlTecnologia(conjunto);
+}
+
 function renderizarTudo() {
-    document.querySelectorAll(".comparar-aba").forEach((aba) => {
-        const ativa = aba.dataset.build === atual;
-        aba.classList.toggle("ativa", ativa);
-        aba.setAttribute("aria-selected", String(ativa));
-    });
-    const estado = estados[atual];
-    if (estado.aberta === undefined) estado.aberta = primeiraPendente(configs[atual]);
-    tituloResumoEl.textContent = `Configuração ${atual}`;
-    etapasEl.innerHTML = htmlEtapas(configs[atual], estado, atual);
-    resumoListaEl.innerHTML = htmlListaResumo(configs[atual]);
-    analiseEl.innerHTML = htmlAnalise(configs[atual]);
+    CONSTRUCOES.forEach(renderizarColuna);
     renderizarComparacao();
     vereditoEl.innerHTML = htmlVeredito();
 }
 
-function escolherPeca(id, categoria) {
-    const conjunto = configs[atual];
+function escolherPeca(k, id, categoria) {
+    const conjunto = configs[k];
     const peca = PECAS.find((p) => p.id === id);
     if (!peca) return;
     if (conjunto[categoria]?.id === id) {
@@ -227,42 +231,42 @@ function escolherPeca(id, categoria) {
     } else {
         if (!opcoesCompativeis(categoria, conjunto).some((p) => p.id === id)) return;
         conjunto[categoria] = peca;
-        estados[atual].aberta = proximaPendente(categoria, conjunto);
+        estados[k].aberta = proximaPendente(categoria, conjunto);
     }
     limparIncompativeis(conjunto);
     salvar();
     renderizarTudo();
 }
 
-document.querySelectorAll(".comparar-aba").forEach((aba) => {
-    aba.addEventListener("click", () => {
-        atual = aba.dataset.build;
-        renderizarTudo();
+CONSTRUCOES.forEach((k) => {
+    const etapasEl = elementos[k].etapas;
+
+    etapasEl.addEventListener("click", (e) => {
+        const cabecalho = e.target.closest("button[data-etapa]");
+        if (cabecalho) {
+            const slug = cabecalho.dataset.etapa;
+            const estado = estados[k];
+            estado.aberta = estado.aberta === slug ? null : slug;
+            renderizarTudo();
+            return;
+        }
+        const botao = e.target.closest("button[data-id]");
+        if (botao) escolherPeca(k, botao.dataset.id, botao.dataset.categoria);
+    });
+
+    ligarBuscaEtapas(etapasEl, (slug, valor) => {
+        estados[k].buscas[slug] = valor;
     });
 });
 
-etapasEl.addEventListener("click", (e) => {
-    const cabecalho = e.target.closest("button[data-etapa]");
-    if (cabecalho) {
-        const slug = cabecalho.dataset.etapa;
-        const estado = estados[atual];
-        estado.aberta = estado.aberta === slug ? null : slug;
+document.querySelectorAll(".btn-limpar-build").forEach((botao) => {
+    botao.addEventListener("click", () => {
+        const k = botao.dataset.build;
+        configs[k] = {};
+        estados[k].aberta = undefined;
+        salvar();
         renderizarTudo();
-        return;
-    }
-    const botao = e.target.closest("button[data-id]");
-    if (botao) escolherPeca(botao.dataset.id, botao.dataset.categoria);
-});
-
-ligarBuscaEtapas(etapasEl, (slug, valor) => {
-    estados[atual].buscas[slug] = valor;
-});
-
-document.getElementById("btn-limpar-atual").addEventListener("click", () => {
-    configs[atual] = {};
-    estados[atual].aberta = undefined;
-    salvar();
-    renderizarTudo();
+    });
 });
 
 async function iniciar() {

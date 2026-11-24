@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comparar montagens | MC Informática</title>
-    <meta name="description" content="Monte duas configurações de PC, compare peça a peça e veja qual é melhor para jogos, trabalho e estudo.">
+    <meta name="description" content="Monte duas configurações de PC lado a lado, compare peça a peça e veja qual vai render mais para jogos, trabalho e estudo.">
     <link rel="icon" type="image/jpeg" href="img/logo.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css?v=20261016-3">
     <link rel="stylesheet" href="refinamento.css?v=20261104-logo-1">
-    <link rel="stylesheet" href="montar.css?v=20261123-8">
-    <link rel="stylesheet" href="comparar.css?v=20261123-8">
+    <link rel="stylesheet" href="montar.css?v=20261124-1">
+    <link rel="stylesheet" href="comparar.css?v=20261124-1">
 </head>
 <body>
     <div class="topbar">
@@ -47,27 +47,41 @@
         <div class="catalogo-intro">
             <span class="secao-kicker">COMPARAR</span>
             <h1 class="secao-titulo">Duas montagens, um veredito.</h1>
-            <p class="secao-subtitulo">Monte a configuração A e a configuração B. Depois compare peça a peça e veja qual vai render mais para jogos, trabalho e estudo.</p>
+            <p class="secao-subtitulo">Monte a configuração A e a configuração B lado a lado. Veja a tecnologia de cada peça, compare item a item e descubra qual vai render mais.</p>
         </div>
 
-        <div class="comparar-abas" role="tablist">
-            <button class="comparar-aba ativa" data-build="A" role="tab" aria-selected="true">Configuração A</button>
-            <button class="comparar-aba" data-build="B" role="tab" aria-selected="false">Configuração B</button>
-        </div>
-
-        <div class="montador-layout">
-            <section class="montador-etapas" id="etapas">
-                <!-- Etapas da configuração atual, renderizadas por comparar.js -->
+        <div class="comparar-colunas">
+            <section class="comparar-coluna" data-build="A">
+                <header class="comparar-coluna-cabecalho">
+                    <h2>Configuração A</h2>
+                    <button class="btn btn-secundario btn-limpar-build" data-build="A">Limpar</button>
+                </header>
+                <div class="comparar-etapas" id="etapas-A"></div>
+                <div class="comparar-resumo">
+                    <ul class="resumo-lista" id="resumo-lista-A"></ul>
+                    <div class="analise" id="analise-A"></div>
+                </div>
+                <div class="comparar-tecnologia">
+                    <h3 class="comparar-subtitulo">Tecnologia da configuração A</h3>
+                    <div id="tecnologia-A"></div>
+                </div>
             </section>
 
-            <aside class="montador-resumo" id="resumo">
-                <div class="resumo-acoes">
-                    <button class="btn btn-secundario" id="btn-limpar-atual">Limpar esta configuração</button>
+            <section class="comparar-coluna" data-build="B">
+                <header class="comparar-coluna-cabecalho">
+                    <h2>Configuração B</h2>
+                    <button class="btn btn-secundario btn-limpar-build" data-build="B">Limpar</button>
+                </header>
+                <div class="comparar-etapas" id="etapas-B"></div>
+                <div class="comparar-resumo">
+                    <ul class="resumo-lista" id="resumo-lista-B"></ul>
+                    <div class="analise" id="analise-B"></div>
                 </div>
-                <h2 id="titulo-resumo">Configuração A</h2>
-                <ul class="resumo-lista" id="resumo-lista"></ul>
-                <div class="analise" id="analise"></div>
-            </aside>
+                <div class="comparar-tecnologia">
+                    <h3 class="comparar-subtitulo">Tecnologia da configuração B</h3>
+                    <div id="tecnologia-B"></div>
+                </div>
+            </section>
         </div>
 
         <section class="comparar-bloco" id="comparacao">
@@ -121,8 +135,8 @@
     </a>
 
     <script src="app.js?v=20260924-3"></script>
-    <script src="montador-core.js?v=20261123-8"></script>
-    <script src="montador-ui.js?v=20261123-8"></script>
-    <script src="comparar.js?v=20261123-8"></script>
+    <script src="montador-core.js?v=20261124-1"></script>
+    <script src="montador-ui.js?v=20261124-1"></script>
+    <script src="comparar.js?v=20261124-1"></script>
 </body>
 </html>

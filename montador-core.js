@@ -262,3 +262,118 @@ function desempenhoConjunto(conjunto) {
         semPlacaDeVideo: !video
     };
 }
+
+// Explicação de cada categoria para o visitante
+const GLOSSARIO = {
+    processador: "Executa os programas. Núcleos e threads definem quantas tarefas ele faz ao mesmo tempo.",
+    placa_mae: "Conecta todas as peças. O chipset define recursos como overclock, versão PCIe e portas.",
+    memoria: "Memória de trabalho. Mais capacidade permite mais programas abertos; a velocidade ajuda na fluidez.",
+    armazenamento: "Guarda o sistema e os arquivos. SSDs são muito mais rápidos que HDs.",
+    placa_video: "Processa imagens e gráficos. A memória de vídeo (VRAM) e a arquitetura definem o desempenho em jogos.",
+    fonte: "Fornece energia para todas as peças. A certificação 80 Plus indica a eficiência da conversão de energia.",
+    gabinete: "Abriga e ventila as peças. O formato precisa aceitar o tamanho da placa-mãe."
+};
+
+const GLOSSARIO_TERMOS = {
+    "PCIe": "Barramento que liga a placa de vídeo e outras peças à placa-mãe. Versões mais novas (4.0, 5.0) transferem dados mais rápido.",
+    "TDP": "Consumo máximo estimado da peça em watts. Usado para dimensionar a fonte.",
+    "VRAM": "Memória dedicada da placa de vídeo, usada para texturas e imagens.",
+    "Ray tracing": "Simula a luz de forma realista. Exige hardware específico para rodar bem.",
+    "DLSS": "Tecnologia NVIDIA que aumenta a resolução com inteligência artificial, ganhando desempenho.",
+    "FSR": "Tecnologia AMD que aumenta a resolução por software, ganhando desempenho.",
+    "Overclock": "Permite acelerar a peça além da velocidade de fábrica."
+};
+
+// Arquitetura da placa de vídeo, deduzida do nome do modelo
+function arquiteturaGPU(nome) {
+    if (/GTX 1(050|060|070|080)/.test(nome)) return "Pascal";
+    if (/GTX 16\d\d/.test(nome)) return "Turing (sem ray tracing)";
+    if (/RTX 20\d\d/.test(nome)) return "Turing";
+    if (/RTX 30\d\d/.test(nome)) return "Ampere";
+    if (/RTX 40\d\d/.test(nome)) return "Ada Lovelace";
+    if (/RTX 50\d\d/.test(nome)) return "Blackwell";
+    if (/RX (550|570|580)/.test(nome)) return "Polaris (sem ray tracing)";
+    if (/RX 5[5-7]\d\d/.test(nome)) return "RDNA 1 (sem ray tracing)";
+    if (/RX 6[5-9]\d\d|RX 6[89]\d\d/.test(nome)) return "RDNA 2";
+    if (/RX 7[5-9]\d\d/.test(nome)) return "RDNA 3";
+    if (/RX 9\d\d\d/.test(nome)) return "RDNA 4";
+    if (/Arc/.test(nome)) return "Intel Xe (Arc)";
+    return "—";
+}
+
+// Recursos de tecnologia da placa de vídeo
+function recursosGPU(nome) {
+    if (/RTX/.test(nome)) return "Ray tracing e DLSS (upscaling por IA)";
+    if (/RX (6[5-9]\d\d|7\d\d\d|9\d\d\d)/.test(nome) || /Arc/.test(nome)) return "Ray tracing e FSR (upscaling por software)";
+    if (/RX 5[5-7]\d\d|RX (550|570|580)/.test(nome)) return "Sem ray tracing em hardware";
+    if (/GTX/.test(nome)) return "Sem ray tracing em hardware";
+    return "—";
+}
+
+// Lista de tecnologias da peça, em linguagem simples: [rótulo, valor]
+function infoTecnologia(peca) {
+    const s = peca.specs || {};
+    const n = peca.nome || "";
+    const d = peca.descricao || "";
+    const itens = [];
+
+    if (peca.categoria === "processador") {
+        const nucleos = d.match(/(\d+) núcleos \/ (\d+) threads/);
+        if (nucleos) itens.push(["Núcleos / threads", `${nucleos[1]} / ${nucleos[2]}`]);
+        const geracao = d.match(/(\d+)ª geração/);
+        if (geracao) itens.push(["Geração", `${geracao[1]}ª`]);
+        if (/X3D/.test(n)) itens.push(["Cache 3D", "Memória de cache empilhada (V-Cache), acelera jogos"]);
+        if (/desbloqueado/i.test(d)) itens.push(["Overclock", "Liberado (modelo sem trava)"]);
+        if (/gráficos/i.test(d)) itens.push(["Vídeo integrado", "Gráficos Radeon no próprio processador"]);
+        itens.push(["Socket", s.socket]);
+        itens.push(["Consumo (TDP)", `${s.tdp} W`]);
+    }
+
+    if (peca.categoria === "placa_mae") {
+        const chipset = n.match(/\b([ABHXZ]\d{2,3})\b/);
+        if (chipset) itens.push(["Chipset", chipset[1]]);
+        itens.push(["Socket", s.socket]);
+        itens.push(["Memória", s.memoria]);
+        itens.push(["Formato", s.formato]);
+        itens.push(["PCIe", `${s.pcie} (slot da placa de vídeo)`]);
+        const overclock = chipset && /^[XZ]/.test(chipset[1]) ? "Sim (chipset X ou Z)" : "Limitado (chipset A, B ou H)";
+        itens.push(["Overclock", overclock]);
+    }
+
+    if (peca.categoria === "memoria") {
+        itens.push(["Tipo", s.memoria]);
+        itens.push(["Capacidade", `${s.capacidade} GB`]);
+        const velocidade = n.match(/(\d{3,4}) MHz/);
+        if (velocidade) itens.push(["Velocidade", `${velocidade[1]} MHz`]);
+    }
+
+    if (peca.categoria === "placa_video") {
+        const vram = n.match(/(\d+) GB/);
+        if (vram) itens.push(["Memória de vídeo (VRAM)", `${vram[1]} GB`]);
+        itens.push(["Arquitetura", arquiteturaGPU(n)]);
+        itens.push(["Recursos", recursosGPU(n)]);
+        itens.push(["PCIe", s.pcie]);
+        itens.push(["Energia", s.conector === "nenhum" ? "Só pelo slot PCIe" : `Cabo de ${s.conector}`]);
+        itens.push(["Consumo (TDP)", `${s.tdp} W`]);
+    }
+
+    if (peca.categoria === "armazenamento") {
+        let tipo = "SSD SATA";
+        if (/NVMe/i.test(n)) tipo = "SSD NVMe (PCIe, muito rápido)";
+        else if (/HD/.test(n)) tipo = "HD mecânico (disco giratório)";
+        itens.push(["Tipo", tipo]);
+    }
+
+    if (peca.categoria === "fonte") {
+        itens.push(["Potência", `${s.potencia} W`]);
+        const certificacao = n.match(/80 Plus (\w+)/);
+        if (certificacao) itens.push(["Certificação 80 Plus", certificacao[1]]);
+        itens.push(["Conectores PCIe", `${s.pcie_conectores ?? 0}`]);
+    }
+
+    if (peca.categoria === "gabinete") {
+        itens.push(["Formatos aceitos", (s.formatos || []).join(", ")]);
+    }
+
+    return itens;
+}

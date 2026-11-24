@@ -110,6 +110,35 @@ function htmlAnalise(conjunto) {
         </ul>`;
 }
 
+// Bloco "Tecnologia da montagem": uma explicação por componente escolhido
+function htmlTecnologia(conjunto) {
+    const escolhidas = ETAPAS.filter((e) => conjunto[e.slug]);
+    if (!escolhidas.length) {
+        return '<p class="montador-aviso">Escolha as peças para ver a tecnologia de cada componente.</p>';
+    }
+    const cards = escolhidas.map((etapa) => {
+        const peca = conjunto[etapa.slug];
+        const linhas = infoTecnologia(peca)
+            .map(([rotulo, valor]) => `<div class="tec-linha"><dt>${esc(rotulo)}</dt><dd>${esc(valor)}</dd></div>`)
+            .join("");
+        return `
+            <article class="tec-card">
+                <h3><i class="${ICONES_ETAPA[etapa.slug]}"></i> ${esc(etapa.nome)}</h3>
+                <p class="tec-glossario">${esc(GLOSSARIO[etapa.slug])}</p>
+                <dl class="tec-lista">${linhas}</dl>
+            </article>`;
+    }).join("");
+    const termos = Object.entries(GLOSSARIO_TERMOS)
+        .map(([termo, texto]) => `<div class="tec-termo"><dt>${esc(termo)}</dt><dd>${esc(texto)}</dd></div>`)
+        .join("");
+    return `
+        <div class="tec-cards">${cards}</div>
+        <details class="tec-termos">
+            <summary>O que significam os termos</summary>
+            <dl>${termos}</dl>
+        </details>`;
+}
+
 // Liga busca e cabeçalhos de etapa (sem re-renderizar a busca, para não perder o foco)
 function ligarBuscaEtapas(container, aoBuscar) {
     container.addEventListener("input", (e) => {
