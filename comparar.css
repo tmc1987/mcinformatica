@@ -318,3 +318,247 @@
         grid-template-columns: 1fr;
     }
 }
+
+/* ============================================================
+   Visual moderno do comparador (botões 3D e cards refinados)
+   ============================================================ */
+
+#comparador {
+    background: linear-gradient(180deg, #f4f7fb 0%, #eef3f8 100%);
+}
+
+#comparador .comparar-coluna,
+#comparador .comparar-bloco {
+    border: 0;
+    border-radius: 22px;
+    background: linear-gradient(180deg, #ffffff 0%, #fbfcfe 100%);
+    box-shadow:
+        0 1px 0 rgba(255, 255, 255, .9) inset,
+        0 2px 4px rgba(16, 36, 61, .04),
+        0 18px 40px rgba(16, 36, 61, .08);
+}
+
+#comparador .comparar-coluna-cabecalho {
+    border-bottom: 0;
+    padding-bottom: 4px;
+}
+
+#comparador .comparar-coluna-cabecalho h2 {
+    font-size: 1.55rem;
+}
+
+#comparador .montador-etapa {
+    border: 0;
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0 1px 2px rgba(16, 36, 61, .05), 0 6px 18px rgba(16, 36, 61, .06);
+    transition: box-shadow .2s ease, transform .2s ease;
+}
+
+#comparador .montador-etapa.concluida {
+    box-shadow: 0 0 0 2px #1461dd33, 0 8px 22px rgba(20, 97, 221, .12);
+}
+
+#comparador .montador-numero {
+    background: linear-gradient(180deg, #3d8bfd, #1461dd);
+    box-shadow: 0 3px 0 #0b3f96, 0 6px 12px rgba(20, 97, 221, .3);
+}
+
+#comparador .montador-linha {
+    border-bottom: 1px solid #f0f4f8;
+    transition: background .15s ease;
+}
+
+#comparador .montador-linha:hover {
+    background: #f6f9ff;
+}
+
+#comparador .montador-busca,
+#comparador .montador-etapa input {
+    border-radius: 12px;
+    border: 1px solid #d5e0ea;
+    box-shadow: inset 0 2px 4px rgba(16, 36, 61, .05);
+}
+
+#comparador .montador-busca:focus {
+    outline: none;
+    border-color: #3d8bfd;
+    box-shadow: 0 0 0 4px rgba(61, 139, 253, .18);
+}
+
+/* Botões em 3D: superfície com gradiente + borda inferior que dá a profundidade */
+#comparador .btn,
+#comparador .btn-whatsapp,
+#comparador .btn-limpar-build {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: 0;
+    border-radius: 14px;
+    padding: 11px 20px;
+    font-weight: 700;
+    letter-spacing: .01em;
+    color: #ffffff;
+    background: linear-gradient(180deg, #3d8bfd 0%, #1461dd 100%);
+    box-shadow:
+        0 1px 0 rgba(255, 255, 255, .45) inset,
+        0 5px 0 #0b3f96,
+        0 10px 18px rgba(20, 97, 221, .28);
+    transform: translateY(0);
+    transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;
+    cursor: pointer;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, .15);
+}
+
+#comparador .btn:hover,
+#comparador .btn-whatsapp:hover,
+#comparador .btn-limpar-build:hover {
+    filter: brightness(1.05);
+    transform: translateY(-2px);
+    box-shadow:
+        0 1px 0 rgba(255, 255, 255, .45) inset,
+        0 7px 0 #0b3f96,
+        0 14px 22px rgba(20, 97, 221, .32);
+}
+
+#comparador .btn:active,
+#comparador .btn-whatsapp:active,
+#comparador .btn-limpar-build:active {
+    transform: translateY(4px);
+    box-shadow:
+        0 1px 0 rgba(255, 255, 255, .3) inset,
+        0 1px 0 #0b3f96,
+        0 3px 6px rgba(20, 97, 221, .22);
+}
+
+#comparador .btn:focus-visible {
+    outline: 3px solid #3d8bfd;
+    outline-offset: 3px;
+}
+
+/* Botão de escolha de cada peça: versão menor */
+#comparador .btn-escolher {
+    padding: 8px 16px;
+    font-size: .9rem;
+    border-radius: 12px;
+    box-shadow:
+        0 1px 0 rgba(255, 255, 255, .4) inset,
+        0 4px 0 #0b3f96,
+        0 8px 14px rgba(20, 97, 221, .22);
+}
+
+/* Peça já escolhida: botão verde em 3D */
+#comparador .btn-secundario {
+    background: linear-gradient(180deg, #34d399 0%, #15803d 100%);
+    box-shadow:
+        0 1px 0 rgba(255, 255, 255, .45) inset,
+        0 4px 0 #0c5a2b,
+        0 8px 14px rgba(21, 128, 61, .25);
+}
+
+#comparador .btn-secundario:hover {
+    box-shadow:
+        0 1px 0 rgba(255, 255, 255, .45) inset,
+        0 6px 0 #0c5a2b,
+        0 12px 20px rgba(21, 128, 61, .3);
+}
+
+/* Botão do WhatsApp: verde da marca em 3D */
+#comparador #btn-compartilhar {
+    background: linear-gradient(180deg, #34d86a 0%, #128c3e 100%);
+    box-shadow:
+        0 1px 0 rgba(255, 255, 255, .45) inset,
+        0 6px 0 #0a5a27,
+        0 12px 22px rgba(18, 140, 62, .3);
+    padding: 14px 28px;
+    font-size: 1.02rem;
+}
+
+#comparador .btn-limpar-build {
+    background: linear-gradient(180deg, #ffffff 0%, #eef2f6 100%);
+    color: #304b66;
+    box-shadow:
+        0 1px 0 #ffffff inset,
+        0 4px 0 #c8d3de,
+        0 8px 14px rgba(16, 36, 61, .1);
+    padding: 8px 14px;
+    font-size: .88rem;
+}
+
+#comparador .btn-limpar-build:hover {
+    box-shadow:
+        0 1px 0 #ffffff inset,
+        0 6px 0 #c8d3de,
+        0 12px 18px rgba(16, 36, 61, .12);
+}
+
+/* Abas (se voltarem a existir) e cabeçalhos */
+#comparador .comparar-aba {
+    border-radius: 14px;
+    box-shadow: 0 4px 0 #c8d3de, 0 8px 14px rgba(16, 36, 61, .08);
+    transform: translateY(0);
+    transition: transform .12s ease, box-shadow .12s ease;
+}
+
+#comparador .comparar-aba:active {
+    transform: translateY(3px);
+    box-shadow: 0 1px 0 #c8d3de;
+}
+
+#comparador .comparar-aba.ativa {
+    background: linear-gradient(180deg, #3d8bfd 0%, #1461dd 100%);
+    box-shadow: 0 4px 0 #0b3f96, 0 8px 14px rgba(20, 97, 221, .28);
+}
+
+#comparador .comparar-titulo {
+    font-size: 1.7rem;
+    background: linear-gradient(90deg, #10243d, #1461dd);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+#comparador .tec-card {
+    border: 0;
+    border-radius: 16px;
+    background: linear-gradient(180deg, #f7fafd 0%, #eef4fa 100%);
+    box-shadow: 0 1px 2px rgba(16, 36, 61, .05), 0 6px 14px rgba(16, 36, 61, .05);
+}
+
+#comparador .tec-card h3 i {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 9px;
+    background: linear-gradient(180deg, #3d8bfd, #1461dd);
+    color: #fff;
+    box-shadow: 0 3px 0 #0b3f96;
+    font-size: .85rem;
+}
+
+#comparador .comparar-tabela thead th {
+    background: #f4f7fb;
+    border-bottom: 2px solid #e1e9f2;
+}
+
+#comparador .comparar-tabela td.vantagem {
+    border-radius: 8px;
+    box-shadow: inset 3px 0 0 #15803d;
+}
+
+#comparador .veredito-geral {
+    border-radius: 18px;
+    background: linear-gradient(135deg, #eaf2ff 0%, #f3f8ff 100%);
+    box-shadow: 0 1px 2px rgba(16, 36, 61, .05), 0 10px 22px rgba(20, 97, 221, .08);
+}
+
+#comparador .veredito-uso {
+    border: 0;
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0 1px 2px rgba(16, 36, 61, .05), 0 8px 18px rgba(16, 36, 61, .07);
+}
