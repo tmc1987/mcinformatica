@@ -11,8 +11,8 @@ const CONSTRUCOES = ["A", "B"];
 
 const configs = { A: {}, B: {} };
 const estados = {
-    A: { aberta: undefined, buscas: {} },
-    B: { aberta: undefined, buscas: {} }
+    A: { aberta: null, buscas: {} },
+    B: { aberta: null, buscas: {} }
 };
 
 const elementos = {};
@@ -209,7 +209,6 @@ document.getElementById("btn-compartilhar").addEventListener("click", () => {
 function renderizarColuna(k) {
     const conjunto = configs[k];
     const estado = estados[k];
-    if (estado.aberta === undefined) estado.aberta = primeiraPendente(conjunto);
     elementos[k].etapas.innerHTML = htmlEtapas(conjunto, estado, k);
     elementos[k].resumo.innerHTML = htmlListaResumo(conjunto);
     elementos[k].analise.innerHTML = htmlAnalise(conjunto);
@@ -263,7 +262,7 @@ document.querySelectorAll(".btn-limpar-build").forEach((botao) => {
     botao.addEventListener("click", () => {
         const k = botao.dataset.build;
         configs[k] = {};
-        estados[k].aberta = undefined;
+        estados[k].aberta = null;
         salvar();
         renderizarTudo();
     });
